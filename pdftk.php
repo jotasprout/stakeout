@@ -1,10 +1,10 @@
 <?php
 
 // form data
-$albumName = 'The Rise and Fall of Ziggy Stardust and the Spiders from Mars';
+$albumName = 'The Rise and Fall of Ziggy Snot';
 $albumPop = '72';
 $albumReleased = '06/06/1972';
-$artistName = 'David Bowie';
+$artistName = 'David Boogers';
 $artistPop = '81';	
 $currentDate = '02/27/2017';	
 $label = 'unknown';
@@ -73,15 +73,18 @@ $fdf_content .= "<</T(trackPop09)/V({$trackPop09})>>";
 $fdf_content .= "<</T(trackPop10)/V({$trackPop10})>>";
 $fdf_content .= "<</T(trackPop11)/V({$trackPop11})>>";
 
-$content = $fdf_header . $fdf_content . $fdf_footer;
+$context = $fdf_header . $fdf_content . $fdf_footer;
 
 // Creating a temporary file for our FDF file.
+// This works but is it really an FDF file with an FDF extension?
+// This isn't the createFDF function thingy from that one guy
+// it also isn't the new FdfFile thingy from the other guy
 $FDFfile = tempnam(sys_get_temp_dir(), gethostname());
 
-file_put_contents($FDFfile, $content);
+file_put_contents($FDFfile, $context);
 
 // Merging the FDF file with the raw PDF form
-exec("pdftk templates/AlbumFormEmpty.pdf fill_form $FDFfile output output.pdf"); 
+exec("pdftk templates/AlbumFormEmpty.pdf fill_form $FDFfile output boogers.pdf"); 
 
 // Removing the FDF file as we don't need it anymore
 unlink($FDFfile);
