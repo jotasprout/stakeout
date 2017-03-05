@@ -114,7 +114,7 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
 
 
 // credentials in a more secure location
-include("../../php/landfill.php");
+include("../../../php/landfill.php");
 
 //Uses PHP code to connect to database
 mysql_select_db("jscript_stakeout", $connekt);
