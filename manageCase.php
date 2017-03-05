@@ -28,12 +28,12 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
 <body>
 	<div class="container">
             <div class="masthead">
-                <a href="http://www.roxorsoxor.com/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
+                <a href="http://www.roxorsoxor.com/stakeout/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
             </div> <!-- /masthead --> 
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.jotascript.com/rxrsxr/index.php">Home</a>
+                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout/index.php">Home</a>
                     </div> 
                 </div> <!-- /container-fluid -->
             </nav> <!-- /navbar -->
