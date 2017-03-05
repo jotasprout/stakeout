@@ -28,13 +28,13 @@
     <title>Stakeout</title>
     <script src="http://www.jotascript.com/js/jquery-214.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
     <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
 	<div class="container">
-
             <div class="masthead">
-                <a href="http://www.jotascript.com/rxrsxr/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
+                <a href="http://www.roxorsoxor.com/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
             </div> <!-- /masthead -->
             
             <nav class="navbar navbar-default">

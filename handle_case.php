@@ -1,6 +1,6 @@
 <?php
 // PHP code in a more secure location
-  include("../../php/landfill.php");
+  include("../../../php/landfill.php");
 
 // Connection test and feedback
   if (!$connekt)
@@ -40,7 +40,7 @@
   }
 	
 	echo "<h2>Case # INSERT NUMBER is now open.</h2>";
-	echo "<p>Assign an investigator or <a href=\"http://www.jotascript.com/rxrsxr/insertObserveBS.htm\">enter an observation</a>.</p>";
+	echo "<p>Assign an investigator or <a href=\"http://www.roxorsoxor.com/stakeout/insertObserveBS.htm\">enter an observation</a>.</p>";
 	
 // When attempt is complete, connection closes
   mysql_close($connekt);

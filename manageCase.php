@@ -16,11 +16,10 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
 <html>
 <head>
     <title>Case Management</title>
-    <script src="../js/jquery-214.js"></script>
-    <script src="../js/jquery_play.js"></script>
-    <link rel="stylesheet" type="text/css" href="../js/bootstrap/css/bootstrap.min.css">
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../js/bootstrap/css/justified-nav.css">
+    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
+    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.js"></script>
     <LINK href="favicon.ico" rel="icon" type="image/x-icon">
     <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
     <LINK href="favicon.ico" rel="icon" type="image/ico"> 
@@ -28,10 +27,9 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
 
 <body>
 	<div class="container">
-		<DIV class="masthead">
-                <a href="http://www.jotascript.com/rxrsxr/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
-
-            </div> <!-- /masthead -->  
+            <div class="masthead">
+                <a href="http://www.roxorsoxor.com/index.php"><img src="stakeoutLogo.png" width="680" height="198"/></a>      
+            </div> <!-- /masthead --> 
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
