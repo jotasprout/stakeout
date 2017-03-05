@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cases</title>
+    <title>Observations</title>
     <script src="http://www.jotascript.com/js/jquery-214.js"></script>
     <script src="http://www.jotascript.com/js/jquery_play.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
@@ -53,10 +53,10 @@
             <!-- main -->
 
 	<div class="panel panel-default">
-		<div class="panel-heading"><h4>Cases</h4></div>
+		<div class="panel-heading"><h4>Observations</h4></div>
 			<div class="panel-body">
 				<!-- Panel Content -->
-                <a href="insertCase.htm" class="btn btn-primary">Open Case</a>
+                <a href="insertCase.htm" class="btn btn-primary">Add Observation</a>
                 <a href="logoutstakeout.php" class="btn">Logout</a>
 <?php
 
@@ -80,7 +80,7 @@
 
 // Create variable for query
 
-    $query = "SELECT * FROM cases ORDER BY cases.startDate ASC";
+    $query = "SELECT * FROM observations ORDER BY observations.observationTime ASC";
 
 // Use variable with MySQL command to grab info from database
 
@@ -90,7 +90,7 @@
 
     echo "<table class='table table-striped table-hover'>";
 
-    echo "<thead><tr><th>Case #</th><th>Manage</th><th>Case Name</th><th>Start Date</th><th>Status</th><th>End Date</th><th>Delivered</th></tr></thead><tbody>";
+    echo "<thead><tr><th>Case #</th><th>Manage</th><th>Observation</th><th>Time Stamp</th></tr></thead><tbody>";
 
 
 
@@ -100,12 +100,9 @@
 
         echo "<tr>";
 		echo "<td>" . $row["caseNum"] . "</td>";
-		echo "<td><a href='manageCase.php?id=" . $row["id"] . "'>Manage</a></td>";
-        echo "<td>" . $row["caseName"] . "</td>";
-        echo "<td>" . $row["startDate"] . "</td>";
-        echo "<td>" . $row["status"] . "</td>";
-        echo "<td>" . $row["endDate"] . "</td>";
-		echo "<td>" . $row["deliveryDate"] . "</td>";
+		echo "<td>Manage</td>";
+        echo "<td>" . $row["observation"] . "</td>";
+        echo "<td>" . $row["observationTime"] . "</td>";
         echo "</tr>";
 
     }

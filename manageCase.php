@@ -33,9 +33,22 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout/index.php">Home</a>
-                    </div> 
-                </div> <!-- /container-fluid -->
+                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout/index.php">Stakeout Home</a>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="http://www.roxorsoxor.com/stakeout/cases.php">Cases</a></li>
+                            <li><a href="http://www.roxorsoxor.com/stakeout/observations.php">Observations</a></li>
+                            <li><a href="http://www.roxorsoxor.com/stakeout/gators.php">Investigators</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+                        </ul>
+                    </div> <!-- /collapse -->                    
+                    
+                </div> <!-- /container-fluid -->   
             </nav> <!-- /navbar -->
  
  
