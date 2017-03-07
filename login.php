@@ -55,6 +55,12 @@
                 </div> <!-- /container-fluid -->   
             </nav> <!-- /navbar -->
 
+
+
+
+
+
+
         <!-- This form uses code in handle_prez to insert input into the database -->
         <form class="form-horizontal" action="handle_login.php" method="post">
             <fieldset>
@@ -85,6 +91,12 @@
             </fieldset>
         </form>
 	
+
+
+
+
+
+
 
     <footer class="footer">
 
