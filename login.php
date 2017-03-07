@@ -2,18 +2,15 @@
 
 	session_start();
 
-	$username = "jotaNaked";
-	$password = "We2CanFly!";
-
 	# Does this automatically redirect logged in users to success? I don't think I like that.
 	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-		header("Location: insertObserveBS.htm");
+		header("Location: index.php");
 	}
 
 	if (isset($_POST['username']) && isset($_POST['password'])) {
 		if ($_POST['username'] == $username && $_POST['password'] == $password) {
 			$_SESSION['logged_in'] = true;
-			header("Location: insertObserveBS.htm");
+			header("Location: index.php");
 		}
 		else {
 			header("Location: failedstakeout.htm");
@@ -58,15 +55,35 @@
                 </div> <!-- /container-fluid -->   
             </nav> <!-- /navbar -->
 
-      <div class="jumbotron">
+        <!-- This form uses code in handle_prez to insert input into the database -->
+        <form class="form-horizontal" action="handle_login.php" method="post">
+            <fieldset>
+            	<legend>Log In (this is the homepage for now)</legend>
+                
+                <div class="form-group"> <!-- Row 1 -->
+                    <!-- Column 1 -->
+                    <label class="col-lg-2 control-label" for="username">username</label>
+                    <!-- Column 2 -->
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" name="username" placeholder="username" />
+                    </div>
+                </div><!-- /Row 1 -->            		
 
-        <h1>Welcome</h1>
-
-        <p class="lead">This is the homepage.</P>
-
-        <p class="lead">Go somewhere else.</P>
-
-      </div>
+                <div class="form-group"> <!-- Row 3 -->
+                    <label class="col-lg-2 control-label" for="password">password</label>
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" name="password" placeholder="password" />                           
+                    </div>
+                </div><!-- /Row 3 --> 
+ 
+                <div class="form-group"> <!-- Last Row -->           
+                    <div class="col-lg-4 col-lg-offset-2">
+                        <button class="btn btn-primary" type="submit" name="submit">Log In</button>
+                    </div>
+                </div><!-- /Last Row -->            
+            
+            </fieldset>
+        </form>
 	
 
     <footer class="footer">

@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-    header("Location: failedstakeout.htm"); # user goes to locked version if they aren't logged in
+    header("Location: login.php"); # user goes to locked version if they aren't logged in
 }
 
 # if they are logged in, the following works like normal?
