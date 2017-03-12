@@ -24,9 +24,11 @@
 
 		// if user is registered
 		if ($result["username"]==$username && $result["password"]==$password) {
+			$_SESSION['username'] = $username;
 			header("location: index.php"); // redirects to welcome page dashboard thingy
 		} else {
 			$error = "Access Denied. Username and/or Password not accepted.";
+			// Doesn't the error need to be echoed for this to matter?
 		}
 
 		mysqli_close($connekt); // slam that door												

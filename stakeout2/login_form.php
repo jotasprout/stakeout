@@ -1,6 +1,7 @@
 <?php
 
-	// include 'areTheyLoggedIn.php';
+	session_start();
+	include 'areTheyLoggedIn.php';
 
 ?>
 
