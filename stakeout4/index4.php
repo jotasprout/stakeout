@@ -1,11 +1,6 @@
 <?php
 
-	session_start();
-
-	if (!isset($_SESSION['username'])) 
-	{
-		header("location:login_form4.php");
-	} 
+	require_once 'areTheyLoggedIn4.php';
 
 ?>
 
@@ -14,7 +9,7 @@
 <head>
     <title>Stakeout | HomeDashThingy</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
