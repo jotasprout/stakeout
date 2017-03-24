@@ -19,7 +19,7 @@
 <body>
 	<div class="container">
 		<div class="masthead">
-			<a href="http://www.roxorsoxor.com/stakeout2/index.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>
+			<a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>
 		</div> <!-- /masthead -->
 
 		<nav class="navbar navbar-default">
@@ -27,16 +27,16 @@
 			<div class="container-fluid">
 			
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout/index.php">Stakeout Home</a>
+					<a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="http://www.roxorsoxor.com/stakeout/cases.php">Cases</a>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a>
 						</li>
-						<li><a href="http://www.roxorsoxor.com/stakeout/observations.php">Observations</a>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a>
 						</li>
-						<li><a href="http://www.roxorsoxor.com/stakeout/gators.php">Investigators</a>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a>
 						</li>
 					</ul>
 

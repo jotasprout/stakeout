@@ -46,8 +46,8 @@
 		<div class="panel-heading"><h4>Investigators</h4></div>
 			<div class="panel-body">
 				<!-- Panel Content -->
-                <a href="insert_gator.htm" class="btn btn-primary">Add Investigator</a>
-                <a href="logoutstakeout.php" class="btn">Logout</a>
+                <a href="insert_gator4.php" class="btn btn-primary">Add Investigator</a>
+                <a href="logout_stakeout4.php" class="btn">Logout</a>
 <?php
 
 // PHP code in a more secure location
@@ -56,7 +56,7 @@
 
 //Uses PHP code to connect to database
 
-	mysqli_select_db("jscript_stakeout", $connekt);
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
 // Connection test and feedback
 
@@ -70,11 +70,13 @@
 
 // Create variable for query
 
-    $query = "SELECT * FROM user_creds ORDER BY user_creds.surname ASC";
+    $query = "SELECT * FROM user_creds";
 
 // Use variable with MySQL command to grab info from database
 
-	$result = mysqli_query($query);
+	// $result = mysqli_query($query);
+	// trying line 79 instead of line 77
+	$result = $connekt->query($query);		
 
 // Start creating an HTML table and create header row
 

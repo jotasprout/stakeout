@@ -50,8 +50,8 @@
 		<div class="panel-heading"><h4>Observations</h4></div>
 			<div class="panel-body">
 				<!-- Panel Content -->
-                <a href="insertCase.htm" class="btn btn-primary">Add Observation</a>
-                <a href="logoutstakeout.php" class="btn">Logout</a>
+                <a href="insertCase4.php" class="btn btn-primary">Add Observation</a>
+                <a href="logout_stakeout4.php" class="btn">Logout</a>
 <?php
 
 // PHP code in a more secure location
@@ -60,7 +60,7 @@
 
 //Uses PHP code to connect to database
 
-	mysqli_select_db("jscript_stakeout", $connekt);
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
 // Connection test and feedback
 
@@ -78,7 +78,7 @@
 
 // Use variable with MySQL command to grab info from database
 
-	$result = mysqli_query($query);
+	$result = $connekt->query($query);
 
 // Start creating an HTML table and create header row
 

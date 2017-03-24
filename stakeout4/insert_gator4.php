@@ -77,7 +77,7 @@
                     <label class="col-lg-2 control-label" for="password">password</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
-                        <input class="form-control" type="text" name="password" placeholder="password" />
+                        <input class="form-control" type="password" name="password" placeholder="password" />
                     </div>
                 </div><!-- /Row 4 -->                     		
  

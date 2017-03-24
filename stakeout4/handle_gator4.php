@@ -33,10 +33,13 @@
 	'$token'
 	);";
 
-mysqli_query($pushGator);
+// mysqli_query($pushGator);
+// I can remove line 36, yes?
   
 // Feedback of whether INSERT worked or not
-  $retval = mysqli_query($pushGator, $connekt);
+  // $retval = mysqli_query($pushGator, $connekt);
+// trying line 42 instead of line 40
+	$retval = $connekt->query($pushGator);
   
   if(!$retval){
 	  die('Nuts. Could not add an investigator: ' . mysqli_error());
