@@ -115,8 +115,6 @@ function renderForm($caseNum, $caseName, $startDate, $status, $endDate, $deliver
  </body>
  </html> 
  
- 
- 
 <?php
 
 	} // end of the renderForm function
@@ -161,7 +159,7 @@ if (isset($_POST['submit']))
 			or die(mysqli_error()); 
  
 			// after save, go to view page
-			header("Location: cases.php"); 
+			header("Location: cases4.php"); 
 			}
 		}
 
