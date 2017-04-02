@@ -11,7 +11,7 @@
 	$action = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['action']));
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
 	$pix = $_POST['pix'];
-	$username = $_SESSION['username'];
+	$username = $_POST['username'];
 
 	// Instructions for inserting form content into database
   $pushObserve = "

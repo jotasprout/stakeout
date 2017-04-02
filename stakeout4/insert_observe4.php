@@ -1,6 +1,7 @@
 <?php
 
 	require_once 'areTheyLoggedIn4.php';
+	$username = $_SESSION['username'];
 
 ?>
 
@@ -42,6 +43,8 @@
 
         <!-- This form uses code in handle_prez to insert input into the database -->
         <form class="form-horizontal" action="handle_observe4.php" method="post">
+        	<input type="hidden" name="username" value="<?php echo $username; ?>"/>
+        
             <fieldset>
             	<legend>Observation Upload</legend>
                 
@@ -79,7 +82,7 @@
                         <input class="form-control" type="text" name="observation" placeholder="Type your observation(s) here." />
                     <div class="checkbox">
           				<label>
-            				<input type="checkbox" id="pix" value="yes"> Photos taken
+            				<input type="checkbox" name="pix" value="yes"> Photos taken
           				</label>
         			</div> 
                     </div>
