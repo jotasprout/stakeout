@@ -125,7 +125,9 @@
 
 	} // end of the renderForm function
 	
-	 
+	$salt1    = "qm&h*";
+	$salt2    = "pg!@";
+	
 	// check if the form has been submitted. If it has, process the form and save it to the database
 	if (isset($_POST['submit']))
 		{ 
@@ -139,23 +141,25 @@
 			$forename = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['forename']));
 			$surname = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['surname']));
 			$username = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['username']));
-			$password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));	
+			$password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));
+			$token = hash('ripemd128', "$salt1$password$salt2");
+			$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));	
 	
 			// check that forename and surname fields are both filled in
-			if ($username == '')
+			if ($username == '' || $password == '')
 				{
 				// generate error message
 				$error = 'ERROR: Boy, you sure are stupid! Fill in all required fields like you were told!';
 	 
 				//error, display form
-				renderForm($id, $forename, $surname, $username, $password, $error);
+				renderForm($id, $forename, $surname, $username, $password, $email, $error);
 				}
 	
 			else
 				{
 	
 				// save data to database
-				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',password='$password' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',password='$token' WHERE id='$id'";
 				
 				$retval = $connekt->query($updateUser);
 	  
@@ -198,10 +202,11 @@
 				$forename = $row['forename'];
 				$surname = $row['surname'];
 				$username = $row['username'];
-				$password = $row['password'];			
+				$password = $row['password'];
+				$email = $row['email'];			
 	 
 				// show form
-				renderForm($id, $forename, $surname, $username, $password, '');
+				renderForm($id, $forename, $surname, $username, $password, $email, '');
 				}
 
 			else // if no match, display result

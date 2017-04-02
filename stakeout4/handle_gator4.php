@@ -18,6 +18,7 @@
 	$username = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['username']));
 	$password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));
 	$token = hash('ripemd128', "$salt1$password$salt2");
+	$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));
 
 // Instructions for inserting form content into database
 
@@ -26,7 +27,8 @@
   	forename,
 	surname,
 	username,
-	password
+	password,
+	email
 
 	)
 
@@ -35,16 +37,12 @@
   	'$forename',
 	'$surname',
 	'$username',
-	'$token'
+	'$token',
+	'$email'
 
 	);";
 
-// mysqli_query($pushGator);
-// I can remove line 44, yes?
-
 // Feedback of whether INSERT worked or not
-// $retval = mysqli_query($pushGator, $connekt);
-// trying line 51 instead of line 48
 
 	$retval = $connekt->query($pushGator);
 
@@ -54,12 +52,9 @@
 
   }
 
-	echo "<h2>You've added an investigator and their name should appear here with maybe a log in link.</h2>";
+	header("location:gators4.php");
 
-	echo "<p>Assign this investigator or <a href=\"http://www.roxorsoxor.com/stakeout4/insert_gator4.php\">add another investigator</a>.</p>";
-
-// When attempt is complete, connection closes
-
-  mysqli_close($connekt);
+	// When attempt is complete, connection closes
+	mysqli_close($connekt);
 
 ?>

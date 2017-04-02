@@ -5,22 +5,14 @@
 ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-<meta charset="UTF-8">
-
+	<meta charset="UTF-8">
     <title>Investigators</title>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
@@ -38,30 +30,22 @@
                 <div class="container-fluid">
 
                     <div class="navbar-header">
-
                         <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
-
                     </div>
                     
 
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                        <ul class="nav navbar-nav">
-
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    	<ul class="nav navbar-nav">
                             <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
-
                             <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
-
                             <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
-
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-
                             <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
-
                         </ul>
 
                     </div> <!-- /collapse -->                    
-          
 
                 </div> <!-- /container-fluid -->   
 
@@ -113,25 +97,20 @@
 // Start creating an HTML table and create header row
 
     echo "<table class='table table-striped table-hover'>";
-
-    echo "<thead><tr><th>ID #</th><th>Manage</th><th>First Name</th><th>Last Name</th><th>username</th></tr></thead><tbody>";
+    echo "<thead><tr><th>ID #</th><th>Manage</th><th>First Name</th><th>Last Name</th><th>username</th><th>password</th><th>eMail</th></tr></thead><tbody>";
 
  // Create a row in HTML table for each row from database
 
     while ($row = mysqli_fetch_array($result)) {
 
         echo "<tr>";
-
 		echo "<td>" . $row["id"] . "</td>";
-
 		echo "<td><a href='manage_gator4.php?id=" . $row["id"] . "'>Manage</a></td>";
-
         echo "<td>" . $row["forename"] . "</td>";
-
         echo "<td>" . $row["surname"] . "</td>";
-
         echo "<td>" . $row["username"] . "</td>";
-
+		echo "<td>" . "reset" . "</td>";
+		echo "<td>" . $row["email"] . "</td>";
         echo "</tr>";
 
     }
@@ -147,12 +126,8 @@
 ?>
 
 			</div>
-
 		</div>
-
 	</div> <!-- /container -->
 
 </body>
-
 </html>
-
