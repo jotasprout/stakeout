@@ -12,7 +12,6 @@
 	{ 
 
     	$un_temp = mysqli_entities_fix_string($connekt, $_POST['username']);
-
     	$pw_temp = mysqli_entities_fix_string($connekt, $_POST['password']);
 		
 		// get info from db for matching username
@@ -28,13 +27,9 @@
 		{
 
 			$row = $result->fetch_array(MYSQLI_NUM);
-
 			$result->close();
-
 			$salt1 = "qm&h*";
-
 			$salt2 = "pg!@";
-
 			$token = hash('ripemd128', "$salt1$pw_temp$salt2");
 
 			if ($token == $row[3])
@@ -45,11 +40,8 @@
 				session_start();
 
 				$_SESSION['username'] = $un_temp;
-
 				$_SESSION['password'] = $pw_temp;
-
 				$_SESSION['forename'] = $row[0];
-
 				$_SESSION['surname']  = $row[1];
 
 				header("location:index4.php");
@@ -78,7 +70,6 @@
 
 	{
 		if (get_magic_quotes_gpc()) $string = stripslashes($string);
-
 		return $connekt->real_escape_string($string);
 	}												
 

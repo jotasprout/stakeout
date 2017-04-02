@@ -10,18 +10,24 @@
 	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseNum']));
 	$action = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['action']));
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
+	$pix = $_POST['pix'];
+	$username = $_SESSION['username'];
 
 	// Instructions for inserting form content into database
   $pushObserve = "
   INSERT INTO observations (
   	caseNum,
 	action,
-	observation
+	observation,
+	pix,
+	username
 	)
   VALUES (
   	'$caseNum',
 	'$action',
-	'$observation'
+	'$observation',
+	'$pix',
+	'$username'
 	);";
 
 	// Uses the above instructions for inserting

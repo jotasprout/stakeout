@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
     <title>Report Observation</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
@@ -54,10 +55,10 @@
                 </div><!-- /Row 1 -->            		
 
                 <div class="form-group"> <!-- Row 3 -->
-                    <label class="col-lg-2 control-label" for="party">Action</label>
+                    <label class="col-lg-2 control-label" for="action">Action</label>
                     <div class="col-lg-4">
                         <select class="form-control" name="action">
-                        	<option value="<?php echo $action; ?>"><?php echo $action; ?></option>
+                        	<option value="">- Choose -</option>
                             <option value="pretextContact">Pretext Contact</option>
                             <option value="socialMedia">Social Media</option>
                             <option value="surveillance">Surveillance</option>
@@ -65,14 +66,22 @@
                             <option value="undercover">Undercover</option>
                         </select>                            
                     </div>
+                   
                 </div><!-- /Row 3 --> 
                 
                 <div class="form-group"> <!-- Row 4 -->
                     <!-- Column 1 -->
                     <label class="col-lg-2 control-label" for="observation">Observation</label>
+
                     <!-- Column 2 -->
                     <div class="col-lg-4">
+                    
                         <input class="form-control" type="text" name="observation" placeholder="Type your observation(s) here." />
+                    <div class="checkbox">
+          				<label>
+            				<input type="checkbox" id="pix" value="yes"> Photos taken
+          				</label>
+        			</div> 
                     </div>
                 </div><!-- /Row 4 -->
  
@@ -84,12 +93,9 @@
             
             </fieldset>
         </form>
-	
 
     <footer class="footer">
-
         <p>&copy; RoxorSoxor 2017</p>
-
     </footer>
 
 </div> <!-- /container -->

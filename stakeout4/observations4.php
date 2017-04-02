@@ -7,21 +7,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
     <title>Observations</title>
     <script src="http://www.jotascript.com/js/jquery-214.js"></script>
     <script src="http://www.jotascript.com/js/jquery_play.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
     <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
-    <LINK href="favicon.ico" rel="icon" type="image/x-icon">
-    <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <LINK href="favicon.ico" rel="icon" type="image/ico">
 </head>
+
 <body>
 
 	<div class="container">
+
             <div class="masthead">
+
                 <a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>      
+
             </div> <!-- /masthead -->
 
             <nav class="navbar navbar-default">
@@ -29,8 +31,9 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
                     </div>
-                    
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                        <ul class="nav navbar-nav">
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    	<ul class="nav navbar-nav">
                             <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
                             <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
                             <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
@@ -39,19 +42,25 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
                         </ul>
+
                     </div> <!-- /collapse -->                    
-                    
                 </div> <!-- /container-fluid -->   
             </nav> <!-- /navbar -->
-            
+
             <!-- main -->
 
 	<div class="panel panel-default">
+
 		<div class="panel-heading"><h4>Observations</h4></div>
+
 			<div class="panel-body">
+
 				<!-- Panel Content -->
-                <a href="insertCase4.php" class="btn btn-primary">Add Observation</a>
+
+                <a href="insert_observe4.php" class="btn btn-primary">Add Observation</a>
+
                 <a href="logout_stakeout4.php" class="btn">Logout</a>
+
 <?php
 
 // PHP code in a more secure location
@@ -67,9 +76,7 @@
   if (!$connekt)
 
   {
-
     die('Rats! Could not connect: ' . mysqli_error());
-
   }
 
 // Create variable for query
@@ -83,10 +90,7 @@
 // Start creating an HTML table and create header row
 
     echo "<table class='table table-striped table-hover'>";
-
-    echo "<thead><tr><th>Case #</th><th>Manage</th><th>Observation</th><th>Time Stamp</th></tr></thead><tbody>";
-
-
+    echo "<thead><tr><th>Case #</th><th>View</th><th>User</th><th>Observation</th><th>Photos</th><th>Time Stamp</th></tr></thead><tbody>";
 
  // Create a row in HTML table for each row from database
 
@@ -94,8 +98,10 @@
 
         echo "<tr>";
 		echo "<td>" . $row["caseNum"] . "</td>";
-		echo "<td>Manage</td>";
+		echo "<td>View</td>";
+		echo "<td>" . $row["username"] . "</td>";
         echo "<td>" . $row["observation"] . "</td>";
+		echo "<td>" . $row["pix"] . "</td>";
         echo "<td>" . $row["observationTime"] . "</td>";
         echo "</tr>";
 
@@ -110,10 +116,12 @@
     mysqli_close($connekt);
 
 ?>
+
 			</div>
+
 		</div>
+
 	</div> <!-- /container -->
 
 </body>
-
 </html>

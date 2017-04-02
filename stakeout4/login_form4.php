@@ -1,5 +1,12 @@
 <?php
 
+	session_start();
+
+	if (isset($_SESSION['username'])) 
+	{
+		header("location:index4.php");
+	}
+		
 	require_once 'handle_login4.php';
 
 ?>
@@ -8,6 +15,7 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
 	<meta charset="utf-8">
 	<title>Stakeout | Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
