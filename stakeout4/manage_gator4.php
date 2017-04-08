@@ -59,7 +59,7 @@
 		}
 ?> 
 
-        <!-- This form uses code in handle_gator to insert input into the database -->
+        <!-- This form displays user profile info from the database -->
 
         <form class="form-horizontal" action="" method="post">
         	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
@@ -101,7 +101,61 @@
                     <div class="col-lg-4">
                         <input class="form-control" type="password" name="password" />
                     </div>
-                </div><!-- /Row 4 -->                     		
+                </div><!-- /Row 4 -->   
+                
+                <div class="form-group"> <!-- Row 5 -->
+                    <!-- Column 1 -->
+                    <label class="col-lg-2 control-label" for="email">eMail</label>
+                    <!-- Column 2 -->
+                    <div class="col-lg-4">
+                        <input class="form-control" type="email" name="email" />
+                    </div>
+                </div><!-- /Row 5 -->  
+                
+            	<legend>Open Cases</legend>
+				<div class="form-group">
+				  <label class="col-lg-2 control-label" for="inputPassword">Select to Assign</label>
+				  
+<?php
+
+// PHP code in a more secure location
+    include("../../../php/landfill.php");
+
+//Uses PHP code to connect to database
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+
+// Connection test and feedback
+  if (!$connekt)
+
+  {
+    die('Rats! Could not connect: ' . mysqli_error());
+  }
+
+// Create variable for query
+    $query = "SELECT * FROM cases";
+
+// Use variable with MySQL command to grab info from database
+	$result = $connekt->query($query);		
+
+// Start creating an HTML table and create header row
+    echo "<div class='col-lg-10'>";
+
+ // Create a row in HTML table for each row from database
+    while ($row = mysqli_fetch_array($result)) {
+
+        echo "<div class='col-lg-10'><div class='checkbox'>";
+		echo "<label><input type='checkbox' value='" . $row["id"] . "'> " . $row["caseName"] . " </label>";
+		echo "</div></div>";
+
+    }
+
+// Finish column and form group
+    echo "</div></div>";
+
+// When attempt is complete, connection closes
+    mysqli_close($connekt);
+
+?>				  
 
                 <div class="form-group"> <!-- Last Row -->           
                     <div class="col-lg-4 col-lg-offset-2">
@@ -111,6 +165,8 @@
 
             </fieldset>
         </form>
+        
+        <!-- This form lists cases for assigning to user -->       
 
     <footer class="footer">
         <p>&copy; RoxorSoxor 2017</p>
@@ -159,7 +215,7 @@
 				{
 	
 				// save data to database
-				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',password='$token' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',password='$token',email='$email' WHERE id='$id'";
 				
 				$retval = $connekt->query($updateUser);
 	  

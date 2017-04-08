@@ -32,7 +32,7 @@
 			$salt2 = "pg!@";
 			$token = hash('ripemd128', "$salt1$pw_temp$salt2");
 
-			if ($token == $row[3])
+			if ($token == $row[4])
 
 			// IF level 3 -- if entered pw matches pw in db
 			{
@@ -41,8 +41,8 @@
 
 				$_SESSION['username'] = $un_temp;
 				$_SESSION['password'] = $pw_temp;
-				$_SESSION['forename'] = $row[0];
-				$_SESSION['surname']  = $row[1];
+				$_SESSION['forename'] = $row[1];
+				$_SESSION['surname']  = $row[2];
 
 				header("location:index4.php");
 
