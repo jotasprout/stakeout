@@ -3,6 +3,8 @@
 	require_once 'areTheyLoggedIn4.php';
 	require_once '../../../php/landfill.php';
 
+	$username = $_SESSION['username'];
+
   	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
 	if ($connekt->connect_error) die($connekt->connect_error);
@@ -132,20 +134,36 @@
   }
 
 // Create variable for query
-    $query = "SELECT * FROM cases";
+    $query0 = "SELECT * FROM assignments WHERE username = '$username'";
 
 // Use variable with MySQL command to grab info from database
-	$result = $connekt->query($query);		
+	$result0 = $connekt->query($query0);	
+
+// put current user's cases into array
+	while ($row0 = mysqli_fetch_array($result0)){
+		$userAssignments[] = $row0['caseNum'];
+	}
+
+	$query = "SELECT * FROM cases WHERE status = 1";
+
+// Use variable with MySQL command to grab info from database
+	$result = $connekt->query($query);
 
 // Start creating an HTML table and create header row
     echo "<div class='col-lg-10'>";
 
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
-
+		if (in_array($row['caseNum'],$userAssignments)){
+			echo "<div class='col-lg-10'><div class='checkbox'>";
+			echo "<label><input type='checkbox' value='" . $row["id"] . " checked'> " . $row["caseName"] . " </label>";
+			echo "</div></div>";			
+		}
+		else {
         echo "<div class='col-lg-10'><div class='checkbox'>";
 		echo "<label><input type='checkbox' value='" . $row["id"] . "'> " . $row["caseName"] . " </label>";
 		echo "</div></div>";
+		}
 
     }
 
