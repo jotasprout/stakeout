@@ -10,7 +10,7 @@
 	if ($connekt->connect_error) die($connekt->connect_error);
 
 	# if they are logged in, the following works like normal?
-	function renderForm($id, $forename, $surname, $username, $password, $error)
+	function renderForm($id, $forename, $surname, $username, $email, $error)
 	{
 ?>
 
@@ -96,23 +96,24 @@
                     </div>
                 </div><!-- /Row 3 -->    
 
-                <div class="form-group"> <!-- Row 4 -->
-                    <!-- Column 1 -->
+                <!-- REMOVE UNTIL I KNOW HOW TO RESET ETC
+                <div class="form-group"> 
                     <label class="col-lg-2 control-label" for="password">password</label>
-                    <!-- Column 2 -->
                     <div class="col-lg-4">
                         <input class="form-control" type="password" name="password" />
                     </div>
-                </div><!-- /Row 4 -->   
-                
+                </div>  
+                -->
+
                 <div class="form-group"> <!-- Row 5 -->
                     <!-- Column 1 -->
                     <label class="col-lg-2 control-label" for="email">eMail</label>
-                    <!-- Column 2 -->
+                    <!-- Column 2 -->                    
                     <div class="col-lg-4">
                         <input class="form-control" type="email" name="email" />
                     </div>
-                </div><!-- /Row 5 -->  
+                </div> <!-- /Row 5 --> 
+                  
                 
             	<legend>Open Cases</legend>
 				<div class="form-group">
@@ -120,13 +121,8 @@
 				  
 <?php
 
-// PHP code in a more secure location
-    include("../../../php/landfill.php");
-
-//Uses PHP code to connect to database
-	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
-
 // Connection test and feedback
+		// Do I need this? I have like 2 or 3 error if statements ...
   if (!$connekt)
 
   {
@@ -215,25 +211,25 @@
 			$forename = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['forename']));
 			$surname = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['surname']));
 			$username = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['username']));
-			$password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));
-			$token = hash('ripemd128', "$salt1$password$salt2");
+			// $password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));
+			// $token = hash('ripemd128', "$salt1$password$salt2");
 			$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));	
 	
-			// check that forename and surname fields are both filled in
-			if ($username == '' || $password == '')
+			// check that username field is filled in
+			if ($username == '')
 				{
 				// generate error message
 				$error = 'ERROR: Boy, you sure are stupid! Fill in all required fields like you were told!';
 	 
 				//error, display form
-				renderForm($id, $forename, $surname, $username, $password, $email, $error);
+				renderForm($id, $forename, $surname, $username, $email, $error);
 				}
 	
 			else
 				{
 	
 				// save data to database
-				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',password='$token',email='$email' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',email='$email' WHERE id='$id'";
 				
 				$retval = $connekt->query($updateUser);
 	  
@@ -276,11 +272,11 @@
 				$forename = $row['forename'];
 				$surname = $row['surname'];
 				$username = $row['username'];
-				$password = $row['password'];
+				// $password = $row['password'];
 				$email = $row['email'];			
 	 
 				// show form
-				renderForm($id, $forename, $surname, $username, $password, $email, '');
+				renderForm($id, $forename, $surname, $username, $email, '');
 				}
 
 			else // if no match, display result
