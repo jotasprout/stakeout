@@ -40,12 +40,10 @@
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a>
-						</li>
-						<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a>
-						</li>
-						<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a>
-						</li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">

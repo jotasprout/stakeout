@@ -43,7 +43,6 @@
                             <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
                             <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
                             <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -144,9 +143,6 @@
 	while ($row0 = mysqli_fetch_array($result0)){
 		$userAssignments[] = $row0['caseNum'];
 	}
-	
-	$comma_separated = implode(",", $userAssignments);
-	echo "<script>console.log($comma_separated)</script>";
 
 	$query = "SELECT * FROM cases WHERE status = 1";
 
@@ -158,21 +154,15 @@
 
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
-		
-		$thisCase = $row['caseNum'];
-		
 		if (in_array($row['caseNum'],$userAssignments)){
 			echo "<div class='col-lg-10'><div class='checkbox'>";
-			echo "<label><input type='checkbox' value='" . $row['caseNum'] . "' checked>" . $row['caseName'] . " </label>";
-			echo "</div></div>";	
-			echo "<script>console.log('Case Number " . $thisCase . " is assigned to " . $username . "')</script>";
+			echo "<label><input type='checkbox' value='" . $row["id"] . " checked'> " . $row["caseName"] . " </label>";
+			echo "</div></div>";			
 		}
-		
 		else {
-			echo "<div class='col-lg-10'><div class='checkbox'>";
-			echo "<label><input type='checkbox' value='" . $row['caseNum'] . "'> " . $row['caseName'] . " </label>";
-			echo "</div></div>";
-			echo "<script>console.log('Case Number " . $thisCase . " is NOT assigned to " . $username . "')</script>";
+        echo "<div class='col-lg-10'><div class='checkbox'>";
+		echo "<label><input type='checkbox' value='" . $row["id"] . "'> " . $row["caseName"] . " </label>";
+		echo "</div></div>";
 		}
 
     }
@@ -212,14 +202,14 @@
 	$salt1    = "qm&h*";
 	$salt2    = "pg!@";
 	
-	// check if the form has been submitted. 
-	if (isset($_POST['submit'])){ 
+	// check if the form has been submitted. If it has, process the form and save it to the database
+	if (isset($_POST['submit']))
+		{ 
 		
-		// If form is being submitted, process the form 
 		// confirm that the 'id' value is a valid integer before getting the form data
-		if (is_numeric($_POST['id'])){
-			
-			// if id is valid integer
+		if (is_numeric($_POST['id']))
+			{
+				
 			// get form data, making sure it is valid
 			$id = $_POST['id'];
 			$forename = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['forename']));
@@ -230,29 +220,32 @@
 			$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));	
 	
 			// check that username field is filled in
-			if ($username == '' || $email == ''){
-				// if form is NOT filled in
+			if ($username == '' || $email == '')
+				{
 				// generate error message
 				$error = 'ERROR: Boy, you sure are stupid! Fill in all required fields like you were told!';
-				// and display form
+	 
+				//error, display form
 				renderForm($id, $forename, $surname, $username, $email, $error);
-			}
-			else // if form is filled in
-			{
+				}
+	
+			else
+				{
+	
 				// save data to database
 				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',email='$email' WHERE id='$id'";
-				$retval = $connekt->query($updateUser);  
+				
+				$retval = $connekt->query($updateUser);
 	  
-				// Feedback of whether UPDATE worked or not
+				// Feedback of whether INSERT worked or not
+	 
 				if(!$retval){
-					// if insert did NOT work
 					die('Crap. Could not update this investigator: ' . mysqli_error());
 				}
 				else 
 				{
-					// if update worked, go to list of investigators
-					// do I want to change that to something AJAXy?
-					header("Location: gators4.php"); 
+				// after save, go to view page
+				header("Location: gators4.php"); 
 				}
 			}
 		}
@@ -261,10 +254,12 @@
 		echo $error;
 		}
 	}
-	else // if the form isn't being submitted, get the data from the db and display the form
+	else // if the form hasn't been submitted, get the data from the db and display the form
 	{
-		// confirm id is valid and is numeric/larger than 0)
-		if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0){
+
+		// get 'id' value from URL (if it exists), confirming it is valid and is numeric/larger than 0)
+		if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0)
+		{
 
 			// query db
 			$id = $_GET['id'];
@@ -273,8 +268,9 @@
 			$row = mysqli_fetch_array($result);
 	 
 			// check that the 'id' matches up with a row in the databse
-			if($row){
-	 			// if there's a match
+			if($row)
+				{
+	 
 				// get data from db
 				$id = $row['id'];
 				$forename = $row['forename'];
@@ -285,8 +281,9 @@
 	 
 				// show form
 				renderForm($id, $forename, $surname, $username, $email, '');
-			}
-			else // if no match, display error
+				}
+
+			else // if no match, display result
 			{
 				echo "No results!";
 			}
@@ -295,5 +292,5 @@
 		{
 			echo $error;
 		}
-	} // end of what to do if form isn't being submitted
+	}
 ?>

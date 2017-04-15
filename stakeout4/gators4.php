@@ -1,7 +1,5 @@
 <?php
-
 	require_once 'areTheyLoggedIn4.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -17,41 +15,32 @@
 
 <body>
 
-	<div class="container">
+<div class="container">
+	<div class="masthead">
+		<a href="http://www.roxorsoxor.com/stakeout4/index4.php">
+			<img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
+		</a>      
+	</div> <!-- /masthead -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>						
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+				</ul>
+			</div> <!-- /collapse -->                    
+		</div> <!-- /container-fluid -->   
+	</nav> <!-- /navbar -->
 
-            <div class="masthead">
-
-                <a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>      
-
-            </div> <!-- /masthead -->
-
-<nav class="navbar navbar-default">
-
-                <div class="container-fluid">
-
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
-                    </div>
-                    
-
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    	<ul class="nav navbar-nav">
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
-                        </ul>
-
-                    </div> <!-- /collapse -->                    
-
-                </div> <!-- /container-fluid -->   
-
-            </nav> <!-- /navbar -->
-
-            <!-- main -->
+	<!-- main -->
 
 	<div class="panel panel-default">
 
@@ -66,47 +55,45 @@
                 <a href="logout_stakeout4.php" class="btn">Logout</a>
 
 <?php
-
-// PHP code in a more secure location
-
+				
+	// PHP code in a more secure location
     include("../../../php/landfill.php");
 
-//Uses PHP code to connect to database
-
+	//Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
-// Connection test and feedback
+	// Connection test and feedback
+	if (!$connekt)
 
-  if (!$connekt)
+	  {
+		die('Rats! Could not connect: ' . mysqli_error());
+	  }
 
-  {
-
-    die('Rats! Could not connect: ' . mysqli_error());
-
-  }
-
-// Create variable for query
-
+	// Create variable for query
     $query = "SELECT * FROM user_creds";
 
-// Use variable with MySQL command to grab info from database
+	// Use variable with MySQL command to grab info from database
+	$result = $connekt->query($query);	
 
-	$result = $connekt->query($query);		
-
-
-// Start creating an HTML table and create header row
-
+	// Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>ID #</th><th>Manage</th><th>First Name</th><th>Last Name</th><th>username</th><th>password</th><th>eMail</th></tr></thead><tbody>";
-
- // Create a row in HTML table for each row from database
-
+    echo "<thead><tr><th>ID #</th><th>Manage</th><th>Status</th><th>First Name</th><th>Last Name</th><th>username</th><th>password</th><th>eMail</th></tr></thead><tbody>";
+				
+	// Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
+		
+		if ($row["status"] == 1){
+			$status = "active";
+		}
+		else {
+			$status = "inactive";
+		}		
 
         echo "<tr>";
 		echo "<td>" . $row["id"] . "</td>";
 		echo "<td><a href='manage_gator4.php?id=" . $row["id"] . "'>Manage</a></td>";
-        echo "<td>" . $row["forename"] . "</td>";
+        echo "<td>" . $status . "</td>";
+		echo "<td>" . $row["forename"] . "</td>";
         echo "<td>" . $row["surname"] . "</td>";
         echo "<td>" . $row["username"] . "</td>";
 		echo "<td>" . "reset" . "</td>";
@@ -115,12 +102,10 @@
 
     }
 
-// Finish creating HTML table
-
+	// Finish creating HTML table
     echo "</tbody></table>";
 
-// When attempt is complete, connection closes
-
+	// When attempt is complete, connection closes
     mysqli_close($connekt);
 
 ?>

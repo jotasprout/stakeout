@@ -1,8 +1,6 @@
 <?php
-
 	require_once 'areTheyLoggedIn4.php';
 	$username = $_SESSION['username'];
-
 ?>
 
 <!DOCTYPE html>
@@ -17,29 +15,30 @@
 </head>
 <body>
 	<div class="container">
-            <div class="masthead">
-                <a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>      
-            </div> <!-- /masthead -->
+		<div class="masthead">
+			<a href="http://www.roxorsoxor.com/stakeout4/index4.php">
+				<img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
+			</a>      
+		</div> <!-- /masthead -->
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
-                    </div>
-                    
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                        <ul class="nav navbar-nav">
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
-                        </ul>
-                    </div> <!-- /collapse -->                    
-                    
-                </div> <!-- /container-fluid -->   
-            </nav> <!-- /navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
+						<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>						
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+					</ul>
+				</div> <!-- /collapse -->                    
+			</div> <!-- /container-fluid -->   
+		</nav> <!-- /navbar -->
 
         <!-- This form uses code in handle_prez to insert input into the database -->
         <form class="form-horizontal" action="handle_observe4.php" method="post">

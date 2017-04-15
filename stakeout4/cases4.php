@@ -18,9 +18,6 @@
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
     <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
-    <LINK href="favicon.ico" rel="icon" type="image/x-icon">
-    <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <LINK href="favicon.ico" rel="icon" type="image/ico">
 
 </head>
 
@@ -51,6 +48,7 @@
                             <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
 
                             <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
+                            <li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
 
                         </ul>
 
