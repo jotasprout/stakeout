@@ -7,7 +7,7 @@
   if ($connekt->connect_error) die($connekt->connect_error);
 
 	// Assigns form field content to columns in database
-	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseNum']));
+	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCases']));
 	$action = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['action']));
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
 	$pix = $_POST['pix'];
