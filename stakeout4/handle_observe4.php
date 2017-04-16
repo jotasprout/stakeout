@@ -7,12 +7,11 @@
   if ($connekt->connect_error) die($connekt->connect_error);
 
 	// Assigns form field content to columns in database
-	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCases']));
+	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCase']));
 	$action = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['action']));
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
 	$pix = $_POST['pix'];
 	$username = $_POST['username'];
-	// I think these next two should also be post
 	$lat  = $_POST['txtlat'];
 	$lng = $_POST['txtlng'];	
 

@@ -1,7 +1,5 @@
 <?php
-
 	require_once 'areTheyLoggedIn4.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -21,17 +19,16 @@
 	<div class="container">
 
             <div class="masthead">
-
-                <a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>      
-
+                <a href="http://www.roxorsoxor.com/stakeout4/index4.php">
+                    <img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
+                </a>      
             </div> <!-- /masthead -->
 
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
+                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a>
                     </div>
-
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     	<ul class="nav navbar-nav">
                             <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
@@ -64,37 +61,31 @@
 
 <?php
 
-// PHP code in a more secure location
-
+    // PHP code in a more secure location
     include("../../../php/landfill.php");
 
-//Uses PHP code to connect to database
-
+    //Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
-// Connection test and feedback
-
+    // Connection test and feedback
   if (!$connekt)
 
   {
     die('Rats! Could not connect: ' . mysqli_error());
   }
 
-// Create variable for query
-
+    // Create variable for query
+    // change below to join adding caseName from cases
     $query = "SELECT * FROM observations ORDER BY observations.observationTime ASC";
 
-// Use variable with MySQL command to grab info from database
-
+    // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
 
-// Start creating an HTML table and create header row
-
+    // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
     echo "<thead><tr><th>Case #</th><th>View</th><th>User</th><th>Observation</th><th>Photos</th><th>Time Stamp</th></tr></thead><tbody>";
 
- // Create a row in HTML table for each row from database
-
+    // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
 
         echo "<tr>";
@@ -108,12 +99,10 @@
 
     }
 
-// Finish creating HTML table
-
+    // Finish creating HTML table
     echo "</tbody></table>";
 
-// When attempt is complete, connection closes
-
+    // When attempt is complete, connection closes
     mysqli_close($connekt);
 
 ?>
