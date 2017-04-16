@@ -14,6 +14,22 @@
 <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showLocation);
+		} else { 
+			$('#location').html('Geolocation is not supported by this browser.');
+		}
+	});
+	
+    function displayLocation(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        document.getElementById('txtlat').value = lat;
+        document.getElementById('txtlng').value = lng;
+    }
+</script>
 </head>
 
 <body>
@@ -44,7 +60,8 @@
 	<!-- This form uses code in handle_observe to insert input into the database -->
 	<form class="form-horizontal" action="handle_observe4.php" method="post">
 		<input type="hidden" name="username" value="<?php echo $username; ?>"/>
-		<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+		<input type="hidden" name="txtlat" id="txtlat" required value="">
+		<input type="hidden" name="txtlng" id="txtlng" required value="">
 		<fieldset>
 			<legend>Observation Upload</legend>
 						

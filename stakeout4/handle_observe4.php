@@ -12,6 +12,9 @@
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
 	$pix = $_POST['pix'];
 	$username = $_POST['username'];
+	// I think these next two should also be post
+	$lat  = $_POST['txtlat'];
+	$lng = $_POST['txtlng'];	
 
 	// Instructions for inserting form content into database
   $pushObserve = "
@@ -19,6 +22,8 @@
   	caseNum,
 	action,
 	observation,
+	lat,
+	lng,
 	pix,
 	username
 	)
@@ -26,24 +31,23 @@
   	'$caseNum',
 	'$action',
 	'$observation',
+	'$lat',
+	'$lng',
 	'$pix',
 	'$username'
 	);";
 
 	// Uses the above instructions for inserting
-	// mysqli_query($pushObserve);
     $retval = $connekt->query($pushObserve);
 	
-	// Feedback of whether INSERT worked or not
+	// Feedback of whether INSERT worked or not.
+ 	if(!$retval){
+		die('Crap. Could not record your observation: ' . mysqli_error());
+	}
 
-  if(!$retval){
-	  die('Crap. Could not record your observation: ' . mysqli_error());
-  }
-	
-	echo "<h2>Your observation has been recorded.</h2>";
-	echo "<p>Either <a href=\"http://www.roxorsoxor.com/stakeout4/observations4.php\">review observations</a> or <a href=\"http://www.roxorsoxor.com/stakeout4/insert_observe4.php\">Record another observation</p>";
-	
+	header("location:observations4.php");
+
 	// When attempt is complete, connection closes
-  mysqli_close($connekt);
+	mysqli_close($connekt);
 
 ?>
