@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="apple-touch-icon-precomposed" href = "stakeoutIcon.png" />
+    <LINK href="favicon.ico" rel="icon" type="image/x-icon">
+    <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <LINK href="favicon.ico" rel="icon" type="image/ico">    
 </head>
 <body>
 	<div class="container">
