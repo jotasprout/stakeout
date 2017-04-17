@@ -124,7 +124,7 @@
 				<!-- Column 2 -->
 				
 				<div class="col-lg-4">
-					<input class="form-control" type="text" name="observation" placeholder="Type your observation(s) here." />
+					<textarea class="form-control" rows="4" name="observation" placeholder="Type your observation(s) here." />
 					<div class="checkbox">
 						<label>
 							<input type="checkbox" name="pix" value="yes">
