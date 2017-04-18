@@ -112,7 +112,7 @@
 
 
 
-                            <li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+                            <li><a href="logout_stakeout4.php">Logout</a></li>
 
 
 
@@ -153,10 +153,6 @@
 
 
                 <a href="insert_case4.php" class="btn btn-primary">Open Case</a>
-
-
-
-                <a href="logout_stakeout4.php" class="btn">Logout</a>
 
 
 

@@ -42,7 +42,7 @@
 					<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+					<li><a href="logout_stakeout4.php">Logout</a></li>
 				</ul>
 			</div>
 			<!-- /collapse --> 

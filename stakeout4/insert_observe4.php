@@ -33,7 +33,7 @@
 					<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://www.roxorsoxor.com">RoxorSoxor.com</a></li>
+					<li><a href="logout_stakeout4.php">Logout</a></li>
 				</ul>
 			</div>
 			<!-- /collapse --> 
@@ -124,15 +124,29 @@
 				<!-- Column 2 -->
 				
 				<div class="col-lg-4">
-					<textarea class="form-control" rows="4" name="observation" placeholder="Type your observation(s) here." />
-					<div class="checkbox">
-						<label>
-							<input type="checkbox" name="pix" value="yes">
-							Photos taken </label>
-					</div>
+					<textarea class="form-control" rows="4" name="observation" placeholder="Type your observation(s) here." /></textarea>
 				</div>
 			</div>
 			<!-- /Row 4 -->
+				<!-- Row 5 -->
+			    <div class="form-group">
+				  <label class="col-lg-2 control-label">Photo(s) Taken</label>
+				  <div class="col-lg-10">
+					<div class="radio">
+					  <label>
+						<input name="pix" id="photoYes" type="radio" checked="" value="Yes">
+						Yes
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+						<input name="pix" id="photoNo" type="radio" checked="" value="No">
+						No
+					  </label>
+					</div>
+				  </div>
+				</div>
+				<!-- /Row 5 -->
 			
 			<div class="form-group"> <!-- Last Row -->
 				
