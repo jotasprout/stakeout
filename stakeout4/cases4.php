@@ -51,7 +51,6 @@
 		<div class="panel-body"> 
 			
 			<!-- Panel Content --> 
-			
 			<a href="insert_case4.php" class="btn btn-primary">Open Case</a>
 <?php
 
@@ -69,7 +68,7 @@
   }
 
 // Create variable for query
-    $query = "SELECT * FROM cases4 ORDER BY cases.startDate ASC";
+    $query = "SELECT * FROM cases4";
 
 // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
