@@ -3,60 +3,56 @@
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>Observations</title>
-    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
-    <script src="http://www.jotascript.com/js/jquery_play.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
-    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
+<title>Observations</title>
+<script src="http://www.jotascript.com/js/jquery-214.js"></script>
+<script src="http://www.jotascript.com/js/jquery_play.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
+<script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
 </head>
 
 <body>
-
-	<div class="container">
-
-            <div class="masthead">
-                <a href="http://www.roxorsoxor.com/stakeout4/index4.php">
-                    <img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
-                </a>      
-            </div> <!-- /masthead -->
-
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    	<ul class="nav navbar-nav">
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
-                            <li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
-						<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>						
-					</ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="logout_stakeout4.php">Logout</a></li>
-                        </ul>
-
-                    </div> <!-- /collapse -->                    
-                </div> <!-- /container-fluid -->   
-            </nav> <!-- /navbar -->
-
-            <!-- main -->
-
+<div class="container">
+	<div class="masthead"> <a href="http://www.roxorsoxor.com/stakeout4/index4.php"> <img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/> </a> </div>
+	<!-- /masthead -->
+	
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"> <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a> </div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/observations4.php">Observations</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/gators4.php">Investigators</a></li>
+					<li><a href="http://www.roxorsoxor.com/stakeout4/assignments4.php">Assignments</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="logout_stakeout4.php">Logout</a></li>
+				</ul>
+			</div>
+			<!-- /collapse --> 
+			
+		</div>
+		<!-- /container-fluid --> 
+		
+	</nav>
+	<!-- /navbar --> 
+	
+	<!-- main -->
+	
 	<div class="panel panel-default">
-
-		<div class="panel-heading"><h4>Observations</h4></div>
-
-			<div class="panel-body">
-
-				<!-- Panel Content -->
-
-                <a href="insert_observe4.php" class="btn btn-primary">Add Observation</a>
-
+		<div class="panel-heading">
+			<h4>Observations</h4>
+		</div>
+		<div class="panel-body"> 
+			
+			<!-- Panel Content --> 
+			
+			<a href="insert_observe4.php" class="btn btn-primary">Add Observation</a>
 <?php
 
     // PHP code in a more secure location
@@ -74,7 +70,7 @@
 
     // Create variable for query
     // change below to join adding caseName from cases
-    $query = "SELECT * FROM observations ORDER BY observations.observationTime ASC";
+    $query = "SELECT * FROM observations4 ORDER BY observations.observationTime ASC";
 
     // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
@@ -104,12 +100,10 @@
     mysqli_close($connekt);
 
 ?>
-
-			</div>
-
 		</div>
-
-	</div> <!-- /container -->
+	</div>
+</div>
+<!-- /container -->
 
 </body>
 </html>

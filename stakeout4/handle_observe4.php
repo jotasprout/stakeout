@@ -17,7 +17,7 @@
 
 	// Instructions for inserting form content into database
   $pushObserve = "
-  INSERT INTO observations (
+  INSERT INTO observations4 (
   	caseNum,
 	action,
 	observation,

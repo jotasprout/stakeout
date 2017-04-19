@@ -1,7 +1,6 @@
 <?php
 
 // PHP code in a more secure location
-
   require_once '../../../php/landfill.php';
 
   $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
@@ -11,7 +10,7 @@
   $salt1    = "qm&h*";
   $salt2    = "pg!@";
 
-// Assigns form field content to columns in database
+	// Assigns form field content to columns in database
 
 	$forename = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['forename']));
 	$surname = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['surname']));
@@ -20,16 +19,14 @@
 	$token = hash('ripemd128', "$salt1$password$salt2");
 	$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));
 
-// Instructions for inserting form content into database
-
-  $pushGator = "INSERT INTO user_creds (
+	// Instructions for inserting form content into database
+  $pushGator = "INSERT INTO user_creds4 (
 
   	forename,
 	surname,
 	username,
 	password,
 	email
-
 	)
 
   VALUES (
@@ -39,22 +36,22 @@
 	'$username',
 	'$token',
 	'$email'
-
 	);";
 
-// Feedback of whether INSERT worked or not
 
+
+// Feedback of whether INSERT worked or not
 	$retval = $connekt->query($pushGator);
 
   if(!$retval){
-
 	  die('Nuts. Could not add an investigator: ' . mysqli_error());
-
   }
 
 	header("location:gators4.php");
 
 	// When attempt is complete, connection closes
 	mysqli_close($connekt);
+
+
 
 ?>

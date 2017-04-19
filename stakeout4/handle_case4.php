@@ -14,7 +14,7 @@
 
 // Instructions for inserting form content into database
   $pushCase = "
-  INSERT INTO cases (
+  INSERT INTO cases4 (
   	caseNum,
 	caseName,
 	startDate
@@ -35,8 +35,7 @@
 	  die('Crap. Could not open your case: ' . mysql_error());
   }
 	
-	echo "<h2>Case # INSERT NUMBER is now open.</h2>";
-	echo "<p>Either <a href=\"http://www.roxorsoxor.com/stakeout4/cases4.php\">review cases</a> or <a href=\"http://www.roxorsoxor.com/stakeout4/insert_case4.php\">open a new case</a>.</p>";
+	header("location:cases4.php");
 	
 // When attempt is complete, connection closes
   mysqli_close($connekt);
