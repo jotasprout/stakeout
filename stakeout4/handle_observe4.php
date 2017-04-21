@@ -7,7 +7,7 @@
   if ($connekt->connect_error) die($connekt->connect_error);
 
 	// Assigns form field content to columns in database
-	$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCase']));
+	$caseID = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCase']));
 	$action = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['action']));
 	$observation = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['observation']));
 	$pix = $_POST['pix'];
@@ -18,7 +18,7 @@
 	// Instructions for inserting form content into database
   $pushObserve = "
   INSERT INTO observations4 (
-  	caseNum,
+  	caseID,
 	action,
 	observation,
 	lat,
@@ -27,7 +27,7 @@
 	username
 	)
   VALUES (
-  	'$caseNum',
+  	'$caseID',
 	'$action',
 	'$observation',
 	'$lat',

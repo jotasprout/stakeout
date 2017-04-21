@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head><meta name="viewport" content="user-scalable=no, width=device-width" />
 <meta charset="UTF-8">
 <title>Manage Investigator</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -33,7 +33,7 @@
 	
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header"> <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a> </div>
+			<div class="navbar-header"> <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a> </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
@@ -46,29 +46,20 @@
 				</ul>
 			</div>
 			<!-- /collapse --> 
-			
 		</div>
 		<!-- /container-fluid --> 
-		
 	</nav>
 	<!-- /navbar -->
 	
-	<?php 
-
+<?php 
  	// if there are any errors, display them
-
  	if ($error != '')
-
 		{
-
 		echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div>';
-
 		}
-
 ?>
 	
 	<!-- This form displays user profile info from the database -->
-	
 	<form class="form-horizontal" action="" method="post">
 		<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 		<fieldset>
@@ -152,12 +143,12 @@
 
 	// Create variable for query	
 	$query0 = "
-	SELECT a.caseNum, c.caseName, c.status, a.username, b.id, b.forename, b.surname 
-		FROM assignments a
-			INNER JOIN user_creds b
+	SELECT a.caseID, c.caseName, c.status, a.username, b.id, b.forename, b.surname 
+		FROM assignments4 a
+			INNER JOIN user_creds4 b
 				ON a.username = b.username
-			INNER JOIN cases c
-				ON a.caseNum = c.caseNum
+			INNER JOIN cases4 c
+				ON a.caseID = c.caseID
 					WHERE b.id = $id AND c.status = 1";
 
 	// Use variable with MySQL command to grab info from database
@@ -230,7 +221,7 @@
 
 				// save data to database
 
-				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username',email='$email' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds4 SET forename='$forename', surname='$surname', username='$username',email='$email' WHERE id='$id'";
 
 				$retval = $connekt->query($updateUser);  
 
@@ -271,7 +262,7 @@
 			// query db
 			$id = $_GET['id'];
 
-			$result = mysqli_query($connekt, "SELECT * FROM user_creds WHERE id=$id")
+			$result = mysqli_query($connekt, "SELECT * FROM user_creds4 WHERE id=$id")
 
 			or die(mysqli_error($result)); 
 

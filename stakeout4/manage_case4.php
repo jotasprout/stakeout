@@ -8,13 +8,13 @@
 	if ($connekt->connect_error) die($connekt->connect_error);	
 	
 	# if they are logged in, the following works like normal?
-	function renderForm($id, $caseNum, $caseName, $startDate, $status, $endDate, $deliveryDate, $error)
+	function renderForm($caseID, $caseNum, $caseName, $startDate, $endDate, $deliveryDate)
 	{
 ?>
  
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="viewport" content="user-scalable=no, width=device-width" />
 <meta charset="UTF-8">
     <title>Case Management</title>
     <script src="http://www.jotascript.com/js/jquery-214.js"></script>
@@ -62,7 +62,7 @@
 		<p>*Required</p>
         
         <form class="form-horizontal" action="" method="post">
-        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+        	<input type="hidden" name="caseID" value="<?php echo $caseID; ?>"/>
             
             <fieldset>
             	<legend>Case Management</legend>
@@ -102,6 +102,15 @@
                         <input class="form-control" type="text" name="endDate" value="<?php echo $endDate; ?>" />
                     </div>
                 </div><!-- /Row 4 -->
+                
+                <div class="form-group"> <!-- Row 5 -->
+                    <!-- Column 1 -->
+                    <label class="col-lg-2 control-label" for="deliveryDate">Delivery Date</label>
+                    <!-- Column 2 -->
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" name="deliveryDate" value="<?php echo $deliveryDate; ?>" />
+                    </div>
+                </div><!-- /Row 5 -->                
  
                 <div class="form-group"> <!-- Last Row -->           
                     <div class="col-lg-4 col-lg-offset-2">
@@ -131,27 +140,28 @@
 		{
 			
 		// get form data, making sure it is valid
-		$id = $_POST['id'];
+		$caseID = $_POST['id'];
 		$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseNum']));
 		$caseName = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseName']));
 		$startDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['startDate']));
-		$endDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['endDate']));		
+		$endDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['endDate']));
+		$deliveryDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['deliveryDate']));
 
 		// check that caseNum and startDate fields are both filled in
-		if ($caseNum == '' || $startDate == '')
+		if ($caseName == '' || $startDate == '')
 			{
 			// generate error message
 			$error = 'ERROR: Boy, you sure are stupid! Fill in all required fields like you were told!';
  
 			//error, display form
-			renderForm($id, $caseNum, $caseName, $startDate, $endDate, $error);
+			renderForm($caseID, $caseNum, $caseName, $startDate, $endDate, $deliveryDate);
 			}
 
 		else
 			{
 
 				// save data to database
-				$updateCase = "UPDATE cases SET caseNum='$caseNum', caseName='$caseName',startDate='$startDate', endDate='$endDate' WHERE id='$id'";
+				$updateCase = "UPDATE cases4 SET caseNum='$caseNum', caseName='$caseName', startDate='$startDate', endDate='$endDate', deliveryDate='$deliveryDate' WHERE caseID='$caseID'";
 				
 				$retval = $connekt->query($updateCase);
 	  
@@ -180,8 +190,8 @@
 		{
 
 			// query db
-			$id = $_GET['id'];
-			$result = mysqli_query($connekt, "SELECT * FROM cases WHERE id=$id")
+			$caseID = $_GET['id'];
+			$result = mysqli_query($connekt, "SELECT * FROM cases4 WHERE caseID=$caseID")
 			or die(mysqli_error($result)); 
 			$row = mysqli_fetch_array($result);
 	 
@@ -190,14 +200,15 @@
 				{
 	 
 				// get data from db
-				$id = $row['id'];
+				$caseID = $row['caseID'];
 				$caseNum = $row['caseNum'];
 				$caseName = $row['caseName'];
 				$startDate = $row['startDate'];
-				$endDate = $row['endDate'];			
+				$endDate = $row['endDate'];	
+				$deliveryDate = $row['deliveryDate'];
 	 
 				// show form
-				renderForm($id, $caseNum, $caseName, $startDate, $status, $endDate, $deliveryDate, '');
+				renderForm($caseID, $caseNum, $caseName, $startDate, $endDate, $deliveryDate);
 				}
 
 			else // if no match, display result

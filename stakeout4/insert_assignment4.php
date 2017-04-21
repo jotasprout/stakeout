@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="viewport" content="user-scalable=no, width=device-width" />
 <meta charset="UTF-8">
     <title>Assign Investigator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -59,7 +59,7 @@
 					}
 
 					// Create variable for query
-					$query0 = "SELECT * FROM user_creds WHERE status = 1";
+					$query0 = "SELECT * FROM user_creds4 WHERE status = 1";
 
 					// Create variable for MySQL command using query to grab active users from database
 					$result0 = $connekt->query($query0);	
@@ -80,7 +80,7 @@
 					echo "</div>";
 
 					// Create variable for query
-					$query = "SELECT * FROM cases WHERE status = 1";
+					$query = "SELECT * FROM cases4 WHERE status = 1";
 
 					// Create variable for MySQL command using query to grab active users from database
 					$result = $connekt->query($query);
@@ -93,7 +93,7 @@
 								echo "<option value=''>- Choose -</option>";
 
 								while ($row = mysqli_fetch_array($result)) {
-									echo "<option value='" . $row['caseNum'] . "'>" . $row['caseName'] . "</option>";
+									echo "<option value='" . $row['caseID'] . "'>" . $row['caseName'] . "</option>";
 								}
 
 							echo "</select>";

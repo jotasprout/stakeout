@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head><meta name="viewport" content="user-scalable=no, width=device-width" />
 <meta charset="UTF-8">
 <title>Report Observation</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -67,10 +67,10 @@
 							// Create variable for query	
 							$query9 = "
 							
-							SELECT a.caseNum, c.caseName, c.status, a.username 
-								FROM assignments a
-									INNER JOIN cases c
-										ON a.caseNum = c.caseNum
+							SELECT a.caseID, c.caseName, c.status, a.username 
+								FROM assignments4 a
+									INNER JOIN cases4 c
+										ON a.caseID = c.caseID
 											WHERE a.username = '$username' AND c.status = 1";
 						
 							// Use variable with MySQL command to grab info from database
@@ -84,7 +84,7 @@
 										echo "<option value=''>- Choose -</option>";
 										while ($row = mysqli_fetch_array($result9)) {
 											echo "<script>console.log('" . $row['username'] . " is assigned " . $row['caseName'] . "')</script>";
-											echo "<option value='" . $row['caseNum'] . "'>" . $row['caseName'] . "</option>";
+											echo "<option value='" . $row['caseID'] . "'>" . $row['caseName'] . "</option>";
 										}
 									echo "</select>";
 								echo "</div>";

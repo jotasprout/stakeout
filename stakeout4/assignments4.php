@@ -5,24 +5,32 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Assignments</title>
-<script src="http://www.jotascript.com/js/jquery-214.js"></script>
-<script src="http://www.jotascript.com/js/jquery_play.js"></script>
-<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
-<script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
+
+<head><meta name="viewport" content="user-scalable=no, width=device-width" />
+	<meta charset="UTF-8">
+    <title>Assignments</title>
+    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
+    <script src="http://www.jotascript.com/js/jquery_play.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
+    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
 </head>
 
 <body>
-<div class="container">
-	<div class="masthead"> <a href="http://www.roxorsoxor.com/stakeout4/index4.php"> <img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/> </a> </div>
-	<!-- /masthead -->
-	
+
+	<div class="container">
+
+	<div class="masthead">
+		<a href="http://www.roxorsoxor.com/stakeout4/index4.php">
+            <img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
+        </a>      
+    </div> <!-- /masthead -->
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header"> <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a> </div>
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a>
+			</div>               
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="http://www.roxorsoxor.com/stakeout4/cases4.php">Cases</a></li>
@@ -33,28 +41,18 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="logout_stakeout4.php">Logout</a></li>
 				</ul>
-			</div>
-			<!-- /collapse --> 
-			
-		</div>
-		<!-- /container-fluid --> 
-		
-	</nav>
-	<!-- /navbar --> 
-	
-	<!-- main -->
-	
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h4>Assignments</h4>
-		</div>
-		<div class="panel-body"> 
-			
-			<!-- Panel Content --> 
-			
-			<a href="insert_assignment4.php" class="btn btn-primary">Assign Case</a>
-			<?php
+			</div> <!-- /collapse -->                                      
+		</div> <!-- /container-fluid -->   
+	</nav> <!-- /navbar -->
 
+    <!-- main -->
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>Assignments</h4></div>
+			<div class="panel-body">
+				<!-- Panel Content -->
+                <a href="insert_assignment4.php" class="btn btn-primary">Assign Case</a>
+
+<?php
 
 // PHP code in a more secure location
 include("../../../php/landfill.php");
@@ -71,13 +69,12 @@ if (!$connekt)
 
 // Create variable for query
 $query = "
-
-SELECT a.caseNum, c.caseName, c.status, a.username, b.forename, b.surname, b.status 
+SELECT a.caseID, c.caseName, c.status, a.username, b.forename, b.surname, b.status 
 	FROM assignments4 a
 		INNER JOIN user_creds4 b
 			ON a.username = b.username
 		INNER JOIN cases4 c
-			ON a.caseNum = c.caseNum
+			ON a.caseID = c.caseID
 				WHERE b.status = 1 AND c.status = 1"; 
 
 // Use variable with MySQL command to grab info from database 
@@ -94,8 +91,8 @@ echo "<thead><tr><th>Manage</th><th>Case Name</th><th>Investigator</th></tr></th
 	 echo "<td>" . $row["caseName"] . "</td>";
 	 echo "<td>" . $row['forename'] . " " . $row['surname'] . "</td>";
 	 echo "</tr>";
-}			
-
+}
+				
 // Finish creating HTML table
 echo "</tbody></table>";
 
@@ -103,10 +100,9 @@ echo "</tbody></table>";
 mysqli_close($connekt);
 
 ?>
+			</div>
 		</div>
-	</div>
-</div>
-<!-- /container -->
+	</div> <!-- /container -->
 
 </body>
 </html>
