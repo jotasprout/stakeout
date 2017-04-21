@@ -120,7 +120,48 @@
             
             </fieldset>
         </form> 
- 
+ <?php
+
+	// PHP code in a more secure location
+	include("../../../php/landfill.php");
+
+	// Start creating an HTML table for Assigned Cases and create header row
+    echo "<table class='table table-striped table-hover '><thead><tr><th>Assigned Investigators</th></tr></thead>";
+	echo "<tbody>";
+
+	//Uses PHP code to connect to database
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+
+	// Connection test and feedback
+	if (!$connekt) {
+		die('Rats! Could not connect: ' . mysqli_error());
+	}
+	
+	$caseID = $_GET['id'];
+		
+	// Create variable for query	
+	$query0 = "
+	SELECT a.caseID, a.username, b.username, b.forename, b.surname 
+		FROM assignments4 a
+			INNER JOIN user_creds4 b
+				ON a.username = b.username
+					WHERE a.caseID = '$caseID'";
+
+	// Use variable with MySQL command to grab info from database
+	$result0 = $connekt->query($query0);	
+
+	// Create a row in HTML table for each row from database
+    while ($row = mysqli_fetch_array($result0)) {
+		echo "<tr><td>" . $row['forename'] . " " . $row['surname'] . "</td></tr>";
+    }
+
+	// Finish table of Assigned Cases
+    echo "</tbody></table>";
+
+	// When attempt is complete, connection closes
+    mysqli_close($connekt);
+
+?>
  	</div> <!-- /container -->
     
  </body>
