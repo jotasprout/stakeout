@@ -32,7 +32,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Stakeout Home</a>
+                        <a class="navbar-brand" href="http://www.roxorsoxor.com/stakeout4/index4.php">Home</a>
                     </div>
                     
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,7 +69,7 @@
                 
                 <div class="form-group"> <!-- Row 1 -->
                     <!-- Column 1 -->
-                    <label class="col-lg-2 control-label" for="caseNum">Case Number</label>
+                    <label class="col-lg-2 control-label" for="caseNum">Case Number*</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
                         <input class="form-control" type="text" name="caseNum" value="<?php echo $caseNum; ?>"/>
@@ -78,7 +78,7 @@
 
                 <div class="form-group"> <!-- Row 2 -->
                     <!-- Column 1 -->
-                    <label class="col-lg-2 control-label" for="caseName">Case Name</label>
+                    <label class="col-lg-2 control-label" for="caseName">Case Name*</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
                         <input class="form-control" type="text" name="caseName" value="<?php echo $caseName; ?>" />
@@ -87,7 +87,7 @@
 
                 <div class="form-group"> <!-- Row 3 -->
                     <!-- Column 1 -->
-                    <label class="col-lg-2 control-label" for="startDate">Start Date</label>
+                    <label class="col-lg-2 control-label" for="startDate">Start Date*</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
                         <input class="form-control" type="text" name="startDate" value="<?php echo $startDate; ?>" />
@@ -136,11 +136,11 @@
 	{ 
 	
 	// confirm that the 'id' value is a valid integer before getting the form data
-	if (is_numeric($_POST['id']))
+	if (is_numeric($_POST['caseID']))
 		{
 			
 		// get form data, making sure it is valid
-		$caseID = $_POST['id'];
+		$caseID = $_POST['caseID'];
 		$caseNum = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseNum']));
 		$caseName = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['caseName']));
 		$startDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['startDate']));
@@ -148,7 +148,7 @@
 		$deliveryDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['deliveryDate']));
 
 		// check that caseNum and startDate fields are both filled in
-		if ($caseName == '' || $startDate == '')
+		if ($caseNum == '' || $startDate == '')
 			{
 			// generate error message
 			$error = 'ERROR: Boy, you sure are stupid! Fill in all required fields like you were told!';
