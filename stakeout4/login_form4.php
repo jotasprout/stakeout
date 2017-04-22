@@ -1,22 +1,15 @@
 <?php
-
 	session_start();
-
-	if (isset($_SESSION['username'])) 
-
+	if (isset($_SESSION['username']))
 	{
 		header("location:index4.php");
 	}
-
 	require_once 'handle_login4.php';
-
 ?>
-
 <!doctype html>
-
 <html>
-
-<head><meta name="viewport" content="user-scalable=no, width=device-width" />
+<head>
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
 	<meta charset="UTF-8">
 	<meta charset="utf-8">
 	<title>Stakeout | Login</title>
@@ -29,15 +22,13 @@
     <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
     <LINK href="favicon.ico" rel="icon" type="image/ico">
 </head>
-
 <body>
-
 	<div class="container">
-
 		<div class="masthead">
-			<a href="http://www.roxorsoxor.com/stakeout4/index4.php"><img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/></a>
+			<a href="http://www.roxorsoxor.com/stakeout4/index4.php">
+				<img src="http://www.roxorsoxor.com/stakeout/stakeoutLogo.png" width="680" height="198"/>
+			</a>
 		</div> <!-- /masthead -->
-
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -53,12 +44,9 @@
 				</div> <!-- /collapse -->
 			</div> <!-- /container-fluid -->
 		</nav> <!-- /navbar -->
-
+		
 		<form class="form-horizontal" action="handle_login4.php" method="post">
 			<fieldset>
-
-				<legend>Log In</legend>
-
 				<div class="form-group"><!-- Row 1 -->
 					<!-- Column 1 -->
 					<label class="col-lg-2 control-label" for="username">username</label>
@@ -67,28 +55,23 @@
 						<input class="form-control" type="text" name="username" placeholder="username"/>
 					</div>
 				</div><!-- /Row 1 -->
-
 				<div class="form-group"><!-- Row 3 -->
 					<label class="col-lg-2 control-label" for="password">password</label>
 					<div class="col-lg-4">
 						<input class="form-control" type="password" name="password" placeholder="password"/>
 					</div>
 				</div><!-- /Row 3 -->
-				
+
 				<div class="form-group"><!-- Last Row -->
 					<div class="col-lg-4 col-lg-offset-2">
 						<button class="btn btn-primary" type="submit" name="submit">Log In</button>
 					</div>
 				</div><!-- /Last Row -->
-
 			</fieldset>
 		</form>
-
 		<footer class="footer">
 			<p>&copy; RoxorSoxor 2017</p>
 		</footer>
-
 	</div><!-- /container -->
-
 </body>
 </html>
