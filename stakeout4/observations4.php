@@ -74,7 +74,7 @@
 
     // Create variable for query
 	$query = "
-		SELECT a.caseID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.status 
+		SELECT a.caseID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.status, a.action 
 			FROM observations4 a
 				INNER JOIN user_creds4 b
 					ON a.username = b.username
