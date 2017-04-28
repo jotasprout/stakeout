@@ -55,7 +55,7 @@
 
 				<!-- Panel Content -->
 
-                <a href="insert_observe4.php" class="btn btn-primary">Add Observation</a>
+                <a href="http://www.roxorsoxor.com/stakeout4/insert_observe5g.php" class="btn btn-primary">Add Observation</a>
 
 <?php
 
