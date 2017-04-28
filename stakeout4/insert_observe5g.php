@@ -31,11 +31,8 @@
 		else if(empty($observation)){
 			$errMSG = "Please type your observation or image description.";
 		}
-		else if(empty($imgFile)){
-			$errMSG = "Please Select Image File.";
-		}
-		else
-		{
+		
+		if(!empty($imgFile)){
 			$upload_dir = 'observe_pix/'; // upload directory
 	
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
