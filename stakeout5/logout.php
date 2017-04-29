@@ -1,0 +1,1 @@
+<?phpsession_start();require_once 'class.gator5.php';$user = new USER();if(!$user->is_logged_in()){	$user->redirect('login_form5.php');}if($user->is_logged_in()!=""){	$user->logout();		$user->redirect('login_form5.php');}?>
