@@ -7,9 +7,9 @@ if($user_login->is_logged_in()!="") {
 }
 
 if(isset($_POST['submit'])) {	
-    $email = trim($_POST['username']);	
-    $upass = trim($_POST['password']);		
-if($user_login->login($email,$password) {		
+    $username = trim($_POST['username']);	
+    $password = trim($_POST['password']);		
+if($user_login->login($username,$password) {		
     $user_login->redirect('index5.php');	
 }
 }
