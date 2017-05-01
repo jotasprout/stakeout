@@ -48,19 +48,4 @@ function mysqli_fix_string($connekt, $string) {
     return $connekt->real_escape_string($string);	
 }	
 
-// NEW STUFF
-session_start();
-require_once 'class.gator5.php';
-$user_login = new USER();
-if($user_login->is_logged_in()!=""){	
-    $user_login->redirect('index5.php');
-}
-if(isset($_POST['btn-login'])){	
-    $email = trim($_POST['txtemail']);	
-    $upass = trim($_POST['txtupass']);		
-    if($user_login->login($email,$upass)) {		
-        $user_login->redirect('index5.php');	
-    }
-}	
-
 ?>

@@ -40,33 +40,7 @@ require_once 'handle_login5.php';
 </div> <!-- /container-fluid -->		
 </nav> <!-- /navbar -->		
 
-<?php 		
-if(isset($_GET['inactive'])) {		
-?>            
-
-<div class='alert alert-error'>				
-<button class='close' data-dismiss='alert'>&times;</button>
-<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it. 			
-</div>        
-
-<?php		
-}		
-?>
-
-<form class="form-horizontal" action="handle_login5.php" method="post">
-
-<?php        
-if(isset($_GET['error'])) {		
-?>            
-
-<div class='alert alert-success'>				
-<button class='close' data-dismiss='alert'>&times;</button>				
-<strong>Wrong Details!</strong> 			
-</div>        
-
-<?php		
-}		
-?>			
+<form class="form-horizontal" action="handle_login5.php" method="post">			
 
 <fieldset>				
 <div class="form-group">
