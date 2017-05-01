@@ -31,15 +31,15 @@ require_once 'areTheyLoggedIn5.php';
 <li><a href="http://www.roxorsoxor.com/stakeout5/assignments5.php">Assignments</a></li>					
 </ul>                        
 <ul class="nav navbar-nav navbar-right">                            
-<li><a href="logout_stakeout4.php">Logout</a></li>                        
+<li><a href="logout_stakeout5.php">Logout</a></li>                        
 </ul>                    
 </div> <!-- /collapse -->                
 </div> <!-- /container-fluid -->            
 </nav> <!-- /navbar -->      
 <div class="jumbotron">        
-<h1>Welcome <?php echo $row['forename']; ?></h1>        
-<p class="lead">Your email is <?php echo $row['email']; ?></P>        
-<p class="lead">Your username is <?php echo $row['username'];?></P>      
+<h1>Welcome</h1>        
+<p class="lead">Your email is belong to us</P>        
+<p class="lead">Your username is something lame</P>      
 </div>    
 <footer class="footer">        <p>&copy; RoxorSoxor 2017</p>    
 </footer>
