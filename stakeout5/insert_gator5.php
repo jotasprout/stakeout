@@ -82,10 +82,10 @@ require_once 'areTheyLoggedIn5.php';
 <div class="col-lg-4 col-lg-offset-2">
 <button class="btn btn-primary" type="submit" name="submit">Add Investigator</button>
 </div>				
-</div>				<!-- /Last Row -->			
+</div> <!-- /Last Row -->			
 </fieldset>		
 </form>		
-<footer class="footer">			<p>&copy; RoxorSoxor 2017</p>		</footer>	
+<footer class="footer"><p>&copy; RoxorSoxor 2017</p></footer>	
 </div>	<!-- /container -->
 </body>
 </html>
