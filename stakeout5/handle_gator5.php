@@ -12,7 +12,12 @@ $password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['passwor
 $pw_hashness = hash('ripemd128', "$salt1$password$salt2");	
 $email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));	
 // Instructions for inserting form content into database  
-$pushGator = "INSERT INTO user_creds4 (  	forename,	surname,	username,	password,	email	)  VALUES (  	'$forename',	'$surname',	'$username',	'$pw_hashness',	'$email'	);";
+$pushGator = "INSERT INTO user_creds4 (  	
+forename,	surname,	username,	password,	email	
+)  
+VALUES (  	
+'$forename',	'$surname',	'$username',	'$pw_hashness',	'$email'	
+);";
 // Feedback of whether INSERT worked or not	
 $retval = $connekt->query($pushGator);  
 if(!$retval) {	  

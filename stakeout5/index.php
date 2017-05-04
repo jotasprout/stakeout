@@ -9,9 +9,9 @@ if($user_login->is_logged_in()!="") {
 if(isset($_POST['submit'])) {	
     $username = trim($_POST['username']);	
     $password = trim($_POST['password']);		
-if($user_login->login($username,$password) {		
-    $user_login->redirect('index5.php');	
-}
+	if($user_login->login($username,$password) {		
+		$user_login->redirect('index5.php');	
+	}
 }
 ?>
 
@@ -25,12 +25,10 @@ if($user_login->login($username,$password) {
 <link href="assets/styles.css" rel="stylesheet" media="screen">     
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->    
-
 <!--[if lt IE 9]>      
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>    
 <![endif]-->    
-
-<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>  
+ 
 </head>  
 
 <body id="login">    
@@ -39,10 +37,9 @@ if($user_login->login($username,$password) {
 
 <?php 		
 if(isset($_GET['inactive'])) {			
-    ?>            
+?>            
 
-<div class='alert alert-error'><button class='close' data-dismiss='alert'>&times;</button>				<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.</div>            
-
+<div class='alert alert-error'><button class='close' data-dismiss='alert'>&times;</button><strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.</div>
 <?php		
 }		
 ?>        
