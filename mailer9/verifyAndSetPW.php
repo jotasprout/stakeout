@@ -1,9 +1,10 @@
 <?php
-require_once 'class.user.php';
+require_once 'class.gator.php';
+
 $user = new USER();
 
 if(empty($_GET['id']) && empty($_GET['code'])) {
-	$user->redirect('index.php');
+	$user->redirect('login_form_09.php');
 }
 
 if(isset($_GET['id']) && isset($_GET['code'])) {
@@ -75,10 +76,11 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 <html>
   <head>
     <title>Password Reset</title>
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
+    <script src="http://www.jotascript.com/js/jquery_play.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
+    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

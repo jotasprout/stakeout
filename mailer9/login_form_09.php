@@ -1,23 +1,28 @@
 <?php
 
 session_start();
+require_once 'class.gator.php';
 
-require_once 'class.user.php';
-
-$user_login = new USER();
-
-if($user_login->is_logged_in()!="") {
-	$user_login->redirect('index_09.php');
+if(isset($_SESSION['username'])) {
+	$username = $_SESSION['username'];
+	echo "<script>console.log('" . $username . "  is logged in.')</script>";
+	header("Location:index_09.php");
 }
+else {
+	echo "<script>console.log('Nobody is logged in.')</script>";
+}
+
+$user = new USER();
 
 if(isset($_POST['submit'])) {
 	$email = trim($_POST['email']);
 	$upass = trim($_POST['password']);
 
-	if($user_login->login($email,$upass)) {
-		$user_login->redirect('index_09.php');
+	if($user->login($email,$upass)) {
+		$user->redirect('index_09.php');
 	}
 }
+
 
 ?>
 <!doctype html>
@@ -27,10 +32,11 @@ if(isset($_POST['submit'])) {
 	<meta charset="UTF-8">
 	<meta charset="utf-8">
 	<title>Stakeout | Login</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
+    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
+    <script src="http://www.jotascript.com/js/jquery_play.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
+    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="apple-touch-icon-precomposed" href = "stakeoutIcon.png" />
     <LINK href="favicon.ico" rel="icon" type="image/x-icon">
     <LINK href="favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -38,7 +44,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body id="login">
 	<div class="container">
-	 
+
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -46,13 +52,13 @@ if(isset($_POST['submit'])) {
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="http://www.roxorsoxor.com/mailer9/cases5.php">Cases</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/cases_09.php">Cases</a></li>
 						<li><a href="http://www.roxorsoxor.com/mailer9/observations_09.php">Observations</a></li>
-						<li><a href="http://www.roxorsoxor.com/mailer9/gators5.php">Investigators</a></li>
-						<li><a href="http://www.roxorsoxor.com/mailer9/assignments5.php">Assignments</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/gators_09.php">Investigators</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/assignments_09.php">Assignments</a></li>
 					</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logout_stakeout5.php">Logout</a></li>
+					<li><a href="logout_09.php">Logout</a></li>
 				</ul>                    
 				</div> <!-- /collapse -->
 			</div> <!-- /container-fluid -->

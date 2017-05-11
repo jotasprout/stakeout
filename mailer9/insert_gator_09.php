@@ -1,12 +1,16 @@
 <?php
 
 session_start();
-require_once 'class.user.php';
+require_once 'class.gator.php';
 
-$reg_user = new USER();
-
-if($reg_user->is_logged_in()!="") {
-	$reg_user->redirect('home.php');
+if(!isset($_SESSION['username'])) {
+	echo "<script>console.log('Nobody is logged in.')</script>";
+	header("Location:login_form_09.php");
+}
+else {
+	// $_SESSION['username'] = $userRow['username'];
+	$username = $_SESSION['username'];
+	echo "<script>console.log('" . $username . "  is logged in.')</script>";
 }
 
 if(isset($_POST['submit'])) {
@@ -16,7 +20,7 @@ if(isset($_POST['submit'])) {
 	$email = trim($_POST['email']);
 	$code = md5(uniqid(rand()));
 
-	$stmt = $reg_user->runQuery("SELECT * FROM user_creds4 WHERE email=:email_id");
+	$stmt = $user->runQuery("SELECT * FROM user_creds4 WHERE email=:email_id");
 	$stmt->execute(array(":email_id"=>$email));
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -27,8 +31,8 @@ if(isset($_POST['submit'])) {
 			  </div>";
 	}
 	else {
-		if($reg_user->register($uname,$forename,$surname,$email,$code)) {
-			$id = $reg_user->lasdID();
+		if($user->register($uname,$forename,$surname,$email,$code)) {
+			$id = $user->lasdID();
 			$key = base64_encode($id);
 			$id = $key;
 
@@ -41,7 +45,7 @@ if(isset($_POST['submit'])) {
 
 			$subject = "Confirm Registration";
 
-			$reg_user->send_mail($email,$message,$subject);
+			$user->send_mail($email,$message,$subject);
 			$msg = "<div class='alert alert-success'>
 						<button class='close' data-dismiss='alert'>&times;</button>
 						<strong>You're almost there!</strong> We've sent an email to $email.
@@ -62,10 +66,11 @@ if(isset($_POST['submit'])) {
 <head><meta name="viewport" content="user-scalable=no, width=device-width" />
 	<meta charset="UTF-8">
 	<title>Add Investigator</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://www.jotascript.com/js/jquery-214.js"></script>
+    <script src="http://www.jotascript.com/js/jquery_play.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/bootstrap.min.css">
+    <script src="http://www.jotascript.com/js/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jotascript.com/js/bootstrap/css/justified-nav.css">
 </head>
 <body>
 	<div class="container">
@@ -78,13 +83,13 @@ if(isset($_POST['submit'])) {
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="http://www.roxorsoxor.com/mailer9/cases5.php">Cases</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/cases_09.php">Cases</a></li>
 						<li><a href="http://www.roxorsoxor.com/mailer9/observations_09.php">Observations</a></li>
-						<li><a href="http://www.roxorsoxor.com/mailer9/gators5.php">Investigators</a></li>
-						<li><a href="http://www.roxorsoxor.com/mailer9/assignments5.php">Assignments</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/gators_09.php">Investigators</a></li>
+						<li><a href="http://www.roxorsoxor.com/mailer9/assignments_09.php">Assignments</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="logout_stakeout5.php">Logout</a></li>
+						<li><a href="logout_09.php">Logout</a></li>
 					</ul>
 				</div>
 				<!-- /collapse -->
