@@ -49,6 +49,10 @@ class USER {
 				if($userRow['userStatus']=="Y") {
 					if($userRow['password']==md5($upass)) {
 						$_SESSION['username'] = $userRow['username'];
+						$username = $_SESSION['username'];
+						$email = $_SESSION['email'];
+						// keep an eye on these in case they interfere with manage_gator
+						$forename = $userRow['forename'];
 						return true;
 					}
 					else {

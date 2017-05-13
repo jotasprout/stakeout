@@ -1,9 +1,1 @@
-<?php
-
-require_once 'class.gator.php';
-areTheyLoggedIn();
-
-$user = new USER();
-$user->logout();
-
-?>
+<?phprequire_once 'class.gator.php';require_once 'stylesAndSuch.php';areTheyLoggedIn();$user = new USER();$user->logout();?>
