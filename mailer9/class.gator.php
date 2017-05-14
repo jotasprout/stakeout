@@ -93,8 +93,8 @@ class USER {
 	}
 
 	public function logout() {
+		session_start();
 		session_destroy();
-		// $_SESSION['userSession'] = false;
 		header("location:login_form_09.php");
 	}
 
