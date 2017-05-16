@@ -93,7 +93,14 @@ else {
 </head>
 <body>
 <div class="container">
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
 	
 	<div class="page-header">
 		<h1 class="h2">Observation Upload<a class="btn btn-default" href="login_form5.php"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; view all </a></h1>

@@ -99,7 +99,14 @@ else {
 <body>
 	<div class="container">
              
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
 
 		<p>*Required</p>
         <form class="form-horizontal" action="" method="post">

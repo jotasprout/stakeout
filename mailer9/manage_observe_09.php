@@ -28,7 +28,14 @@ else {
 </head>
 <body onload="initMap()">
 	<div class="container">
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
     <!-- main -->
 	<div class="panel panel-default">
 		<div class="panel-heading"><h4>Manage Observation</h4></div>

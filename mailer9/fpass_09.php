@@ -56,7 +56,14 @@ if(isset($_POST['btn-submit']))
   </head>
   <body id="login">
     <div class="container">
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
       <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Land of Forgotten Passwords</h2><hr />
         	<?php

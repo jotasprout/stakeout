@@ -23,7 +23,14 @@ else {
 </head>
 <body>
 <div class="container">
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
 	
 	<!-- This form uses code in handle_prez to insert input into the database -->
 	

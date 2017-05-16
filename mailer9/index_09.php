@@ -10,11 +10,15 @@ if(!isset($_SESSION['username'])) {
 	header("Location:login_form_09.php");
 }
 else {
-	// $_SESSION['username'] = $userRow['username'];
+	$jefe = $_SESSION['jefe'];
 	$username = $_SESSION['username'];
 	$forename = $_SESSION['forename'];
 	$email = $_SESSION['email'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
+	
+	if ($jefe == 1) {
+		echo "<script>console.log('You are an admin.')</script>";
+	}
 }
 
 // PHP code in a more secure location
@@ -49,12 +53,19 @@ $result = $connekt->query($query);
 <body>
 <div class="container">
 
-<?php echo $navbar; ?> 
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
 	
-	<div class="jumbotron">
-		<h1>Welcome, <?php echo $forename; ?>!</h1>
-		<p class="lead">Your email is <?php echo $email; ?></P>
-		<p class="lead">Your username is <?php echo $username; ?></P>
+	<div class="jumbotron">  
+        
+		<p class="lead">Email: <?php echo $email; ?></P>
+		<p class="lead">Username: <?php echo $username; ?></P>
       <?php
 		  // PHP code in a more secure location
 		  include("../../../php/landfill.php");

@@ -69,7 +69,14 @@ if(isset($_POST['submit'])) {
 	<div class="container">
 		<?php if(isset($msg)) echo $msg;  ?>
 		
-<?php echo $navbar; ?>
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>
 
 		<form class="form-horizontal" method="post">
 			<fieldset>

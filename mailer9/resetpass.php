@@ -74,7 +74,14 @@ if(isset($_GET['id']) && isset($_GET['code']))
   </head>
   <body id="login">
     <div class="container">
-<?php echo $navbar; ?>   
+<?php 
+	if ($jefe == 1) {
+		echo $navbarJefe;
+	}
+	else {
+		echo $navbarGator;
+	}
+?>   
     	<div class='alert alert-success'>
 			<strong>Hello there,</strong> <?php echo $rows['username'] ?>! So far, so good. Enter your new password.
 		</div>
