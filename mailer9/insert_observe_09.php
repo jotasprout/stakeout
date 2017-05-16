@@ -183,8 +183,7 @@ else {
 			</tr>
 			<tr>
 				<td><label class="control-label">Observation</label></td>
-				<td><textarea class="form-control" name="observation" placeholder="Observation" value="<?php echo $observation; ?>" />
-					</textarea></td>
+				<td><textarea class="form-control" name="observation" placeholder="Observation" value="<?php echo $observation; ?>" /></textarea></td>
 			</tr>
 			<tr>
 				<td><label class="control-label">Photo(s) Taken</label></td>
