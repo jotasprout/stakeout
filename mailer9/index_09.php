@@ -1,5 +1,6 @@
 <?php
 
+session_set_cookie_params(0, '/', '.roxorsoxor.com');
 session_start();
 require_once 'class.gator.php';
 require_once 'stylesAndSuch.php';

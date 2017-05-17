@@ -50,6 +50,7 @@ class USER {
 			if($stmt->rowCount() == 1) {
 				if($userRow['userStatus']=="Y") {
 					if($userRow['password']==md5($upass)) {
+						session_start();
 						$_SESSION['username'] = $userRow['username'];
 						$_SESSION['email'] = $userRow['email'];
 						$_SESSION['forename'] = $userRow['forename'];
@@ -82,7 +83,7 @@ class USER {
 	public function logout() {
 		session_start();
 		session_destroy();
-		header("location:login_form_09.php");
+		header("location: https://www.roxorsoxor.com/mailer9/login_form_09.php");
 	}
 
 	function send_mail($email,$message,$subject) {

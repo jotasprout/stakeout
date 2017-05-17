@@ -1,21 +1,22 @@
 <?php
 
+session_set_cookie_params(0, '/', '.roxorsoxor.com');
 session_start();
 
 require_once 'class.gator.php';
 require_once 'stylesAndSuch.php';
 
+$user = new USER();
+
 if(isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
-	header("Location:index_09.php");
+	header("Location: index_09.php");
 }
 
 else {
 	echo "<script>console.log('Nobody is logged in.')</script>";
 }
-
-$user = new USER();
 
 if(isset($_POST['submit'])) {
 	$email = trim($_POST['email']);
@@ -44,9 +45,9 @@ if(isset($_POST['submit'])) {
 	<div id='header' class='container-fluid'>
 		<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
 			<ul class='nav navbar-nav'>
-				<li><a class='navbar-brand' href='//www.roxorsoxor.com/mailer9/index_09.php'>Home</a></li>
-				<li><a href='//www.roxorsoxor.com/mailer9/cases_09.php'>Cases</a></li>
-				<li><a href='//www.roxorsoxor.com/mailer9/observations_09.php'>Observations</a></li>
+				<li><a class='navbar-brand' href='index_09.php'>Home</a></li>
+				<li><a href='cases_09.php'>Cases</a></li>
+				<li><a href='observations_09.php'>Observations</a></li>
 			</ul>
 		</div> <!-- /collapse -->                    
 	</div> <!-- /container-fluid -->   
