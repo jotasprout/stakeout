@@ -7,7 +7,7 @@ $user = new USER();
 
 if(empty($_GET['id']) && empty($_GET['code']))
 {
-	$user->redirect('login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/mailer9/login_form_09.php');
 }
 
 if(isset($_GET['id']) && isset($_GET['code']))

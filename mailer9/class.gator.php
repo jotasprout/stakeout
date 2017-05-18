@@ -57,17 +57,17 @@ class USER {
 						return true;
 					}
 					else {
-						header("Location: login_form_09.php?error");
+						header("Location: https://www.roxorsoxor.com/mailer9/login_form_09.php?error");
 						exit;
 					}
 				}
 				else {
-					header("Location: login_form_09.php?inactive");
+					header("Location: https://www.roxorsoxor.com/mailer9/login_form_09.php?inactive");
 					exit;
 				}
 			}
 			else {
-				header("Location: login_form_09.php?error");
+				header("Location: https://www.roxorsoxor.com/mailer9/login_form_09.php?error");
 				exit;
 			}
 		}

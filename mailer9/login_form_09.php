@@ -41,9 +41,9 @@ if(isset($_POST['submit'])) {
 	<div id='header' class='container-fluid'>
 		<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
 			<ul class='nav navbar-nav'>
-				<li><a class='navbar-brand' href='index_09.php'>Home</a></li>
-				<li><a href='cases_09.php'>Cases</a></li>
-				<li><a href='observations_09.php'>Observations</a></li>
+				<li><a class='navbar-brand' href='https://www.roxorsoxor.com/mailer9/index_09.php'>Home</a></li>
+				<li><a href='https://www.roxorsoxor.com/mailer9/cases_09.php'>Cases</a></li>
+				<li><a href='https://www.roxorsoxor.com/mailer9/observations_09.php'>Observations</a></li>
 			</ul>
 		</div> <!-- /collapse -->                    
 	</div> <!-- /container-fluid -->   
