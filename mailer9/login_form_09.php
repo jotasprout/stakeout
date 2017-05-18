@@ -1,6 +1,5 @@
 <?php
 
-session_set_cookie_params(0, '/', '.roxorsoxor.com');
 session_start();
 
 require_once 'class.gator.php';
@@ -8,12 +7,9 @@ require_once 'stylesAndSuch.php';
 
 $user = new USER();
 
-if(isset($_SESSION['username'])) {
-	$username = $_SESSION['username'];
-	echo "<script>console.log('" . $username . " is logged in.')</script>";
-	header("Location: index_09.php");
+if($user->areTheyLoggedIn()!="") {
+	$user->redirect('index_09.php');
 }
-
 else {
 	echo "<script>console.log('Nobody is logged in.')</script>";
 }

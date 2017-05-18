@@ -50,11 +50,11 @@ class USER {
 			if($stmt->rowCount() == 1) {
 				if($userRow['userStatus']=="Y") {
 					if($userRow['password']==md5($upass)) {
-						session_start();
 						$_SESSION['username'] = $userRow['username'];
 						$_SESSION['email'] = $userRow['email'];
 						$_SESSION['forename'] = $userRow['forename'];
 						$_SESSION['jefe'] = $userRow['admin'];
+						return true;
 					}
 					else {
 						header("Location: login_form_09.php?error");
@@ -76,13 +76,19 @@ class USER {
 		}
 	}
 
+	public function areTheyLoggedIn() {
+		if(isset($_SESSION['username'])) {
+			return true;
+		}
+	}
+	
 	public function redirect($url) {
 		header("Location: $url");
 	}
 
 	public function logout() {
-		session_start();
 		session_destroy();
+		$_SESSION['username'] = false;
 		header("location: https://www.roxorsoxor.com/mailer9/login_form_09.php");
 	}
 

@@ -1,19 +1,13 @@
 <?php
 
-session_start();
-
 require_once 'class.gator.php';
 require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();
 
-if(!isset($_SESSION['username'])) {
-	echo "<script>console.log('Nobody is logged in.')</script>";
-	header("Location:login_form_09.php");
-}
-
-else {
-	echo "<script>console.log('" . $username . " is logged in.')</script>";
+if(empty($_GET['id']) && empty($_GET['code']))
+{
+	$user->redirect('login_form_09.php');
 }
 
 if(isset($_GET['id']) && isset($_GET['code']))

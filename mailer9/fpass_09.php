@@ -5,6 +5,13 @@ require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();
 
+if($user->areTheyLoggedIn()!="") {
+	$user->redirect('index_09.php');
+}
+else {
+	echo "<script>console.log('Nobody is logged in.')</script>";
+}
+
 if(isset($_POST['btn-submit']))
 {
 	$email = $_POST['txtemail'];

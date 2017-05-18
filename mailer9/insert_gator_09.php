@@ -2,17 +2,18 @@
 session_start();
 
 require_once 'class.gator.php';
-
 require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();
 
-if(!isset($_SESSION['username'])) {
-	echo "<script>console.log('Nobody is logged in.')</script>";
-	header("Location:login_form_09.php");
+if(!$user->areTheyLoggedIn()) {
+	$user->redirect('login_form_09.php');
 }
 else {
-	// $_SESSION['username'] = $userRow['username'];
+	$jefe = $_SESSION['jefe'];
+	if ($jefe == 1) {
+		echo "<script>console.log('You are an admin.')</script>";
+	}
 	$username = $_SESSION['username'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
