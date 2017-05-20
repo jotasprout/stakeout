@@ -25,8 +25,8 @@ else {
 <?php echo $stylesAndSuch; ?>   
 <style>
 #map {
-	width: 600px;
-	height: 400px;
+	width: 300px;
+	height: 300px;
 }
 </style>
 </head>
@@ -77,7 +77,7 @@ else {
 			echo "<tr></tr>";
 			// Create a row in HTML table for each row from database
 			echo "<tr><th>Case Name: </th><td>" . $row["caseName"] . "</td></tr>";
-			echo "<tr><th>Image Uploaded: </th><td><a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='600px' height='auto'></a></td></tr>";
+			echo "<tr><th>Image Uploaded: </th><td><a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a></td></tr>";
 			echo "<tr><th>Action: </th><td>" . $row["action"] . "</td></tr>";
 			echo "<tr><th>Investigator: </th><td>" . $row['forename'] . " " . $row['surname'] . "</td></tr>";
 			echo "<tr><th>Observation: </th><td>" . $row["observation"] . "</td></tr>";

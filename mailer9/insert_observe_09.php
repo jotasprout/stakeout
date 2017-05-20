@@ -105,32 +105,40 @@ else {
 		echo $navbarGator;
 	}
 ?>
-	
-	<div class="page-header">
-		<h1 class="h2">Observation Upload<a class="btn btn-default" href="login_form5.php"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; view all </a></h1>
-	</div>
-	<?php
-	if(isset($errMSG)){
-			?>
-	<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> <strong><?php echo $errMSG; ?></strong> </div>
-	<?php
-	}
-	else if(isset($successMSG)){
-		?>
-	<div class="alert alert-success"> <strong><span class="glyphicon glyphicon-info-sign"></span> <?php echo $successMSG; ?></strong> </div>
-	<?php
-	}
-	?>
-	<form method="post" enctype="multipart/form-data" class="form-horizontal">
+
+<?php
+if(isset($errMSG)){
+?>
+
+<div class="alert alert-danger"><strong><?php echo $errMSG; ?></strong> </div>
+
+<?php
+}
+else if(isset($successMSG)){
+?>
+
+<div class="alert alert-success"> <strong><?php echo $successMSG; ?></strong> </div>
+
+<?php
+}
+?>
+    	
+<form method="post" enctype="multipart/form-data" class="form-horizontal">
+    <fieldset>
+        <legend>Observation Upload</legend>
 		<input type="hidden" name="txtlat" id="txtlat" required value="">
 		<input type="hidden" name="txtlng" id="txtlng" required value="">
-		<table class="table table-bordered table-responsive">
-			<tr>
-				<td><label class="control-label">username</label></td>
-				<td><input class="form-control" type="text" name="username" placeholder="username" value="<?php echo $username; ?>" /></td>
-			</tr>
+        
+		<div class="form-group"><!-- Row 1 -->
+            <!-- Column 1 -->
+            <label class="col-lg-2 control-label" for="username">Username</label>
+            <!-- Column 2 -->
+            <div class="col-lg-4">
+                <input class="form-control" type="text" name="username" placeholder="username" value="<?php echo $username; ?>" />
+            </div>
+        </div><!-- /Row 1 -->
+
 			<?php
-			
 				// PHP code in a more secure location
 				include("../../../php/landfill.php");
 				// require_once '../../../php/landfill.php';
@@ -146,7 +154,6 @@ else {
 			
 				// Create variable for query	
 				$query9 = "
-				
 				SELECT a.caseID, c.caseName, c.status, a.username 
 					FROM assignments4 a
 						INNER JOIN cases4 c
@@ -157,10 +164,9 @@ else {
 				$result9 = $connekt->query($query9);	
 				
 				// Create Case Menu
-				echo "<tr>";
-					echo "<td>";
-					echo "<label class='control-label' for='assignedCase'>Case</label>";
-					echo "</td><td>";
+				echo "<div class='form-group'>";
+					echo "<label class='col-lg-2 control-label' for='assignedCase'>Case</label>";
+					echo "<div class='col-lg-4'>";
 						echo "<select class='form-control' name='assignedCase'>";
 							echo "<option value=''>- Choose -</option>";
 							while ($row = mysqli_fetch_array($result9)) {
@@ -168,8 +174,8 @@ else {
 								echo "<option value='" . $row['caseID'] . "'>" . $row['caseName'] . "</option>";
 							}
 						echo "</select>";
-					echo "</td>";
-				echo "</tr>";
+					echo "</div>";
+				echo "</div>";
 			
 				// Feedback of whether UPDATE worked or not
 				if(!$result9){
@@ -180,49 +186,53 @@ else {
 				mysqli_close($connekt);
 			
 			?>
-			<tr> <!-- Row 3 -->
-				
-				<td><label class="control-label" for="action">Action</label></td>
-				<td><select class="form-control" name="action">
+			<div class='form-group'> <!-- Row 3 -->
+				<label class='col-lg-2 control-label' for='action'>Action</label>
+
+				<div class='col-lg-4'>
+                	<select class="form-control" name="action">
 						<option value="">- Choose -</option>
 						<option value="pretextContact">Pretext Contact</option>
 						<option value="socialMedia">Social Media</option>
 						<option value="surveillance">Surveillance</option>
 						<option value="trashPull">Trash Pull</option>
 						<option value="undercover">Undercover</option>
-					</select></td>
-			</tr>
-			<tr>
-				<td><label class="control-label">Observation</label></td>
-				<td><textarea class="form-control" name="observation" placeholder="Observation" value="<?php echo $observation; ?>" /></textarea></td>
-			</tr>
-			<tr>
-				<td><label class="control-label">Photo(s) Taken</label></td>
-				<td><label>
-						<input name="pix" id="photoYes" type="radio" checked="" value="Yes">
-						Yes</label>
-					<label>
-						<input name="pix" id="photoNo" type="radio" checked="" value="No">
-						No</label></td>
-			</tr>
-			<tr>
-				<td><label class="control-label">Photo</label></td>
-				<td><input class="input-group" type="file" name="observeImage" accept="image/*" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><button type="submit" name="btnsave" class="btn btn-default"> <span class="glyphicon glyphicon-save"></span> &nbsp; Upload </button></td>
-			</tr>
-		</table>
-	</form>
+					</select>
+                </div>
+			</div>
+            
+			<div class='form-group'> <!-- Row 4 -->
+				<label class='col-lg-2 control-label' for='observation'>Observation</label>
+                <div class='col-lg-4'>
+					<textarea class="form-control" name="observation" placeholder="Observation" value="<?php echo $observation; ?>" /></textarea>
+                </div>
+			</div>
+            
+			<div class='form-group'> <!-- Row 5 -->
+				<label class='col-lg-2 control-label' for='pix'>Photo(s) Taken</label>
+                <div class='col-lg-4'>
+                    <label class="mobRadio"><input name="pix" id="photoYes" type="radio" checked="" value="Yes"> Yes</label>
+                    <label class="mobRadio"><input name="pix" id="photoNo" type="radio" checked="" value="No"> No</label>
+                </div>
+			</div>
+            
+			<div class='form-group'> <!-- Row 6 -->
+				<label class='col-lg-2 control-label' for='observeImage'>Photo</label>
+				<div class='col-lg-4'>
+                	<input class="input-group" type="file" name="observeImage" accept="image/*" />
+                </div>
+			</div>
+            
+			<div class="form-group"> <!-- Last Row -->
+                <div class="col-lg-4 col-lg-offset-2">
+                    <button class="btn btn-primary" type="submit" name="btnsave"> Upload </button>
+                </div>
+            </div><!-- /Last Row -->
+        </fieldset>
+	</form> 
 	
-<!--
-<div class="alert alert-info">
-    <strong>App Update:</strong> <a href="http://www.roxorsoxor.com">Read here</a>!
-</div>
---> 
-	
-</div>
-<!-- Latest compiled and minified JavaScript --> 
+</div> <!-- /container -->
+
 <script src="geoloc5.js"></script>
 </body>
 </html>

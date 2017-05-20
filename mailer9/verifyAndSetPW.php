@@ -87,20 +87,43 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
     	<div class='alert alert-success'>
 			<strong>Hello there,</strong> <?php echo $rows['username'] ?>! 
 		</div>
-        <form class="form-signin" method="post">
-        <h3 class="form-signin-heading">Create Your Password</h3><hr />
-        <?php
-        if(isset($msg))
-		{
-			echo $msg;
-		}
-		?>
-        <div><input type="password" class="input-block-level" placeholder="Type your new password" name="pass" required /></div>
-        <div><input type="password" class="input-block-level" placeholder="Type it again" name="confirm-pass" required /></div>
-     	<hr />
-        <button class="btn btn-large btn-primary" type="submit" name="btn-make-pass">Submit</button>
-        
-      </form>
+        <form method="post" class="form-horizontal">
+    		<fieldset>
+        		<legend>Create Your Password</legend>
+
+			<?php
+            if(isset($msg))
+            {
+                echo $msg;
+            }
+            ?>
+            
+            <div class="form-group"><!-- Row 1 -->
+                <!-- Column 1 -->
+                <label class="col-lg-2 control-label" for="pass">Type your new password</label>
+                <!-- Column 2 -->
+                <div class="col-lg-4">
+                    <input type="password" class="input-block-level" placeholder="password" name="pass" required />
+                </div>
+        	</div><!-- /Row 1 -->
+            
+            <div class="form-group"><!-- Row 2 -->
+                <!-- Column 1 -->
+                <label class="col-lg-2 control-label" for="confirm-pass">Type it again</label>
+                <!-- Column 2 -->
+                <div class="col-lg-4">
+                    <input type="password" class="input-block-level" placeholder="password" name="confirm-pass" required />
+                </div>
+        	</div><!-- /Row 2 -->
+            
+			<div class="form-group"> <!-- Last Row -->
+                <div class="col-lg-4 col-lg-offset-2">
+                    <button class="btn btn-primary" type="submit" name="btn-make-pass"> Submit </button>
+                </div>
+            </div><!-- /Last Row -->
+        </fieldset>            
+            
+        </form>
     </div> <!-- /container -->
   </body>
 </html>

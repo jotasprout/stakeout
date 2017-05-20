@@ -75,7 +75,7 @@ else {
 
 	// Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>ID #</th><th>Manage</th><th>Status</th><th>First Name</th><th>Last Name</th><th>username</th><th>password</th><th>eMail</th></tr></thead><tbody>";
+    echo "<thead><tr><th>ID #</th><th>Manage</th><th>Status</th><th>First Name</th><th>Last Name</th><th>username</th><th>eMail</th></tr></thead><tbody>";
 
 	// Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
@@ -95,7 +95,6 @@ else {
 		echo "<td>" . $row["forename"] . "</td>";
         echo "<td>" . $row["surname"] . "</td>";
         echo "<td>" . $row["username"] . "</td>";
-		echo "<td>" . "reset" . "</td>";
 		echo "<td>" . $row["email"] . "</td>";
         echo "</tr>";
     }

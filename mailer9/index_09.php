@@ -99,9 +99,7 @@ $result = $connekt->query($query);
 		  mysqli_close($connekt);
 		  ?>
 	</div>
-	<footer class="footer">
-		<p>&copy; RoxorSoxor 2017</p>
-	</footer>
+	
 </div>
 <!-- /container -->
 

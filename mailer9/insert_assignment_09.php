@@ -91,9 +91,7 @@ else {
                 </div><!-- /Last Row -->
             </fieldset>
         </form>
-		<footer class="footer">
-			<p>&copy; RoxorSoxor 2017</p>
-		</footer>
+
 	</div> <!-- /container -->
 </body>
 </html>

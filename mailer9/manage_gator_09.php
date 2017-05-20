@@ -216,9 +216,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
     mysqli_close($connekt);
 ?>
 </div></div>
-	<footer class="footer">
-		<p>&copy; RoxorSoxor 2017</p>
-	</footer>
+	
 </div>
 <!-- /container -->
 </body>

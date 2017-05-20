@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
 				</div><!-- /Row 2 -->
 				<div class="form-group"><!-- Row 3 -->
 					<!-- Column 1 -->
-					<label class="col-lg-2 control-label" for="username">username</label>
+					<label class="col-lg-2 control-label" for="username">Username</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
 						<input class="form-control" type="text" name="username" placeholder="username"/>
@@ -109,7 +109,7 @@ if(isset($_POST['submit'])) {
 				
 				<div class="form-group"><!-- Row 5 -->
 					<!-- Column 1 -->
-					<label class="col-lg-2 control-label" for="email">email</label>
+					<label class="col-lg-2 control-label" for="email">Email</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
 						<input class="form-control" type="text" name="email" placeholder="you@domain.com"/>
@@ -123,9 +123,7 @@ if(isset($_POST['submit'])) {
 				<!-- /Last Row -->
 			</fieldset>
 		</form>
-		<footer class="footer">
-			<p>&copy; RoxorSoxor 2017</p>
-		</footer>
+
 	</div>
 	<!-- /container -->
 </body>

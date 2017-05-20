@@ -37,6 +37,8 @@ if(isset($_POST['submit'])) {
 
 <body>
 <div class="container">
+
+<!-- NAVBAR
 <nav class='navbar navbar-default'>
 	<div id='header' class='container-fluid'>
 		<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -45,37 +47,33 @@ if(isset($_POST['submit'])) {
 				<li><a href='https://www.roxorsoxor.com/mailer9/cases_09.php'>Cases</a></li>
 				<li><a href='https://www.roxorsoxor.com/mailer9/observations_09.php'>Observations</a></li>
 			</ul>
-		</div> <!-- /collapse -->                    
-	</div> <!-- /container-fluid -->   
-</nav> <!-- /navbar -->
+		</div>                    
+	</div>    
+</nav>  
+NAVBAR -->
 	
 	<?php 
-
 		if(isset($_GET['inactive'])) {
-
-		?>
-	<div class='alert alert-error'>
-		<button class='close' data-dismiss='alert'>&times;</button>
-		This account is not activated. Go to your inbox and activate it.</div>
+	?>
+    
+	<div class='alert alert-error'><button class='close' data-dismiss='alert'>&times;</button>This account is not activated. Go to your inbox and activate it.</div>
+    
 	<?php
-
-		}
-
-		?>
+	}
+	?>
+    
 	<form class="form-horizontal" method="post">
+    
 		<?php
-
         if(isset($_GET['error'])) {
-
 		?>
-		<div class='alert alert-success'>
-			<button class='close' data-dismiss='alert'>&times;</button>
-			<strong>Wrong Details!</strong> </div>
+        
+		<div class='alert alert-success'><button class='close' data-dismiss='alert'>&times;</button><strong>Wrong Details!</strong> </div>
+		
 		<?php
-
 		}
-
 		?>
+        
 		<fieldset>
 			<div class="form-group"><!-- Row 1 --> 
 				<!-- Column 1 -->
@@ -91,6 +89,7 @@ if(isset($_POST['submit'])) {
 				<label class="col-lg-2 control-label" for="password">Password</label>
 				<div class="col-lg-4">
 					<input class="form-control" type="password" name="password" placeholder="password"/>
+                    <div id="lost"><a href="fpass.php">Lost your password?</a></div>
 				</div>
 			</div>
 			<!-- /Row 3 -->
@@ -99,15 +98,14 @@ if(isset($_POST['submit'])) {
 				<div class="col-lg-4 col-lg-offset-2">
 					<button class="btn btn-primary" type="submit" name="submit">Log In</button>
 				</div>
-                <div><a href="fpass.php">Lost your password?</a></div>
+                
 			</div>
 			<!-- /Last Row -->
 			
 		</fieldset>
+        
 	</form>
-	<footer class="footer">
-		<p>&copy; RoxorSoxor 2017</p>
-	</footer>
+	
 </div> <!-- /container -->
 
 </body>
