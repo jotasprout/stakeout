@@ -63,17 +63,12 @@ else {
 	$result = $connekt->query($query);
 // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>Case #</th><th>Manage</th><th>Case Name</th><th>Start Date</th><th>Status</th><th>End Date</th><th>Delivered</th></tr></thead><tbody>";
+    echo "<thead><tr><th>Case Name</th><th>Start Date</th></tr></thead><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
-		echo "<td>" . $row["caseNum"] . "</td>";
-		echo "<td><a href='manage_case_09.php?id=" . $row["caseID"] . "'>Manage</a></td>";
-        echo "<td>" . $row["caseName"] . "</td>";
+        echo "<td><a href='manage_case_09.php?id=" . $row["caseID"] . "'>" . $row["caseName"] . "</a></td>";
         echo "<td>" . $row["startDate"] . "</td>";
-        echo "<td>" . $row["status"] . "</td>";
-        echo "<td>" . $row["endDate"] . "</td>";
-		echo "<td>" . $row["deliveryDate"] . "</td>";
         echo "</tr>";
     }
 // Finish creating HTML table
