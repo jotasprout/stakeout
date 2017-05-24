@@ -232,7 +232,7 @@ else if(isset($successMSG)){
             
 			<div class="form-group"> <!-- Last Row -->
                 <div class="col-lg-4 col-lg-offset-2">
-                    <button class="btn btn-primary" type="submit" name="btnsave"> Upload </button>
+                    <button class="btn btn-primary" type="submit" name="btnsave">Submit</button>
                 </div>
             </div><!-- /Last Row -->
         </fieldset>

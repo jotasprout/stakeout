@@ -70,8 +70,7 @@ else {
 // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
 // Start creating an HTML table and create header row
-    echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>Case Name</th></tr></thead><tbody>";
+    echo "<table class='table table-striped table-hover'><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";

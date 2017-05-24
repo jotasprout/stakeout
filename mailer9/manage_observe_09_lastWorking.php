@@ -79,56 +79,24 @@ else {
 		// check that the 'id' matches up with a row in the databse
 		if($row){
 			// if there's a match, display data from db
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Case Name:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["caseName"] . "</div>";
-			echo "</div>";
-
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Image Uploaded:</strong></div>";
-			echo "<div class='col-md-9'><a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a></div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Action:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["action"] . "</div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Investigator:</strong></div>";
-			echo "<div class='col-md-9'>" . $row['forename'] . " " . $row['surname'] . "</div>";
-			echo "</div>";	
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Observation:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["observation"] . "</div>";
-			echo "</div>";
-			
+			echo "<table class='table'><tbody>";
+			echo "<tr></tr>";
+			// Create a row in HTML table for each row from database
+			echo "<tr><th>Case Name: </th><td>" . $row["caseName"] . "</td></tr>";
+			echo "<tr><th>Image Uploaded: </th><td><a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a></td></tr>";
+			echo "<tr><th>Action: </th><td>" . $row["action"] . "</td></tr>";
+			echo "<tr><th>Investigator: </th><td>" . $row['forename'] . " " . $row['surname'] . "</td></tr>";
+			echo "<tr><th>Observation: </th><td>" . $row["observation"] . "</td></tr>";
 			if ($row["pix"] == 1) {
 				$available = "Yes";
 			}
 			else {
 				$available = "No";
-			}			
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Photos Available:</strong></div>";
-			echo "<div class='col-md-9'>" . $available . "</div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Date &amp; Time:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["observeTime"] . "</div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Location:</strong></div>";
-			echo "<div class='col-md-9'><div id='map'></div></div>";
-			echo "</div>";
-
-			echo "<div class='col-md-3'><strong>Case Name:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["caseName"] . "</div>";
-			echo "</div>";																				
+			}
+			echo "<tr><th>Photos Available: </th><td>" . $available . "</td></tr>";
+			echo "<tr><th>Date &amp; Time: </th><td>" . $row["observeTime"] . "</td></tr>";
+			echo "<tr><th>Location: </th><td><div id='map'></div></td></tr>";
+			echo "</tbody></table>";
 
 			$latitude = $row["lat"];
 			$longitude = $row["lng"];

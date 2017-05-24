@@ -75,7 +75,7 @@ else {
 			
 			<div class="form-group"> <!-- Last Row -->
 				<div class="col-lg-4 col-lg-offset-2">
-					<button class="btn btn-primary" type="submit" name="submit">Open Case</button>
+					<button class="btn btn-primary" type="submit" name="submit">Submit</button>
 				</div>
 			</div> <!-- /Last Row -->
 			
