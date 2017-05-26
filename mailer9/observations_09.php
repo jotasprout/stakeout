@@ -68,7 +68,8 @@ else {
 					ON a.username = b.username
 				INNER JOIN cases4 c
 					ON a.caseID = c.caseID
-						WHERE b.status = 1 AND c.status = 1"; 				
+						WHERE b.status = 1 AND c.status = 1
+						 ORDER BY observeTime ASC"; 				
     // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
     // Start creating an HTML table and create header row

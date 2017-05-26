@@ -66,11 +66,11 @@ else {
     die('Rats! Could not connect: ' . mysqli_error());
   }
 // Create variable for query
-    $query = "SELECT * FROM cases4 ORDER BY cases4.startDate ASC";
+    $query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
 // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
 // Start creating an HTML table and create header row
-    echo "<table class='table table-striped table-hover'><thead><tr><th>Case</th></tr></thead><tbody>";
+    echo "<table class='table table-striped table-hover'><thead><tr><th>Case Name</th></tr></thead><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
