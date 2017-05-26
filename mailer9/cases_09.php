@@ -54,7 +54,7 @@ else {
 			
 			<!-- Panel Content --> 
 			
-			<a href="https://www.roxorsoxor.com/stakeout/insert_case_09.php" class="btn btn-primary">New Case</a>
+			<a href="https://www.roxorsoxor.com/stakeout/insert_case_09.php" class="btn btn-primary">Add Case</a>
 <?php
 // PHP code in a more secure location
     include("../../../php/landfill.php");
@@ -70,7 +70,7 @@ else {
 // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
 // Start creating an HTML table and create header row
-    echo "<table class='table table-striped table-hover'><tbody>";
+    echo "<table class='table table-striped table-hover'><thead><tr><th>Case</th></tr></thead><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";

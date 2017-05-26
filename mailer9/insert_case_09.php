@@ -42,6 +42,13 @@ else {
 	</div> <!-- /container-fluid -->   
 </nav> <!-- /navbar -->	
 	
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">New Case</h3>
+		</div>
+		<div class="panel-body"> 	
+	
 	<!-- This form uses code in handle_prez to insert input into the database -->
 	
 	<form class="form-horizontal" action="handle_case_09.php" method="post">
@@ -81,6 +88,9 @@ else {
 			
 		</fieldset>
 	</form>
+			 
+		</div> <!-- /panel-body -->
+	</div> <!-- /panel-primary -->	
 	
 </div> <!-- /container -->
 <script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>

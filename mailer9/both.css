@@ -1,1 +1,13 @@
-#lost {	display: block;	line-height: 44px;}#header h1.hide {    display: none;}
+#lost {
+	display: block;
+	line-height: 44px;
+}
+
+#header h1.hide {
+    display: none;
+}
+
+
+.panel-body > .row:nth-of-type(odd) {
+	background-color: #404040;
+}

@@ -27,22 +27,30 @@ else {
 <body>
 	<div class="container">
 		 
-<nav class='navbar navbar-default'>	
-	<div id='header' class='container-fluid'>		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1><?php 
-	if ($jefe == 1) {
-		echo $navbarJefe;
-	}
-	else {
-		echo $navbarGator;
-	}
-?>
-	
-	</div> <!-- /container-fluid -->   
-</nav> <!-- /navbar -->	
+		<nav class='navbar navbar-default'>	
+			<div id='header' class='container-fluid'>
+				<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<?php 
+			if ($jefe == 1) {
+				echo $navbarJefe;
+			}
+			else {
+				echo $navbarGator;
+			}
+		?>
+			
+			</div> <!-- /container-fluid -->   
+		</nav> <!-- /navbar -->	
+		
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">New Assignment</h3>
+			</div>
+			<div class="panel-body">
+
         <!-- This form uses code in handle_prez to insert input into the database -->
         <form class="form-horizontal" action="handle_assignment_09.php" method="post">
             <fieldset>
-            	<legend>Assign Investigator</legend>
 				<?php
 					// PHP code in a more secure location
 					include("../../../php/landfill.php");
@@ -96,6 +104,10 @@ else {
             </fieldset>
         </form>
 
+		</div> <!-- /panel-body -->
+	</div> <!-- /panel-primary -->
+
 	</div> <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+<script src='//roxorsoxor.com/stakeout/mobrules.js'></script>
+</body>
 </html>

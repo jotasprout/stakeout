@@ -48,7 +48,7 @@ else {
     <div class="panel-heading">
       <h3 class="panel-title">Assignments</h3>
     </div>
-    <div class="panel-body"> <!-- Panel Content --> <a href="insert_assignment_09.php" class="btn btn-primary">New Assignment</a>
+    <div class="panel-body"> <!-- Panel Content --> <a href="insert_assignment_09.php" class="btn btn-primary">Add Assignment</a>
       <?php
       // PHP code in a more secure location
 	  include("../../../php/landfill.php");

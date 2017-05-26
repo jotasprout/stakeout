@@ -66,7 +66,7 @@ else {
 		// if no error occured, continue ....
 		if(!isset($errMSG))
 		{
-			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observePic,lat,lng,caseID,action,pix) VALUES(:uname, :observation, :observePic, :lat, :lng, :caseID, :action, :pix)');
+			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observePic,lat,lng,caseID,action,pix, observeTime) VALUES(:uname, :observation, :observePic, :lat, :lng, :caseID, :action, :pix, UTC_TIMESTAMP())');
 			$stmt->bindParam(':uname',$username);
 			$stmt->bindParam(':observation',$observation);
 			$stmt->bindParam(':observePic',$observePic);
@@ -78,12 +78,11 @@ else {
 			
 			if($stmt->execute())
 			{
-				$successMSG = "new record succesfully inserted ...";
-				header("refresh:5;observations_09.php"); // redirects image view page after 5 seconds.
+				$successMSG = "New Observation succesfully inserted.";
 			}
 			else
 			{
-				$errMSG = "error while inserting....";
+				$errMSG = "Error while inserting. Sorry that's so vague.";
 			}
 		}
 	}
@@ -113,6 +112,13 @@ else {
 	</div> <!-- /container-fluid -->   
 </nav> <!-- /navbar -->	
 
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">New Observation</h3>
+	</div>
+	<div class="panel-body">
+
+
 <?php
 if(isset($errMSG)){
 ?>
@@ -132,18 +138,17 @@ else if(isset($successMSG)){
     	
 <form method="post" enctype="multipart/form-data" class="form-horizontal">
     <fieldset>
-        <legend>Observation Upload</legend>
 		<input type="hidden" name="txtlat" id="txtlat" required value="">
 		<input type="hidden" name="txtlng" id="txtlng" required value="">
-        
-		<div class="form-group"><!-- Row 1 -->
-            <!-- Column 1 -->
+        <input type="hidden" name="username" value="<?php echo $username; ?>" />
+		<!-- Row 1
+		<div class="form-group">
             <label class="col-lg-2 control-label" for="username">Username</label>
-            <!-- Column 2 -->
             <div class="col-lg-4">
-                <input class="form-control" type="text" name="username" placeholder="username" value="<?php echo $username; ?>" />
+                
             </div>
-        </div><!-- /Row 1 -->
+        </div>
+		-->
 
 			<?php
 				// PHP code in a more secure location
@@ -237,6 +242,9 @@ else if(isset($successMSG)){
             </div><!-- /Last Row -->
         </fieldset>
 	</form> 
+	
+		</div> <!-- /panel-body -->
+	</div> <!-- /panel-primary -->	
 	
 </div> <!-- /container -->
 

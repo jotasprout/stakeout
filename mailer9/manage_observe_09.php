@@ -80,14 +80,21 @@ else {
 		if($row){
 			// if there's a match, display data from db
 			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Case Name:</strong></div>";
+			echo "<div class='col-md-3'><strong>Case:</strong></div>";
 			echo "<div class='col-md-9'>" . $row["caseName"] . "</div>";
 			echo "</div>";
 
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Image Uploaded:</strong></div>";
-			echo "<div class='col-md-9'><a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a></div>";
-			echo "</div>";
+			echo "<div class='col-md-9'>";
+			
+			if($row["observePic"] == "") {
+				echo "None";
+			}
+			else {
+				echo "<a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a>";
+			}
+			echo "</div></div>";
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Action:</strong></div>";
@@ -117,18 +124,23 @@ else {
 			echo "</div>";
 			
 			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Date &amp; Time:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["observeTime"] . "</div>";
+			echo "<div class='col-md-3'><strong>Date:</strong></div>";
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
+			echo "<div class='col-md-9'>" . $formatted_date_long=date_format($ourTime, 'F jS, Y') . "</div>";
 			echo "</div>";
+			
+			echo "<div class='row'>";
+			echo "<div class='col-md-3'><strong>Time:</strong></div>";
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
+			echo "<div class='col-md-9'>" . $formatted_date_long=date_format($ourTime, 'g:i a') . "</div>";
+			echo "</div>";			
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Location:</strong></div>";
 			echo "<div class='col-md-9'><div id='map'></div></div>";
-			echo "</div>";
-
-			echo "<div class='col-md-3'><strong>Case Name:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["caseName"] . "</div>";
-			echo "</div>";																				
+			echo "</div>";																			
 
 			$latitude = $row["lat"];
 			$longitude = $row["lng"];

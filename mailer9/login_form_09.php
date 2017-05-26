@@ -25,14 +25,15 @@ if(isset($_POST['submit'])) {
 ?>
 
 <!doctype html>
-
 <html>
+
 <head>
-<meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
-<meta charset="utf-8">
-<title>Stakeout | Login</title>
-<?php echo $stylesAndSuch; ?>
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta charset="UTF-8">
+	<title>Stakeout | Login</title>
+	<?php echo $stylesAndSuch; ?>
 </head>
 
 <body>
@@ -80,19 +81,15 @@ if(isset($_POST['submit'])) {
 					<input class="form-control" type="password" name="password" placeholder="password"/>
                     <div id="lost"><a href="fpass.php">Lost your password?</a></div>
 				</div>
-			</div>
-			<!-- /Row 3 -->
+			</div> <!-- /Row 3 -->
 			
 			<div class="form-group"><!-- Last Row -->
 				<div class="col-lg-4 col-lg-offset-2">
 					<button class="btn btn-primary" type="submit" name="submit">Log In</button>
-				</div>
-                
-			</div>
-			<!-- /Last Row -->
+				</div>  
+			</div> <!-- /Last Row -->
 			
 		</fieldset>
-        
 	</form>
 	
 </div> <!-- /container -->

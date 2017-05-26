@@ -58,7 +58,7 @@ else {
 			
 			<!-- Panel Content --> 
 			
-			<a href="insert_gator_09.php" class="btn btn-primary">New Investigator</a>
+			<a href="insert_gator_09.php" class="btn btn-primary">Add Investigator</a>
 
 <?php
 

@@ -82,14 +82,18 @@ if(isset($_POST['submit'])) {
 	else {
 		echo $navbarGator;
 	}
-?>
-	
+?>	
 	</div> <!-- /container-fluid -->   
 </nav> <!-- /navbar -->	
 
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">New Investigator</h3>
+		</div>
+		<div class="panel-body"> 
+
 		<form class="form-horizontal" method="post">
 			<fieldset>
-				<legend>Add Investigator</legend>
 				<div class="form-group"><!-- Row 1 -->
 					<!-- Column 1 -->
 					<label class="col-lg-2 control-label" for="forename">First Name</label>
@@ -132,7 +136,9 @@ if(isset($_POST['submit'])) {
 			</fieldset>
 		</form>
 
-	</div>
-	<!-- /container -->
+		</div> <!-- /panel-body -->
+	</div> <!-- /panel-primary -->
+
+	</div> <!-- /container -->
 <script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
 </html>

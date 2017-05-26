@@ -49,7 +49,7 @@ else {
 		<div class="panel-heading"><h3 class="panel-title">Observations</h3></div>
 			<div class="panel-body">
 				<!-- Panel Content -->
-                <a href="//www.roxorsoxor.com/stakeout/insert_observe_09.php" class="btn btn-primary">New Observation</a>
+                <a href="//www.roxorsoxor.com/stakeout/insert_observe_09.php" class="btn btn-primary">Add Observation</a>
 <?php
     // PHP code in a more secure location
     include("../../../php/landfill.php");
@@ -73,14 +73,18 @@ else {
 	$result = $connekt->query($query);
     // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>Case Name</th><th>User</th><th>Observation</th><th>Time Stamp</th></tr></thead><tbody>";
+    echo "<thead><tr><th>Case</th><th>Investigator</th><th>Observation</th><th>Date</th></tr></thead><tbody>";
     // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
 		echo "<td>" . $row["caseName"] . "</td>";
 		echo "<td>" . $row['forename'] . " " . $row['surname'] . "</td>";
         echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $row["observation"] . "</a></td>";
-        echo "<td>" . $row["observeTime"] . "</td>";
+		
+		$ourTime = new DateTime($row["observeTime"] ." UTC");
+		$ourTime ->setTimezone(new DateTimeZone('America/New_York'));
+		
+        echo "<td>" . $formatted_date_long=date_format($ourTime, 'm-d-y') . "</td>";
         echo "</tr>";
     }
     // Finish creating HTML table
