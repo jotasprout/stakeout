@@ -262,7 +262,7 @@ td,  th {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-	background-color: #404040;
+	background-color: ##353a41;
 }
 
 table {

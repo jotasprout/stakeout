@@ -119,14 +119,13 @@ else {
 </nav> <!-- /navbar -->	
 
 <div class="panel panel-primary">
-	<div class="panel-heading"><h3 class="panel-title">Manage Observation</h3></div>
+	<div class="panel-heading"><h3 class="panel-title">Manage Case</h3></div>
 		<div class="panel-body">
 		<!-- Panel Content -->
 		<p>*Required</p>
         <form class="form-horizontal" action="" method="post">
         	<input type="hidden" name="caseID" value="<?php echo $caseID; ?>"/>
             <fieldset>
-            	<legend>Case Management</legend>
                 <div class="form-group"> <!-- Row 1 -->
                     <!-- Column 1 -->
                     <label class="col-lg-2 control-label" for="caseNum">Case Number*</label>
@@ -148,7 +147,7 @@ else {
                     <label class="col-lg-2 control-label" for="startDate">Start Date*</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
-                        <input class="form-control" type="text" name="startDate" value="<?php echo $startDate; ?>" />
+                        <input class="form-control" type="date" name="startDate" value="<?php echo $startDate; ?>" />
                     </div>
                 </div><!-- /Row 3 -->
                 <div class="form-group"> <!-- Row 4 -->
@@ -156,7 +155,7 @@ else {
                     <label class="col-lg-2 control-label" for="endDate">End Date</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
-                        <input class="form-control" type="text" name="endDate" value="<?php echo $endDate; ?>" />
+                        <input class="form-control" type="date" name="endDate" placeholder="YYYY-MM-DD" value="<?php echo $endDate; ?>" />
                     </div>
                 </div><!-- /Row 4 -->
                 <div class="form-group"> <!-- Row 5 -->
@@ -164,7 +163,7 @@ else {
                     <label class="col-lg-2 control-label" for="deliveryDate">Delivery Date</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
-                        <input class="form-control" type="text" name="deliveryDate" value="<?php echo $deliveryDate; ?>" />
+                        <input class="form-control" type="date" name="deliveryDate"  placeholder="YYYY-MM-DD" value="<?php echo $deliveryDate; ?>" />
                     </div>
                 </div><!-- /Row 5 -->
                 <div class="form-group"> <!-- Last Row -->
@@ -174,9 +173,10 @@ else {
                 </div><!-- /Last Row -->
             </fieldset>
         </form>
+		
+<div class="well">
+		
  <?php
-	// Should this only appear for Admin?
-	// Should this instead list observations for gators?
 	// PHP code in a more secure location
 	include("../../../php/landfill.php");
 	// Start creating an HTML table for Assigned Cases and create header row
@@ -207,6 +207,52 @@ else {
 	// When attempt is complete, connection closes
     mysqli_close($connekt);
 ?>
+
+</div> <!-- /well -->
+
+<?php
+    // PHP code in a more secure location
+    include("../../../php/landfill.php");
+    //Uses PHP code to connect to database
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+    // Connection test and feedback
+  if (!$connekt)
+  {
+    die('Rats! Could not connect: ' . mysqli_error());
+  }
+    $caseID = $_GET['id'];
+	// Create variable for query
+	$query = "
+		SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, a.username, b.forename, b.surname, a.action 
+			FROM observations4 a
+				INNER JOIN user_creds4 b
+					ON a.username = b.username
+				INNER JOIN cases4 c
+					ON a.caseID = c.caseID
+						WHERE a.caseID = '$caseID'"; 				
+    // Use variable with MySQL command to grab info from database
+	$result = $connekt->query($query);
+    // Start creating an HTML table and create header row
+    echo "<table class='table table-striped table-hover'>";
+    echo "<thead><tr><th>Investigator</th><th>Observation</th><th>Date</th></tr></thead><tbody>";
+    // Create a row in HTML table for each row from database
+    while ($row = mysqli_fetch_array($result)) {
+        echo "<tr>";
+		echo "<td>" . $row['forename'] . " " . $row['surname'] . "</td>";
+        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $row["observation"] . "</a></td>";
+		
+		$ourTime = new DateTime($row["observeTime"] ." UTC");
+		$ourTime ->setTimezone(new DateTimeZone('America/New_York'));
+		
+        echo "<td>" . $formatted_date_long=date_format($ourTime, 'm-d-y') . "</td>";
+        echo "</tr>";
+    }
+    // Finish creating HTML table
+    echo "</tbody></table>";
+    // When attempt is complete, connection closes
+    mysqli_close($connekt);
+?>
+
 		</div> <!-- /panel-body -->
 	</div> <!-- /panel -->
 </div> <!-- /container -->

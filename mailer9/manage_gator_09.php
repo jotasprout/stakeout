@@ -188,6 +188,8 @@ if ($connekt->connect_error) die($connekt->connect_error);
 		</fieldset>
 	</form>
     
+<div class="well">	
+	
 	<?php
 	// this lists the cases assigned to this user
 	// PHP code in a more secure location
@@ -221,6 +223,9 @@ if ($connekt->connect_error) die($connekt->connect_error);
 	// When attempt is complete, connection closes
     mysqli_close($connekt);
 ?>
+
+</div> <!-- /well -->
+
 	</div> <!-- /panel-body -->
 </div> <!-- /panel -->
 	
