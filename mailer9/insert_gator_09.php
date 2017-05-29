@@ -46,8 +46,8 @@ if(isset($_POST['submit'])) {
 			$user->send_mail($email,$message,$subject);
 			$msg = "<div class='alert alert-success'>
 						<button class='close' data-dismiss='alert'>&times;</button>
-						<strong>You're almost there!</strong> We've sent an email to $email.
-                    Click the link in the email to verify your account.</div>";
+						<strong>Almost there!</strong> We've sent an email to $email.
+                    They must click the link in the email to verify their account and create a password.</div>";
 		}
 		else {
 			// echo "Crap. Query not executed.";

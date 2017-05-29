@@ -70,13 +70,13 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
   }
     // Create variable for query
 	$query = "
-		SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.status, a.action 
+		SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
 			FROM observations4 a
 				INNER JOIN user_creds4 b
 					ON a.username = b.username
 				INNER JOIN cases4 c
 					ON a.caseID = c.caseID
-						WHERE b.status = 1 AND c.status = 1
+						WHERE b.userStatus = 'Y' AND c.status = 1
 						 ORDER BY observeTime ASC"; 				
     // Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);

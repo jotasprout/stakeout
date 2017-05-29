@@ -86,7 +86,7 @@ else {
 	// Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
 
-		if ($row["status"] == 1) {
+		if ($row["userStatus"] == "Y") {
 			$status = "active";
 		}
 
