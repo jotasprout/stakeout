@@ -91,6 +91,16 @@ else {
 			echo $error;
 		}
 	}
+	
+
+function truncomatic ($textytext, $endomatic, $linkylink) {
+	$temp = substr ($textytext, 0, $endomatic);
+	$lastThing = strrpos ($temp, " ");
+	$temp = substr($temp, 0, $lastThing);
+	$temp = preg_replace("/([^\w])$/", "", $temp);
+	return "$temp$linkylink";
+}
+	
 ?>
 
 <!DOCTYPE html>
@@ -238,8 +248,18 @@ else {
     // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
-		echo "<td>" . $row['forename'] . " " . $row['surname'] . "</td>";
-        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $row["observation"] . "</a></td>";
+		echo "<td>" . $row['surname'] . "</td>";
+
+		$thisObserve = $row["observation"];
+		$observeLength = strlen($thisObserve);
+		if ($oserveLength > 30) {
+			$observeX = truncomatic($thisObserve, 30, " ...");
+		}
+		else {
+			$observeX = $thisObserve;
+		}
+		
+        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $observeX . "</a></td>";
 		
 		$ourTime = new DateTime($row["observeTime"] ." UTC");
 		$ourTime ->setTimezone(new DateTimeZone('America/New_York'));

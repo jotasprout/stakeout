@@ -17,6 +17,14 @@ else {
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
 
+function truncomatic ($textytext, $endomatic, $linkylink) {
+	$temp = substr ($textytext, 0, $endomatic);
+	$lastThing = strrpos ($temp, " ");
+	$temp = substr($temp, 0, $lastThing);
+	$temp = preg_replace("/([^\w])$/", "", $temp);
+	return "$temp$linkylink";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,15 +87,26 @@ else {
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
 		echo "<td>" . $row["caseName"] . "</td>";
-		echo "<td>" . $row['forename'] . " " . $row['surname'] . "</td>";
-        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $row["observation"] . "</a></td>";
+		echo "<td>" . $row['surname'] . "</td>";
+		
+		$thisObserve = $row["observation"];
+		$observeLength = strlen($thisObserve);
+		if ($oserveLength > 30) {
+			$observeX = truncomatic($thisObserve, 30, " ...");
+		}
+		else {
+			$observeX = $thisObserve;
+		}
+		
+        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $observeX . "</a></td>";
 		
 		$ourTime = new DateTime($row["observeTime"] ." UTC");
 		$ourTime ->setTimezone(new DateTimeZone('America/New_York'));
-		
         echo "<td>" . $formatted_date_long=date_format($ourTime, 'm-d-y') . "</td>";
+		
         echo "</tr>";
     }
+	
     // Finish creating HTML table
     echo "</tbody></table>";
     // When attempt is complete, connection closes
