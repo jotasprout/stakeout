@@ -79,7 +79,7 @@ if(isset($_POST['submit'])) {
 				<label class="col-lg-2 control-label" for="password">Password</label>
 				<div class="col-lg-4">
 					<input class="form-control" type="password" name="password" placeholder="password"/>
-                    <div id="lost"><a href="fpass.php">Lost your password?</a></div>
+                    <div id="lost"><a href="fpass_09.php">Reset/Change Password</a></div>
 				</div>
 			</div> <!-- /Row 3 -->
 			

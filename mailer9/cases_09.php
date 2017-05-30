@@ -16,6 +16,7 @@ else {
 	$username = $_SESSION['username'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,8 +54,12 @@ else {
 		<div class="panel-body"> 
 			
 			<!-- Panel Content --> 
-			
-			<a href="https://www.roxorsoxor.com/stakeout/insert_case_09.php" class="btn btn-primary">Add Case</a>
+			<?php
+				if ($jefe == 1) {
+					echo "<a href='https://www.roxorsoxor.com/stakeout/insert_case_09.php' class='btn btn-primary'>Add Case</a>";
+				}
+			?>
+
 <?php
 // PHP code in a more secure location
     include("../../../php/landfill.php");
@@ -66,9 +71,27 @@ else {
     die('Rats! Could not connect: ' . mysqli_error());
   }
 // Create variable for query
-    $query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
+else {
+
+	if ($jefe == 1) {
+		// Admin sees all cases
+		$query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
+		$result = $connekt->query($query);
+	}
+	else {
+		// Gators only see cases assigned to them
+		$query = "
+		SELECT a.caseID, c.caseName, c.status, a.username 
+			FROM assignments4 a
+				INNER JOIN cases4 c
+					ON a.caseID = c.caseID
+						WHERE a.username = '$username' AND c.status = 1";
+		$result = $connekt->query($query);
+	}
+}
+    
 // Use variable with MySQL command to grab info from database
-	$result = $connekt->query($query);
+	// $result = $connekt->query($query);
 // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'><thead><tr><th>Case Name</th></tr></thead><tbody>";
  // Create a row in HTML table for each row from database

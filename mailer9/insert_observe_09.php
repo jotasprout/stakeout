@@ -78,7 +78,7 @@ else {
 			
 			if($stmt->execute())
 			{
-				$successMSG = "New Observation succesfully inserted.";
+				$successMSG = "Observation inserted.";
 			}
 			else
 			{

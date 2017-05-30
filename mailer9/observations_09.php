@@ -64,22 +64,41 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
     //Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
     // Connection test and feedback
-  if (!$connekt)
-  {
+  if (!$connekt) {
     die('Rats! Could not connect: ' . mysqli_error());
   }
-    // Create variable for query
-	$query = "
-		SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
-			FROM observations4 a
-				INNER JOIN user_creds4 b
-					ON a.username = b.username
-				INNER JOIN cases4 c
-					ON a.caseID = c.caseID
-						WHERE b.userStatus = 'Y' AND c.status = 1
-						 ORDER BY observeTime ASC"; 				
-    // Use variable with MySQL command to grab info from database
-	$result = $connekt->query($query);
+  else {
+		// Create variable for query
+		if ($jefe == 1) {
+			// Admin sees all observations
+			$query = "
+					SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
+						FROM observations4 a
+							INNER JOIN user_creds4 b
+								ON a.username = b.username
+							INNER JOIN cases4 c
+								ON a.caseID = c.caseID
+									WHERE b.userStatus = 'Y' AND c.status = 1
+									 ORDER BY a.observeTime ASC";
+			// Use variable with MySQL command to grab info from database
+			$result = $connekt->query($query);								 
+		}
+		else {
+			// Gators only see their observations
+			$query = "
+					SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
+						FROM observations4 a
+							INNER JOIN user_creds4 b
+								ON a.username = b.username
+							INNER JOIN cases4 c
+								ON a.caseID = c.caseID
+									WHERE a.username = '$username' AND c.status = 1
+									 ORDER BY a.observeTime ASC";		
+			// Use variable with MySQL command to grab info from database
+			$result = $connekt->query($query);								 
+		}
+  }
+
     // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
     echo "<thead><tr><th>Case</th><th>Investigator</th><th>Observation</th><th>Date</th></tr></thead><tbody>";
