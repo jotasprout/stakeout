@@ -129,7 +129,7 @@ if(isset($_POST['submit'])) {
 				</div><!-- /Row 5 -->
 				<div class="form-group"><!-- Last Row -->
 					<div class="col-lg-4 col-lg-offset-2">
-						<button class="btn btn-primary" type="submit" name="submit">Submit</button>
+						<button class="btn btn-primary" type="submit" name="submit">Add Investigator</button>
 					</div>
 				</div>
 				<!-- /Last Row -->

@@ -79,10 +79,7 @@ else {
 		// check that the 'id' matches up with a row in the databse
 		if($row){
 			// if there's a match, display data from db
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Case:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["caseName"] . "</div>";
-			echo "</div>";
+			echo "<div class='row'><strong>Case:</strong> " . $row["caseName"] . "</div>";
 
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Image Uploaded:</strong></div>";
@@ -96,15 +93,9 @@ else {
 			}
 			echo "</div></div>";
 			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Action:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["action"] . "</div>";
-			echo "</div>";
+			echo "<div class='row'><strong>Action:</strong> " . $row["action"] . "</div>";
 			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Investigator:</strong></div>";
-			echo "<div class='col-md-9'>" . $row['forename'] . " " . $row['surname'] . "</div>";
-			echo "</div>";	
+			echo "<div class='row'><strong>Investigator:</strong> " . $row['forename'] . " " . $row['surname'] . "</div>";
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Description:</strong></div>";
@@ -118,24 +109,15 @@ else {
 				$available = "No";
 			}			
 			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Photos Available:</strong></div>";
-			echo "<div class='col-md-9'>" . $available . "</div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Date:</strong></div>";
+			echo "<div class='row'><strong>Photos Available:</strong> " . $available . "</div>";
+
 			$ourTime = new DateTime($row["observeTime"] ." UTC");
 			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='col-md-9'>" . $formatted_date_long=date_format($ourTime, 'F jS, Y') . "</div>";
-			echo "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Time:</strong></div>";
+			echo "<div class='row'><strong>Date:</strong> " . $formatted_date_long=date_format($ourTime, 'F jS, Y') . "</div>";
+
 			$ourTime = new DateTime($row["observeTime"] ." UTC");
 			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='col-md-9'>" . $formatted_date_long=date_format($ourTime, 'g:i a') . "</div>";
-			echo "</div>";			
+			echo "<div class='row'><strong>Time:</strong> " . $formatted_date_long=date_format($ourTime, 'g:i a') . "</div>";		
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Location:</strong></div>";

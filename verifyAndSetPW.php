@@ -111,7 +111,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
                 <label class="col-lg-2 control-label" for="pass">Type password</label>
                 <!-- Column 2 -->
                 <div class="col-lg-4">
-                    <input type="password" class="input-block-level" placeholder="password" name="pass" required />
+                    <input type="password" class="form-control" placeholder="Type your password" name="pass" required />
                 </div>
         	</div><!-- /Row 1 -->
             
@@ -120,7 +120,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
                 <label class="col-lg-2 control-label" for="confirm-pass">Type it again</label>
                 <!-- Column 2 -->
                 <div class="col-lg-4">
-                    <input type="password" class="input-block-level" placeholder="password" name="confirm-pass" required />
+                    <input type="password" class="form-control" placeholder="Type it again" name="confirm-pass" required />
                 </div>
         	</div><!-- /Row 2 -->
             
