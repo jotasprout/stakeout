@@ -46,7 +46,7 @@ if(isset($_POST['submit'])) {
 		if(isset($_GET['inactive'])) {
 	?>
     
-	<div class='alert alert-error'><button class='close' data-dismiss='alert'>&times;</button>This account is not activated. Go to your inbox and activate it.</div>
+	<div class='alert alert-error'>This account is not activated. Go to your inbox and activate it.</div>
     
 	<?php
 	}
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])) {
         if(isset($_GET['error'])) {
 		?>
         
-		<div class='alert alert-success'><button class='close' data-dismiss='alert'>&times;</button><strong>Wrong Details!</strong> </div>
+		<div class='alert alert-success'><strong>Wrong Details!</strong> </div>
 		
 		<?php
 		}

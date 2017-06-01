@@ -37,7 +37,6 @@ if(isset($_POST['btn-submit']))
 		$subject = "Password Reset";
 		$user->send_mail($email,$message,$subject);
 		$msg = "<div class='alert alert-success'>
-					<button class='close' data-dismiss='alert'>&times;</button>
 					We've sent an email to $email.
                     Click the link in the email to reset your password.
 			  	</div>";
@@ -97,7 +96,7 @@ if(isset($_POST['btn-submit']))
 			
 			<div class="form-group"><!-- Last Row -->
 				<div class="col-lg-4 col-lg-offset-2">
-					<button class="btn btn-danger btn-primary" type="submit" name="btn-submit">Reset Password</button>
+					<button class="btn btn-danger btn-primary" type="submit" name="btn-submit">Send Reset Email</button>
 				</div>  
 			</div> <!-- /Last Row -->
 

@@ -27,6 +27,7 @@ nav {
 	width: 100%;
 }
 
+
 .form-group {
 	margin-top: 10px;
 }
@@ -392,4 +393,17 @@ textarea.form-control {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.alert-success {
+	background-color: #62c462;
+	border-color: #62bd4f;
+	color: #ffffff;
 }

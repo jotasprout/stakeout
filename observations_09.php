@@ -101,7 +101,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 
     // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>Case</th><th>Investigator</th><th>Observation</th><th>Date</th></tr></thead><tbody>";
+    echo "<thead><tr><th>Case</th><th>Investigator</th><th>Description</th><th>Date</th></tr></thead><tbody>";
     // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";

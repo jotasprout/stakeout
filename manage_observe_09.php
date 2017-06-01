@@ -92,7 +92,7 @@ else {
 				echo "None";
 			}
 			else {
-				echo "<a href='observe_pix/" . $row["observePic"] . "'><img src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a>";
+				echo "<a href='observe_pix/" . $row["observePic"] . "'><img class='img-thumb' src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a>";
 			}
 			echo "</div></div>";
 			
@@ -107,7 +107,7 @@ else {
 			echo "</div>";	
 			
 			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Observation:</strong></div>";
+			echo "<div class='col-md-3'><strong>Description:</strong></div>";
 			echo "<div class='col-md-9'>" . $row["observation"] . "</div>";
 			echo "</div>";
 			
@@ -139,7 +139,7 @@ else {
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Location:</strong></div>";
-			echo "<div class='col-md-9'><div id='map'></div></div>";
+			echo "<div class='col-md-9'><div id='map' class='allThumbs'></div></div>";
 			echo "</div>";																			
 
 			$latitude = $row["lat"];

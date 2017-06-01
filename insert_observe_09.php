@@ -214,7 +214,7 @@ else if(isset($successMSG)){
 			</div>
             
 			<div class='form-group'> <!-- Row 4 -->
-				<label class='col-lg-2 control-label' for='observation'>Observation</label>
+				<label class='col-lg-2 control-label' for='observation'>Description</label>
                 <div class='col-lg-4'>
 					<textarea class="form-control" name="observation" placeholder="Observation" value="<?php echo $observation; ?>" /></textarea>
                 </div>

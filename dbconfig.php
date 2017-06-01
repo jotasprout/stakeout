@@ -3,8 +3,8 @@
 class Database {
     private $host = "localhost";
     private $db_name = "jscript_stakeout";
-    private $username = "jscript_jota";
-    private $password = "We2CanFly!";
+    private $username = "jscript_soadmin";
+    private $password = "F3@5tY0ur3yez!";
     public $conn;
     public function dbConnection() {
 	    $this->conn = null;    

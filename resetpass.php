@@ -85,19 +85,25 @@ if(isset($_GET['id']) && isset($_GET['code']))
     	<div class='alert alert-success'>
 			<strong>Hello there,</strong> <?php echo $rows['username'] ?>! So far, so good. Enter your new password.
 		</div>
-        <form class="form-signin" method="post">
-        <h3 class="form-signin-heading">Password Changing Station</h3><hr />
+        <form class="form-horizontal" method="post">
+        <legend>Password Changing Station</legend>
         <?php
         if(isset($msg))
 		{
 			echo $msg;
 		}
 		?>
-        <input type="password" class="input-block-level" placeholder="Type your new password" name="pass" required />
-        <input type="password" class="input-block-level" placeholder="Type it again" name="confirm-pass" required />
-     	<hr />
+		<fieldset>
+		<div class="form-group">
+        <input type="password" class="form-control" placeholder="Type your new password" name="pass" required />
+		</div>
+		<div class="form-group">
+        <input type="password" class="form-control" placeholder="Type it again" name="confirm-pass" required />
+     	</div>
+		<div class="form-group">
         <button class="btn btn-large btn-primary" type="submit" name="btn-reset-pass">Make it so</button>
-        
+        </div>
+		</fieldset>
       </form>
     </div> <!-- /container -->
   <script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>

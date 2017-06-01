@@ -66,8 +66,7 @@ else {
 //Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 // Connection test and feedback
-  if (!$connekt)
-  {
+  if (!$connekt) {
     die('Rats! Could not connect: ' . mysqli_error());
   }
 // Create variable for query
@@ -93,7 +92,7 @@ else {
 // Use variable with MySQL command to grab info from database
 	// $result = $connekt->query($query);
 // Start creating an HTML table and create header row
-    echo "<table class='table table-striped table-hover'><thead><tr><th>Case Name</th></tr></thead><tbody>";
+    echo "<table class='table table-striped table-hover'><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
