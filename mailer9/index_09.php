@@ -71,7 +71,7 @@ $result = $connekt->query($query);
 	
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Home: User Profile</h3>
+    <h3 class="panel-title">Home</h3>
   </div>
   <div class="panel-body">
     <p><strong>Email:</strong> <?php echo $email; ?></p>
@@ -96,7 +96,7 @@ $result = $connekt->query($query);
   $result = $connekt->query($query);
   // Start creating an HTML table and create header row
   echo "<table class='table table-striped table-hover'>";
-  echo "<thead><tr><th>Assigned Cases</th></tr></thead><tbody>";
+  echo "<thead><tr><th>Assignments</th></tr></thead><tbody>";
   // Create a row in HTML table for each row from database 
   while ($row = mysqli_fetch_array($result)) {	 
 	  echo "<tr>";	 

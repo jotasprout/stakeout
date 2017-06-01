@@ -26,9 +26,9 @@ if(isset($_POST['btn-submit']))
 		$stmt->execute(array(":token"=>$code,"email"=>$email));
 		$message= "Hello $email,
 				   <br /><br />
-				   Someone requested this email to reset your password.
-				   If it was you, click the link and reset your password.
-				   If it wasn't you, someone is up to no good.
+				   Someone requested this email to reset your password.<br/>
+				   If it was you, click the link and reset your password.<br/>
+				   If it wasn't you, someone is up to no good.<br/>
 				   <br /><br />
 				   <a href='https://www.roxorsoxor.com/stakeout/resetpass.php?id=$id&code=$code'>Click here to reset your password</a>.
 				   <br /><br />
