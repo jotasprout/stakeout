@@ -1,0 +1,1 @@
+[13-Mar-2017 18:02:23 America/Detroit] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'jscript_jota'@'localhost' to database 'stakeout' in /home/jscript/public_html/roxorsoxor/nixon/setupusers.php on line 3
