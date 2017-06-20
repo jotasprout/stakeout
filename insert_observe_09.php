@@ -43,7 +43,7 @@ else {
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
 		
 			// valid image extensions
-			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'm4a', 'mp3'); // valid extensions
 		
 			// rename uploading image
 			$observePic = rand(1000,1000000).".".$imgExt;
@@ -59,7 +59,7 @@ else {
 				}
 			}
 			else{
-				$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";		
+				$errMSG = "Sorry, only JPG, JPEG, PNG, GIF, M4A, and MP3 files are allowed.";		
 			}
 		}
 			
@@ -231,7 +231,7 @@ else if(isset($successMSG)){
 			<div class='form-group'> <!-- Row 6 -->
 				<label class='col-lg-2 control-label' for='observeImage'>Photo</label>
 				<div class='col-lg-4'>
-                	<input class="input-group" type="file" name="observeImage" accept="image/*" />
+                	<input class="input-group" type="file" name="observeImage" accept="image/jpeg,image/jpg,image/png,image/gif,audio/mp3,audio/m4a" />
                 </div>
 			</div>
             
