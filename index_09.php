@@ -109,7 +109,10 @@ $result = $connekt->query($query);
   // When attempt is complete, connection closes
   mysqli_close($connekt);
 ?>	
-  </div>
+
+<p align="center"><a href="userGuide_beta_0-2.pdf">Download latest User Guide (PDF)</a></p>
+
+  </div> <!-- /panel-body -->
 </div>
 	
 </div> <!-- /container -->

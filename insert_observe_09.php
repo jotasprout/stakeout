@@ -229,7 +229,7 @@ else if(isset($successMSG)){
 			</div>
             
 			<div class='form-group'> <!-- Row 6 -->
-				<label class='col-lg-2 control-label' for='observeImage'>Photo</label>
+				<label class='col-lg-2 control-label' for='observeImage'>Upload Asset</label>
 				<div class='col-lg-4'>
                 	<input class="input-group" type="file" name="observeImage" accept="image/jpeg,image/jpg,image/png,image/gif,audio/mp3,audio/m4a" />
                 </div>

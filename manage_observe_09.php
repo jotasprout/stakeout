@@ -82,7 +82,7 @@ else {
 			echo "<div class='row'><strong>Case:</strong> " . $row["caseName"] . "</div>";
 
 			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Image Uploaded:</strong></div>";
+			echo "<div class='col-md-3'><strong>Uploaded Asset:</strong></div>";
 			echo "<div class='col-md-9'>";
 			
 			if($row["observePic"] == "") {
