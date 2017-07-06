@@ -163,7 +163,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 				<label class="col-lg-2 control-label" for="username">Username</label>
 				<!-- Column 2 -->
 				<div class="col-lg-4">
-					<input class="form-control" type="text" name="username" value="<?php echo $username; ?>" />
+					<input class="form-control" type="text" name="username" value="<?php echo $username; ?>" readonly/>
 				</div>
 			</div>
 			<!-- /Row 3 -->
