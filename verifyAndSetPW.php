@@ -4,7 +4,7 @@ require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();
 if(empty($_GET['id']) && empty($_GET['code'])) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 if(isset($_GET['id']) && isset($_GET['code'])) {
 	$id = base64_decode($_GET['id']);
@@ -24,7 +24,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 		if($row['userStatus']==$statusY) {
 			$msg = "<div class='alert alert-error'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>What are you doing here?</strong> Your account is already activated: <a href='login_form_09.php'>Login here</a>.</div>";			
+					  <strong>What are you doing here?</strong> Your account is already activated: <a href='login_form.php'>Login here</a>.</div>";			
 		}
 		// if user is NOT already active
 		else {
@@ -55,7 +55,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 					$msg = "<div class='alert alert-success'>
 							<button class='close' data-dismiss='alert'>&times;</button>
 							Password set. Good job.<br>You'll be automatically redirected to your home page.</div>";
-					header("refresh:5;index_09.php");
+					header("refresh:5;index.php");
 				}
 			}				
 		}		
@@ -78,7 +78,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
     <div class="container">
 		<nav class='navbar navbar-default'>	
 			<div id='header' class='container-fluid'>		
-				<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+				<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 
 <?php 
 	if ($jefe == 1) {

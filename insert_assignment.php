@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -29,7 +29,7 @@ else {
 		 
 		<nav class='navbar navbar-default'>	
 			<div id='header' class='container-fluid'>
-				<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+				<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 		<?php 
 			if ($jefe == 1) {
 				echo $navbarJefe;
@@ -49,7 +49,7 @@ else {
 			<div class="panel-body">
 
         <!-- This form uses code in handle_prez to insert input into the database -->
-        <form class="form-horizontal" action="handle_assignment_09.php" method="post">
+        <form class="form-horizontal" action="handle_assignment.php" method="post">
             <fieldset>
 				<?php
 					// PHP code in a more secure location
@@ -98,7 +98,7 @@ else {
 				?>
                 <div class="form-group"> <!-- Last Row -->
                     <div class="col-lg-4 col-lg-offset-2">
-                        <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Assign</button>
                     </div>
                 </div><!-- /Last Row -->
             </fieldset>

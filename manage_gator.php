@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -61,7 +61,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 				{
 					// if update worked, go to list of investigators
 					// do I want to change that to something AJAXy?
-					header("Location: gators_09.php");
+					header("Location: gators.php");
 				}
 			}
 		}
@@ -113,7 +113,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 <div class="container">
 <nav class='navbar navbar-default'>	
 	<div id='header' class='container-fluid'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 		<?php 
 			if ($jefe == 1) {
 				echo $navbarJefe;

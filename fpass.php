@@ -6,7 +6,7 @@ require_once 'stylesAndSuch.php';
 $user = new USER();
 
 if($user->areTheyLoggedIn()!="") {
-	$user->redirect('index_09.php');
+	$user->redirect('index.php');
 }
 else {
 	echo "<script>console.log('Nobody is logged in.')</script>";
@@ -63,7 +63,7 @@ if(isset($_POST['btn-submit']))
   <body>
     <div class="container">
 	<div id='header'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 	</div> <!-- /container -->
 	
    

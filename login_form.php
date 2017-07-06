@@ -8,7 +8,7 @@ require_once 'stylesAndSuch.php';
 $user = new USER();
 
 if($user->areTheyLoggedIn()!="") {
-	$user->redirect('index_09.php');
+	$user->redirect('index.php');
 }
 else {
 	echo "<script>console.log('Nobody is logged in.')</script>";
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
 	$email = trim($_POST['email']);
 	$upass = trim($_POST['password']);
 	if($user->login($email,$upass)) {
-		$user->redirect('index_09.php');
+		$user->redirect('index.php');
 	}
 }
 
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])) {
 <body>
 <div class="container">
 	<div id='header'>
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
     </div>
 	
 	<?php 
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])) {
 				<label class="col-lg-2 control-label" for="password">Password</label>
 				<div class="col-lg-4">
 					<input class="form-control" type="password" name="password" placeholder="password"/>
-                    <div id="lost"><a href="fpass_09.php">Reset/Change Password</a></div>
+                    <div id="lost"><a href="fpass.php">Reset/Change Password</a></div>
 				</div>
 			</div> <!-- /Row 3 -->
 			

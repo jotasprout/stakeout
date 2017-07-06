@@ -28,7 +28,7 @@
 			die('Crap. Could not assign the investigator to the case: ' . mysqli_error());
 		}
 		else {
-			header("location:assignments_09.php");
+			header("location:assignments.php");
 		}
 
 		// When attempt is complete, connection closes

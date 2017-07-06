@@ -19,7 +19,7 @@ class OBSERVATION {
 			
 			if($stmt->execute()) {
 				$successMSG = "new record succesfully inserted ...";
-				header("refresh:5;observations_09.php"); // redirects image view page after 5 seconds.
+				header("refresh:5;observations.php"); // redirects image view page after 5 seconds.
 			}
 			else {
 				$errMSG = "error while inserting....";

@@ -8,7 +8,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -35,7 +35,7 @@ else {
 <div class="container">
 <nav class='navbar navbar-default'>	
 	<div id='header' class='container-fluid'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 <?php 
 	if ($jefe == 1) {
 		echo $navbarJefe;
@@ -58,7 +58,7 @@ else {
 			
 			<!-- Panel Content --> 
 			
-			<a href="insert_gator_09.php" class="btn btn-primary">Add Investigator</a>
+			<a href="insert_gator.php" class="btn btn-primary">Add Investigator</a>
 
 <?php
 
@@ -95,7 +95,7 @@ else {
 		}
 
         echo "<tr>";
-		echo "<td><a href='manage_gator_09.php?id=" . $row["id"] . "'>" . $row['forename'] . " " . $row['surname'] . "</a></td>";
+		echo "<td><a href='manage_gator.php?id=" . $row["id"] . "'>" . $row['forename'] . " " . $row['surname'] . "</a></td>";
         echo "<td>" . $status . "</td>";
         echo "<td>" . $row["username"] . "</td>";
 		echo "<td>" . $row["email"] . "</td>";

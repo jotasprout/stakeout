@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -51,7 +51,7 @@ else {
 				else
 				{
 				// after save, go to view page
-				header("Location: cases_09.php");
+				header("Location: cases.php");
 				}
 			}
 		}
@@ -115,7 +115,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
              
 <nav class='navbar navbar-default'>	
 	<div id='header' class='container-fluid'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 		<?php 
 			if ($jefe == 1) {
 				echo $navbarJefe;
@@ -259,7 +259,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 			$observeX = $thisObserve;
 		}
 		
-        echo "<td><a href='manage_observe_09.php?id=" . $row['observeID'] . "'>" . $observeX . "</a></td>";
+        echo "<td><a href='manage_observe.php?id=" . $row['observeID'] . "'>" . $observeX . "</a></td>";
 		
 		$ourTime = new DateTime($row["observeTime"] ." UTC");
 		$ourTime ->setTimezone(new DateTimeZone('America/New_York'));

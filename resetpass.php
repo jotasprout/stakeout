@@ -7,7 +7,7 @@ $user = new USER();
 
 if(empty($_GET['id']) && empty($_GET['code']))
 {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 
 if(isset($_GET['id']) && isset($_GET['code']))
@@ -43,7 +43,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 						<button class='close' data-dismiss='alert'>&times;</button>
 						Password changed. Good job. You'll be redirected home in 5 seconds.
 						</div>";
-				header("refresh:5;index_09.php");
+				header("refresh:5;index.php");
 			}
 		}	
 	}
@@ -70,7 +70,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
     <div class="container">
 <nav class='navbar navbar-default'>	
 	<div id='header' class='container-fluid'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 <?php 
 	if ($jefe == 1) {
 		echo $navbarJefe;

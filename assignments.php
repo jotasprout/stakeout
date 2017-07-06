@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form_09.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -30,7 +30,7 @@ else {
 
 <nav class='navbar navbar-default'>	
 	<div id='header' class='container-fluid'>		
-		<h1 class="hide"><a href="index_09.php">Stakeout</a></h1>
+		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 <?php 
 	if ($jefe == 1) {
 		echo $navbarJefe;
@@ -48,7 +48,7 @@ else {
     <div class="panel-heading">
       <h3 class="panel-title">Assignments</h3>
     </div>
-    <div class="panel-body"> <!-- Panel Content --> <a href="insert_assignment_09.php" class="btn btn-primary">Add Assignment</a>
+    <div class="panel-body"> <!-- Panel Content --> <a href="insert_assignment.php" class="btn btn-primary">Add Assignment</a>
       <?php
       // PHP code in a more secure location
 	  include("../../../php/landfill.php");
