@@ -163,7 +163,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
                     <label class="col-lg-2 control-label" for="startDate">Start Date*</label>
                     <!-- Column 2 -->
                     <div class="col-lg-4">
-                        <input class="form-control" type="date" name="startDate" value="<?php echo $startDate; ?>" />
+                        <input class="form-control" type="date" name="startDate" value="<?php echo $startDate; ?>" readonly/>
                     </div>
                 </div><!-- /Row 3 -->
                 <div class="form-group"> <!-- Row 4 -->

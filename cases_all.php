@@ -8,14 +8,6 @@ $user = new USER();
 if(!$user->areTheyLoggedIn()) {
 	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
-else {
-	$jefe = $_SESSION['jefe'];
-	if ($jefe == 1) {
-		echo "<script>console.log('You are an admin.')</script>";
-	}	
-	$username = $_SESSION['username'];
-	echo "<script>console.log('" . $username . " is logged in.')</script>";
-}
 
 ?>
 <!DOCTYPE html>
@@ -34,12 +26,7 @@ else {
 		<h1 class="hide"><a href="index.php">Stakeout</a></h1>
 		
 <?php 
-	if ($jefe == 1) {
-		echo $navbarJefe;
-	}
-	else {
-		echo $navbarGator;
-	}
+	echo $navbarJefe;
 ?>
 	
 	</div> <!-- /container-fluid -->   
@@ -55,10 +42,8 @@ else {
 			
 			<!-- Panel Content --> 
 			<?php
-				if ($jefe == 1) {
-					echo "<a href='https://www.roxorsoxor.com/stakeout/insert_case.php' class='btn btn-primary'>Add Case</a>";
-					echo "<a href='https://www.roxorsoxor.com/stakeout/cases_all.php' class='btn btn-primary'>Show All</a>";
-				}
+				echo "<a href='https://www.roxorsoxor.com/stakeout/insert_case.php' class='btn btn-primary'>Add Case</a>";
+				echo "<a href='https://www.roxorsoxor.com/stakeout/cases.php' class='btn btn-primary active' aria-pressed='true'>Show All</a>";
 			?>
 
 <?php
@@ -73,32 +58,25 @@ else {
 // Create variable for query
 else {
 
-	if ($jefe == 1) {
-		// Admin sees all cases
-		$query = "SELECT * FROM cases4 WHERE status=1 ORDER BY cases4.caseName ASC";
-		$result = $connekt->query($query);
-	}
-	else {
-		// Gators only see cases assigned to them
-		$query = "
-		SELECT a.caseID, c.caseName, c.status, a.username 
-			FROM assignments4 a
-				INNER JOIN cases4 c
-					ON a.caseID = c.caseID
-						WHERE a.username = '$username' AND c.status = 1";
-		$result = $connekt->query($query);
-	}
+	$query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
+	$result = $connekt->query($query);
 }
-    
+
 // Use variable with MySQL command to grab info from database
 	// $result = $connekt->query($query);
 // Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-	echo "<thead><tr><th>Case Name</th></tr></thead><tbody>";
+	echo "<thead><tr><th>Case Name</th><th>Status</th></tr></thead><tbody>";
  // Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
+		if ($row["status"] == 1) {
+			$caseStatus = "Open";
+		}
+		else {
+			$caseStatus = "Closed";
+		}
         echo "<tr>";
-        echo "<td><a href='manage_case.php?id=" . $row["caseID"] . "'>" . $row["caseName"] . "</a></td><td>";
+        echo "<td><a href='manage_case.php?id=" . $row["caseID"] . "'>" . $row["caseName"] . "</a></td><td>" . $caseStatus . "</td>";
         echo "</tr>";
     }
 // Finish creating HTML table
