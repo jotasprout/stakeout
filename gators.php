@@ -59,6 +59,7 @@ else {
 			<!-- Panel Content --> 
 			
 			<a href="insert_gator.php" class="btn btn-primary">Add Investigator</a>
+			<a href='https://www.roxorsoxor.com/stakeout/gators_all.php' class='btn btn-primary'>Show All</a>
 
 <?php
 
@@ -74,14 +75,14 @@ else {
 	  }
 
 	// Create variable for query
-    $query = "SELECT * FROM user_creds4 ORDER BY surname ASC";
+    $query = "SELECT * FROM user_creds4 WHERE userStatus='Y' ORDER BY surname ASC";
 
 	// Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);
 
 	// Start creating an HTML table and create header row
     echo "<table class='table table-striped table-hover'>";
-    echo "<thead><tr><th>Name</th><th>Status</th><th>Username</th><th>eMail</th></tr></thead><tbody>";
+    echo "<thead><tr><th>Name</th><th>Username</th><th>eMail</th></tr></thead><tbody>";
 
 	// Create a row in HTML table for each row from database
     while ($row = mysqli_fetch_array($result)) {
@@ -96,7 +97,6 @@ else {
 
         echo "<tr>";
 		echo "<td><a href='manage_gator.php?id=" . $row["id"] . "'>" . $row['forename'] . " " . $row['surname'] . "</a></td>";
-        echo "<td>" . $status . "</td>";
         echo "<td>" . $row["username"] . "</td>";
 		echo "<td>" . $row["email"] . "</td>";
         echo "</tr>";
