@@ -74,7 +74,7 @@ else {
 
 	if ($jefe == 1) {
 		// Admin sees all cases
-		$query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
+		$query = "SELECT * FROM cases4 WHERE status=1 ORDER BY cases4.caseName ASC";
 		$result = $connekt->query($query);
 	}
 	else {

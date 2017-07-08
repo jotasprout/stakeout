@@ -33,6 +33,12 @@ else {
 		$startDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['startDate']));
 		$endDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['endDate']));
 		$deliveryDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['deliveryDate']));
+		$status = 1;
+
+		if ($endDate !== ''){
+			$status = 0;
+		}
+
 		// check that caseNum and startDate fields are both filled in
 		if ($caseNum == '' || $startDate == '')
 			{
@@ -42,7 +48,7 @@ else {
 		else
 			{
 				// save data to database
-				$updateCase = "UPDATE cases4 SET caseNum='$caseNum', caseName='$caseName', startDate='$startDate', endDate='$endDate', deliveryDate='$deliveryDate' WHERE caseID='$caseID'";
+				$updateCase = "UPDATE cases4 SET caseNum='$caseNum', caseName='$caseName', startDate='$startDate', endDate='$endDate', deliveryDate='$deliveryDate', status='$status' WHERE caseID='$caseID'";
 				$retval = $connekt->query($updateCase);
 				// Feedback of whether INSERT worked or not
 				if(!$retval){
