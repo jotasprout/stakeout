@@ -39,6 +39,8 @@ if ($connekt->connect_error) die($connekt->connect_error);
 			// $password = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['password']));
 			// $pw_hashness = hash('ripemd128', "$salt1$password$salt2");
 			$email = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['email']));
+			$userStatus = $_POST['userStatus'];
+
 			// check that username field is filled in
 			if ($username == '' || $email == ''){
 				// if form is NOT filled in
@@ -50,7 +52,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 			else // if form is filled in
 			{
 				// save data to database
-				$updateUser = "UPDATE user_creds4 SET forename='$forename', surname='$surname', username='$username',email='$email' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds4 SET forename='$forename', surname='$surname', username='$username', email='$email', userStatus='$userStatus' WHERE id='$id'";
 				$retval = $connekt->query($updateUser);
 				// Feedback of whether UPDATE worked or not
 				if(!$retval){
@@ -88,6 +90,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 				$surname = $row['surname'];
 				$username = $row['username'];
 				$email = $row['email'];
+				$userStatus = $row['userStatus'];				
 			}
 			else // if no match, display error
 			{
@@ -168,7 +171,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 			</div>
 			<!-- /Row 3 -->
 			
-			<div class="form-group"> <!-- Row 5 --> 
+			<div class="form-group"> <!-- Row 4 --> 
 				<!-- Column 1 -->
 				<label class="col-lg-2 control-label" for="email">eMail</label>
 				<!-- Column 2 -->
@@ -176,8 +179,16 @@ if ($connekt->connect_error) die($connekt->connect_error);
 					<input class="form-control" type="email" name="email"  value="<?php echo $email; ?>" />
 				</div>
 			</div>
-			<!-- /Row 5 --> 
+			<!-- /Row 4 --> 					
 			
+			<div class='form-group'> <!-- Row 5 -->
+				<label class='col-lg-2 control-label' for='pix'>Status</label>
+                <div class='col-lg-4'>
+                    <label class="mobRadio"><input name="userStatus" id="userStatus" type="radio" value="Y" <?php echo ($userStatus=='Y')?'checked':'' ?>> Active</label>
+                    <label class="mobRadio"><input name="userStatus" id="userStatus" type="radio" value="N" <?php echo ($userStatus=='N')?'checked':'' ?>> Inactive</label>
+                </div>
+			</div>
+
 			<!-- Last Row -->
 			<div class="form-group"> <!-- Last Row -->	
 				<div class="col-lg-4 col-lg-offset-2">
