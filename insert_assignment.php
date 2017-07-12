@@ -19,10 +19,9 @@ else {
 ?>
 <!DOCTYPE html>
 <html>
-<head><meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
+<head>
     <title>Assign Investigator</title>
-<?php echo $stylesAndSuch; ?>   
+	<?php echo $stylesAndSuch; ?>   
 </head>
 <body>
 	<div class="container">

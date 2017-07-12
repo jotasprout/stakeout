@@ -25,10 +25,8 @@ else {
 
 <html>
 <head>
-<meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
-<title>Investigators</title>
-<?php echo $stylesAndSuch; ?>
+	<title>Investigators</title>
+	<?php echo $stylesAndSuch; ?>
 </head>
 
 <body>

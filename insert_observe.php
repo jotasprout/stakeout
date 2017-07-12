@@ -90,10 +90,8 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Upload Observation</title>
-<?php echo $stylesAndSuch; ?>
+	<title>Upload Observation</title>
+	<?php echo $stylesAndSuch; ?>
 </head>
 <body>
 <div class="container">

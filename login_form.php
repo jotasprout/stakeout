@@ -28,10 +28,6 @@ if(isset($_POST['submit'])) {
 <html>
 
 <head>
-	<meta name="viewport" content="user-scalable=no, width=device-width" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta charset="UTF-8">
 	<title>Stakeout | Login</title>
 	<?php echo $stylesAndSuch; ?>
 </head>

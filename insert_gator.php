@@ -62,8 +62,6 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="user-scalable=no, width=device-width" />
-	<meta charset="UTF-8">
 	<title>Add Investigator</title>
 	<?php echo $stylesAndSuch; ?>
 </head>

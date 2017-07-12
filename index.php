@@ -44,10 +44,8 @@ $result = $connekt->query($query);
 
 <html>
 <head>
-<meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
-<title>Stakeout | Home</title>
-<?php echo $stylesAndSuch; ?>
+  <title>Stakeout | Home</title>
+  <?php echo $stylesAndSuch; ?>
 </head>
 
 <body>

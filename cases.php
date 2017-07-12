@@ -21,10 +21,8 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
-<title>Cases</title>
-<?php echo $stylesAndSuch; ?>
+	<title>Cases</title>
+	<?php echo $stylesAndSuch; ?>
 </head>
 <body>
 <div class="container">

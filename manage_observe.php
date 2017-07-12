@@ -19,16 +19,15 @@ else {
 ?>
 <!DOCTYPE html>
 <html>
-<head><meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
+<head>
     <title>Manage Observation</title>
-<?php echo $stylesAndSuch; ?>   
-<style>
-#map {
-	width: 300px;
-	height: 300px;
-}
-</style>
+	<?php echo $stylesAndSuch; ?>   
+	<style>
+		#map {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
 </head>
 <body onload="initMap()">
 	<div class="container">

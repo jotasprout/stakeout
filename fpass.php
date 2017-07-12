@@ -56,8 +56,6 @@ if(isset($_POST['btn-submit']))
   <head>
     <title>Land of Forgotten Passwords</title>
 	<?php echo $stylesAndSuch; ?>
-	<meta name="viewport" content="user-scalable=no, width=device-width" />
-	<meta charset="UTF-8">
   </head>
   
   <body>

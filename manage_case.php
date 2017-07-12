@@ -111,17 +111,9 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 
 <!DOCTYPE html>
 <html>
-<head><meta name="viewport" content="user-scalable=no, width=device-width" />
-<meta charset="UTF-8">
+<head>
     <title>Case Management</title>
 	<?php echo $stylesAndSuch; ?>   
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script>
-	$( function() {
-		$( "#datepicker" ).datepicker();
-	} );
-	</script>
 </head>
 <body>
 	<div class="container">
