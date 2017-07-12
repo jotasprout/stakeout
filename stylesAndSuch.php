@@ -9,8 +9,8 @@ $stylesAndSuch = "
 <link rel='stylesheet' type='text/css' href='//roxorsoxor.com/js/bootstrap/css/bootstrap.min.css' media='screen and (min-width: 601px)'>
 <link rel='stylesheet' type='text/css' href='//roxorsoxor.com/js/bootstrap/css/justified-nav.css' media='screen and (min-width: 601px)'>
 <link rel='apple-touch-icon-precomposed' href = 'stakeoutIcon.png' />
-<LINK href='favicon.ico' rel='icon' type='image/x-icon'>
-<LINK href='favicon.ico' rel='shortcut icon' type='image/x-icon'>
-<LINK href='favicon.ico' rel='icon' type='image/ico'>
+<link href='favicon.ico' rel='icon' type='image/x-icon'>
+<link href='favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<link href='favicon.ico' rel='icon' type='image/ico'>
 ";
 ?>

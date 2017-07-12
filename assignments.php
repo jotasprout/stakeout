@@ -59,13 +59,13 @@ else {
 	  	die('Rats! Could not connect: ' . mysqli_error());  
 	  }
 	  // Create variable for query
-	  $query = "SELECT a.caseID, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus	
+	  $query = "SELECT a.caseID, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.status	
 	  	FROM assignments4 a		
 	  		INNER JOIN user_creds4 b			
 	  			ON a.username = b.username		
 	  		INNER JOIN cases4 c			
 	  			ON a.caseID = c.caseID				
-	  		WHERE b.userStatus = 1 AND c.status = 1";
+	  		WHERE b.userStatus = 1 AND c.status = 1 AND a.status = 1";
 	  // Use variable with MySQL command to grab info from database
 	  $result = $connekt->query($query);
 	  // Start creating an HTML table and create header row
