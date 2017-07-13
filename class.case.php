@@ -4,25 +4,6 @@ require_once '../../../php/dbconfig.php';
 
 class CASE {
 
-	private $conn;
-
-	public function register($uname,$forename,$surname,$email,$code) {
-		try {
-			$password = md5($upass);
-			$stmt = $this->conn->prepare("INSERT INTO user_creds4 (username,forename,surname,email,tokenCode) VALUES(:user_name, :forename, :surname, :user_mail, :active_code)");
-			$stmt->bindparam(":user_name",$uname);
-			$stmt->bindparam(":forename",$forename);
-			$stmt->bindparam(":surname",$surname);
-			$stmt->bindparam(":user_mail",$email);
-			$stmt->bindparam(":active_code",$code);
-			$stmt->execute();
-			return $stmt;
-		}
-		catch(PDOException $ex) {
-			echo $ex->getMessage();
-		}
-	}
-
 	public function login($email,$upass) {
 		try {
 			$stmt = $this->conn->prepare("SELECT * FROM user_creds4 WHERE email=:email_id");
