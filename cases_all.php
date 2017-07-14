@@ -7,8 +7,16 @@ $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
 	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
+} else {
+	$jefe = $_SESSION['jefe'];
+	if ($jefe == 1) {
+		echo "<script>console.log('You are an admin.')</script>";
+	} else {
+		$user->redirect('index.php');
+	}	
+	$username = $_SESSION['username'];
+	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
-
 ?>
 <!DOCTYPE html>
 <html>
