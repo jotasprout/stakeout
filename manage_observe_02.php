@@ -58,36 +58,27 @@ else {
 			$forename = $row['forename'];
 			$surname = $row['surname'];
 			$observation = $row["observation"];
-			$available = "";
-
+			$available = "";		
 			
 			if ($row["pix"] == 1) {
 				$available = "Yes";
 			}
 			else {
 				$available = "No";
-			}			
-		
-
-			$ourTime = new DateTime($row["observeTime"] ." UTC");
-			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='row'><strong>Date:</strong> " . $formatted_date_long=date_format($ourTime, 'F jS, Y') . "</div>";
-
-			$ourTime = new DateTime($row["observeTime"] ." UTC");
-			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='row'><strong>Time:</strong> " . $formatted_date_long=date_format($ourTime, 'g:i a') . "</div>";		
+			}	
 			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Location:</strong></div>";
-			echo "<div class='col-md-9'><div id='map' class='allThumbs'></div></div>";
-			echo "</div>";																			
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));						
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
+																			
 
 			$latitude = $row["lat"];
 			$longitude = $row["lng"];
 			$observation = $row["observation"];
 		}
-		else // if no match, display error
-		{
+		else {
+			// if no match, display error
 			echo "<script>console.log('No results.')</script>";
 		}
 	}
@@ -147,6 +138,15 @@ else {
 </div>
 
 <div class='row'><strong>Photos Available:</strong> <?php echo $available; ?></div>
+
+<div class='row'><strong>Date:</strong><?php echo $formatted_date_long=date_format($ourTime, 'F jS, Y'); ?></div>
+
+<div class='row'><strong>Time:</strong><?php echo $formatted_date_long=date_format($ourTime, 'g:i a'); ?></div>	
+			
+<div class='row'>
+	<div class='col-md-3'><strong>Location:</strong></div>
+	<div class='col-md-9'><div id='map' class='allThumbs'></div></div>
+</div>
 	
 <!-- /SHIZZLE WENT THERE -->
 
