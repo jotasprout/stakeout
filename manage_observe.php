@@ -16,6 +16,76 @@ else {
 	$username = $_SESSION['username'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
+
+    // PHP code in a more secure location
+    include("../../../php/landfill.php");
+    //Uses PHP code to connect to database
+	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+    // Connection test and feedback
+	// confirm id is valid and is numeric/larger than 0)
+	if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0){
+		// query db
+		$id = $_GET['id'];
+		
+		// Create variable for query
+		$query = "
+			SELECT a.caseID, a.observeID, a.action, a.observation, a.pix, a.observePic, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
+				FROM observations4 a
+					INNER JOIN user_creds4 b
+						ON a.username = b.username
+					INNER JOIN cases4 c
+						ON a.caseID = c.caseID
+							WHERE a.observeID = '$id'"; 				
+		// Use variable with MySQL command to grab info from database
+		$result = $connekt->query($query)
+		or die(mysqli_error($result));
+		$row = mysqli_fetch_array($result);
+		// check that the 'id' matches up with a row in the databse
+		if($row){
+			// if there's a match, display data from db
+			$caseName = $row["caseName"];
+			$observePic = "";
+
+			
+			if($row["observePic"] == "") {
+				$observePic = "nope.png";
+			}
+			else {
+				$observePic = $row["observePic"];
+			}
+			
+			$action = $row["action"];
+			$forename = $row['forename'];
+			$surname = $row['surname'];
+			$observation = $row["observation"];
+			$available = "";		
+			
+			if ($row["pix"] == 1) {
+				$available = "Yes";
+			}
+			else {
+				$available = "No";
+			}	
+			
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));						
+			$ourTime = new DateTime($row["observeTime"] ." UTC");
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
+																			
+
+			$latitude = $row["lat"];
+			$longitude = $row["lng"];
+			$observation = $row["observation"];
+		}
+		else {
+			// if no match, display error
+			echo "<script>console.log('No results.')</script>";
+		}
+	}
+
+	// When attempt is complete, connection closes
+    mysqli_close($connekt);
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,92 +121,35 @@ else {
 			<div class="panel-body">
 				<!-- Panel Content -->
                 
-<?php
-    // PHP code in a more secure location
-    include("../../../php/landfill.php");
-    //Uses PHP code to connect to database
-	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
-    // Connection test and feedback
-	// confirm id is valid and is numeric/larger than 0)
-	if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0){
-		// query db
-		$id = $_GET['id'];
-		
-		// Create variable for query
-		$query = "
-			SELECT a.caseID, a.observeID, a.action, a.observation, a.pix, a.observePic, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
-				FROM observations4 a
-					INNER JOIN user_creds4 b
-						ON a.username = b.username
-					INNER JOIN cases4 c
-						ON a.caseID = c.caseID
-							WHERE a.observeID = '$id'"; 				
-		// Use variable with MySQL command to grab info from database
-		$result = $connekt->query($query)
-		or die(mysqli_error($result));
-		$row = mysqli_fetch_array($result);
-		// check that the 'id' matches up with a row in the databse
-		if($row){
-			// if there's a match, display data from db
-			echo "<div class='row'><strong>Case:</strong> " . $row["caseName"] . "</div>";
+<!-- SHIZZLE GOES HERE -->
 
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Uploaded Asset:</strong></div>";
-			echo "<div class='col-md-9'>";
-			
-			if($row["observePic"] == "") {
-				echo "None";
-			}
-			else {
-				echo "<a href='observe_pix/" . $row["observePic"] . "'><img class='img-thumb' src='observe_pix/" . $row["observePic"] . "' width='300px' height='auto'></a>";
-			}
-			echo "</div></div>";
-			
-			echo "<div class='row'><strong>Action:</strong> " . $row["action"] . "</div>";
-			
-			echo "<div class='row'><strong>Investigator:</strong> " . $row['forename'] . " " . $row['surname'] . "</div>";
-			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Description:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["observation"] . "</div>";
-			echo "</div>";
-			
-			if ($row["pix"] == 1) {
-				$available = "Yes";
-			}
-			else {
-				$available = "No";
-			}			
-			
-			echo "<div class='row'><strong>Photos Available:</strong> " . $available . "</div>";
+<div class='row'><strong>Case: </strong> <?php echo $caseName; ?> </div>
+<div class='row'>
+	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
+	<div class='col-md-9'><a href='observe_pix/<?php echo $observePic; ?>'><img class='img-thumb' src='observe_pix/<?php echo $observePic; ?>' width='300px' height='auto'></a></div>
+</div>
 
-			$ourTime = new DateTime($row["observeTime"] ." UTC");
-			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='row'><strong>Date:</strong> " . $formatted_date_long=date_format($ourTime, 'F jS, Y') . "</div>";
+<div class='row'><strong>Action:</strong> <?php echo $action; ?> </div>
+<div class='row'><strong>Investigator:</strong> <?php echo $forename . " " . $surname; ?> </div>
 
-			$ourTime = new DateTime($row["observeTime"] ." UTC");
-			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-			echo "<div class='row'><strong>Time:</strong> " . $formatted_date_long=date_format($ourTime, 'g:i a') . "</div>";		
+<div class='row'>
+	<div class='col-md-3'><strong>Description:</strong></div>
+	<div class='col-md-9'><?php echo $observation; ?></div>
+</div>
+
+<div class='row'><strong>Photos Available:</strong> <?php echo $available; ?></div>
+
+<div class='row'><strong>Date:</strong><?php echo $formatted_date_long=date_format($ourTime, 'F jS, Y'); ?></div>
+
+<div class='row'><strong>Time:</strong><?php echo $formatted_date_long=date_format($ourTime, 'g:i a'); ?></div>	
 			
-			echo "<div class='row'>";
-			echo "<div class='col-md-3'><strong>Location:</strong></div>";
-			echo "<div class='col-md-9'><div id='map' class='allThumbs'></div></div>";
-			echo "</div>";																			
-
-			$latitude = $row["lat"];
-			$longitude = $row["lng"];
-			$observation = $row["observation"];
-		}
-		else // if no match, display error
-		{
-			echo "<script>console.log('No results.')</script>";
-		}
-	}
-
-	// When attempt is complete, connection closes
-    mysqli_close($connekt);
+<div class='row'>
+	<div class='col-md-3'><strong>Location:</strong></div>
+	<div class='col-md-9'><div id='map' class='allThumbs'></div></div>
+</div>
 	
-?>
+<!-- /SHIZZLE WENT THERE -->
+
 			</div>
 		</div>
 	</div> <!-- /container -->
