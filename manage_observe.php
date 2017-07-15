@@ -70,8 +70,13 @@ else {
 			$ourTime = new DateTime($row["observeTime"] ." UTC");
 			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));						
 			$ourTime = new DateTime($row["observeTime"] ." UTC");
-			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));			
-																			
+			$ourTime ->setTimezone(new DateTimeZone('America/New_York'));
+			
+			$nowhere = false;
+			
+			if ($row["lat"] == 0 || $row["lng"] == 0) {
+				$nowhere = true;
+			} 
 
 			$latitude = $row["lat"];
 			$longitude = $row["lng"];
@@ -142,11 +147,16 @@ else {
 <div class='row'><strong>Date:</strong><?php echo $formatted_date_long=date_format($ourTime, 'F jS, Y'); ?></div>
 
 <div class='row'><strong>Time:</strong><?php echo $formatted_date_long=date_format($ourTime, 'g:i a'); ?></div>	
-			
-<div class='row'>
-	<div class='col-md-3'><strong>Location:</strong></div>
-	<div class='col-md-9'><div id='map' class='allThumbs'></div></div>
-</div>
+
+<?php
+
+	if ($nowhere) {
+		echo "<div class='row'><div class='col-md-3'><strong>Location:</strong></div><div class='col-md-9'>No coordinates</div></div>";
+	} else {
+		echo "<div class='row'><div class='col-md-3'><strong>Location:</strong></div><div class='col-md-9'><div id='map' class='allThumbs'></div></div></div>";
+	}
+
+?>
 	
 <!-- /SHIZZLE WENT THERE -->
 
