@@ -75,15 +75,15 @@ else {
 
 	if ($jefe == 1) {
 		// Admin sees all cases
-		$query = "SELECT * FROM cases4 WHERE status=1 ORDER BY cases4.caseName ASC";
+		$query = "SELECT * FROM cases WHERE status=1 ORDER BY cases.caseName ASC";
 		$result = $connekt->query($query);
 	}
 	else {
 		// Gators only see cases assigned to them
 		$query = "
 		SELECT a.caseID, c.caseName, c.status, a.username 
-			FROM assignments4 a
-				INNER JOIN cases4 c
+			FROM assignments a
+				INNER JOIN cases c
 					ON a.caseID = c.caseID
 						WHERE a.username = '$username' AND c.status = 1";
 		$result = $connekt->query($query);

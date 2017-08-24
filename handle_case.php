@@ -9,7 +9,7 @@
 	$startDate = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['startDate']));
 // Instructions for inserting form content into database
   $pushCase = "
-  INSERT INTO cases4 (
+  INSERT INTO cases (
   	caseNum,
 	caseName,
 	startDate

@@ -15,14 +15,14 @@ else {
 if(isset($_POST['btn-submit']))
 {
 	$email = $_POST['txtemail'];
-	$stmt = $user->runQuery("SELECT id FROM user_creds4 WHERE email=:email LIMIT 1");
+	$stmt = $user->runQuery("SELECT id FROM user_creds WHERE email=:email LIMIT 1");
 	$stmt->execute(array(":email"=>$email));
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 	if($stmt->rowCount() == 1)
 	{
 		$id = base64_encode($row['id']);
 		$code = md5(uniqid(rand()));
-		$stmt = $user->runQuery("UPDATE user_creds4 SET tokenCode=:token WHERE email=:email");
+		$stmt = $user->runQuery("UPDATE user_creds SET tokenCode=:token WHERE email=:email");
 		$stmt->execute(array(":token"=>$code,"email"=>$email));
 		$message= "Hello $email,
 				   <br /><br />

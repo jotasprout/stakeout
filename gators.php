@@ -75,7 +75,7 @@ else {
 	  }
 
 	// Create variable for query
-    $query = "SELECT * FROM user_creds4 WHERE userStatus='Y' ORDER BY surname ASC";
+    $query = "SELECT * FROM user_creds WHERE userStatus='Y' ORDER BY surname ASC";
 
 	// Use variable with MySQL command to grab info from database
 	$result = $connekt->query($query);

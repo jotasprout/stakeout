@@ -62,7 +62,7 @@ else {
 						die('Rats! Could not connect: ' . mysqli_error());
 					}
 					// Create variable for query
-					$query0 = "SELECT * FROM user_creds4 WHERE userStatus = 'Y'";
+					$query0 = "SELECT * FROM user_creds WHERE userStatus = 'Y'";
 					// Create variable for MySQL command using query to grab active users from database
 					$result0 = $connekt->query($query0);
 					// Create Investigator Menu
@@ -78,7 +78,7 @@ else {
 						echo "</div>";
 					echo "</div>";
 					// Create variable for query
-					$query = "SELECT * FROM cases4 WHERE status = 1";
+					$query = "SELECT * FROM cases WHERE status = 1";
 					// Create variable for MySQL command using query to grab active users from database
 					$result = $connekt->query($query);
 					// Create Investigator Menu

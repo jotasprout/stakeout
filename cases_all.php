@@ -64,7 +64,7 @@ if(!$user->areTheyLoggedIn()) {
 // Create variable for query
 else {
 
-	$query = "SELECT * FROM cases4 ORDER BY cases4.caseName ASC";
+	$query = "SELECT * FROM cases ORDER BY cases.caseName ASC";
 	$result = $connekt->query($query);
 }
 

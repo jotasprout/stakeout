@@ -15,7 +15,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 	$id = base64_decode($_GET['id']);
 	$code = $_GET['code'];
 	
-	$stmt = $user->runQuery("SELECT * FROM user_creds4 WHERE id=:uid AND tokenCode=:token");
+	$stmt = $user->runQuery("SELECT * FROM user_creds WHERE id=:uid AND tokenCode=:token");
 	$stmt->execute(array(":uid"=>$id,":token"=>$code));
 	$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 	
@@ -36,7 +36,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			else
 			{
 				$password = md5($cpass);
-				$stmt = $user->runQuery("UPDATE user_creds4 SET password=:upass WHERE id=:uid");
+				$stmt = $user->runQuery("UPDATE user_creds SET password=:upass WHERE id=:uid");
 				$stmt->execute(array(":upass"=>$password,":uid"=>$rows['id']));
 				
 				$msg = "<div class='alert alert-success'>

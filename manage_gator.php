@@ -54,7 +54,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 			else // if form is filled in
 			{
 				// save data to database
-				$updateUser = "UPDATE user_creds4 SET forename='$forename', surname='$surname', username='$username', email='$email', userStatus='$userStatus' WHERE id='$id'";
+				$updateUser = "UPDATE user_creds SET forename='$forename', surname='$surname', username='$username', email='$email', userStatus='$userStatus' WHERE id='$id'";
 				$retval = $connekt->query($updateUser);
 				// Feedback of whether UPDATE worked or not
 				if(!$retval){
@@ -80,7 +80,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 		if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0){
 			// query db
 			$id = $_GET['id'];
-			$result = mysqli_query($connekt, "SELECT * FROM user_creds4 WHERE id=$id")
+			$result = mysqli_query($connekt, "SELECT * FROM user_creds WHERE id=$id")
 			or die(mysqli_error($result));
 			$row = mysqli_fetch_array($result);
 			// check that the 'id' matches up with a row in the databse
@@ -219,10 +219,10 @@ if ($connekt->connect_error) die($connekt->connect_error);
 	// Create variable for query
 	$query0 = "
 	SELECT a.caseID, c.caseName, c.status, a.username, b.id, b.forename, b.surname
-		FROM assignments4 a
-			INNER JOIN user_creds4 b
+		FROM assignments a
+			INNER JOIN user_creds b
 				ON a.username = b.username
-			INNER JOIN cases4 c
+			INNER JOIN cases c
 				ON a.caseID = c.caseID
 					WHERE b.id = $id AND c.status = 1";
 	// Use variable with MySQL command to grab info from database

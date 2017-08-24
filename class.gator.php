@@ -27,7 +27,7 @@ class USER {
 	public function register($uname,$forename,$surname,$email,$code) {
 		try {
 			$password = md5($upass);
-			$stmt = $this->conn->prepare("INSERT INTO user_creds4 (username,forename,surname,email,tokenCode) VALUES(:user_name, :forename, :surname, :user_mail, :active_code)");
+			$stmt = $this->conn->prepare("INSERT INTO user_creds (username,forename,surname,email,tokenCode) VALUES(:user_name, :forename, :surname, :user_mail, :active_code)");
 			$stmt->bindparam(":user_name",$uname);
 			$stmt->bindparam(":forename",$forename);
 			$stmt->bindparam(":surname",$surname);
@@ -43,7 +43,7 @@ class USER {
 
 	public function login($email,$upass) {
 		try {
-			$stmt = $this->conn->prepare("SELECT * FROM user_creds4 WHERE email=:email_id");
+			$stmt = $this->conn->prepare("SELECT * FROM user_creds WHERE email=:email_id");
 			$stmt->execute(array(":email_id"=>$email));
 			$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 

@@ -6,7 +6,7 @@ class OBSERVATION {
 	
 	public function insertObserve($username,$observation,$observeAsset,$lat,$lng,$caseID,$action,$pix) {
 		try {
-			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observeAsset,lat,lng,caseID,action,pix) VALUES(:uname, :observation, :observeAsset, :lat, :lng, :caseID, :action, :pix)');
+			$stmt = $db->prepare('INSERT INTO observations(username,observation,observeAsset,lat,lng,caseID,action,pix) VALUES(:uname, :observation, :observeAsset, :lat, :lng, :caseID, :action, :pix)');
 			
 			$stmt->bindParam(':uname',$username);
 			$stmt->bindParam(':observation',$observation);

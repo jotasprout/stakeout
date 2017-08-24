@@ -12,7 +12,7 @@
 		
 		public function openCase ($caseNum,$caseName,$startDate) {
 			try {
-				$stmt = $this->conn->prepare("INSERT INTO cases4 (caseNum,caseName,startDate) VALUES (:caseNum,:caseName,:startDate)");
+				$stmt = $this->conn->prepare("INSERT INTO cases (caseNum,caseName,startDate) VALUES (:caseNum,:caseName,:startDate)");
 				$stmt->bindparam(":caseNum",$caseNum);
 				$stmt->bindparam(":caseName",$caseName);
 				$stmt->bindparam(":startDate",$startDate);

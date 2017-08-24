@@ -58,9 +58,9 @@ else {
 		
 		// Create variable for query
 		$query = "
-			SELECT a.caseID, a.observeID, a.observation, a.observeAsset, c.caseName 
-				FROM observations4 a
-					INNER JOIN cases4 c
+			SELECT a.caseID, a.observeID, a.description, a.observeAsset, c.caseName 
+				FROM observations a
+					INNER JOIN cases c
 						ON a.caseID = c.caseID
 							WHERE a.observeID = '$id'"; 				
 		// Use variable with MySQL command to grab info from database
@@ -80,13 +80,13 @@ else {
 				echo "None";
 			}
 			else {
-				echo "<img src='observe_pix/" . $row["observeAsset"] . "'>";
+				echo "<img src='caseAssets/" . $row["observeAsset"] . "'>";
 			}
 			echo "</div></div>";
 			
 			echo "<div class='row'>";
 			echo "<div class='col-md-3'><strong>Description:</strong></div>";
-			echo "<div class='col-md-9'>" . $row["observation"] . "</div>";
+			echo "<div class='col-md-9'>" . $row["description"] . "</div>";
 			echo "</div>";																		
 		}
 		else // if no match, display error

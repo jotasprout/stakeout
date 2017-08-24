@@ -33,7 +33,7 @@ if (!$connekt) {
   }
 
 // Create variable for query
-$query = "SELECT * FROM user_creds4 WHERE username = $username";
+$query = "SELECT * FROM user_creds WHERE username = $username";
 
 // Use variable with MySQL command to grab info from database
 $result = $connekt->query($query);
@@ -87,7 +87,7 @@ $result = $connekt->query($query);
 		
   // Create variable for query
   $query = "SELECT a.caseID, c.caseName, c.status, a.username	
-	FROM assignments4 a, cases4 c			
+	FROM assignments a, cases c			
 			WHERE a.caseID = c.caseID AND c.status = 1 AND a.username = '$username'";				
 		
   // Use variable with MySQL command to grab info from database

@@ -13,7 +13,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 	$statusY = "Y";
 	$statusN = "N";	
 	
-	$stmt = $user->runQuery("SELECT * FROM user_creds4 WHERE id=:uID AND tokenCode=:code LIMIT 1");
+	$stmt = $user->runQuery("SELECT * FROM user_creds WHERE id=:uID AND tokenCode=:code LIMIT 1");
 	$stmt->execute(array(":uID"=>$id,":code"=>$code));
 	$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 	
@@ -28,7 +28,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 		}
 		// if user is NOT already active
 		else {
-			$stmt = $user->runQuery("UPDATE user_creds4 SET userStatus=:status WHERE id=:uID");
+			$stmt = $user->runQuery("UPDATE user_creds SET userStatus=:status WHERE id=:uID");
 			$stmt->bindparam(":status",$statusY);
 			$stmt->bindparam(":uID",$id);
 			$stmt->execute();	
@@ -49,7 +49,7 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
 				}
 				else {
 					$password = md5($cpass);
-					$stmt = $user->runQuery("UPDATE user_creds4 SET password=:upass WHERE id=:uid");
+					$stmt = $user->runQuery("UPDATE user_creds SET password=:upass WHERE id=:uid");
 					$stmt->execute(array(":upass"=>$password,":uid"=>$rows['id']));
 					
 					$msg = "<div class='alert alert-success'>

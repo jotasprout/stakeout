@@ -7,13 +7,13 @@
 	$assignedCase = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedCase']));
 	$assignedGator = mysqli_real_escape_string($connekt, htmlspecialchars($_POST['assignedGator']));
 	// Check to see if assignment already exists
-	$query4 = "SELECT * FROM assignments4 WHERE caseID = '$assignedCase' AND username = '$assignedGator'";
+	$query4 = "SELECT * FROM assignments WHERE caseID = '$assignedCase' AND username = '$assignedGator'";
 	$result4 = $connekt->query($query4);
 
 	if(mysqli_num_rows($result4) == 0){
 		// if assignment doesn't exist, insert a row with that caseNum and user
 		$pushAssignment = "
-		INSERT INTO assignments4 (
+		INSERT INTO assignments (
 		caseID,
 		username
 		)

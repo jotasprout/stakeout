@@ -71,11 +71,11 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		if ($jefe == 1) {
 			// Admin sees all observations
 			$query = "
-					SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
-						FROM observations4 a
-							INNER JOIN user_creds4 b
+					SELECT a.caseID, a.observeID, a.description, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
+						FROM observations a
+							INNER JOIN user_creds b
 								ON a.username = b.username
-							INNER JOIN cases4 c
+							INNER JOIN cases c
 								ON a.caseID = c.caseID
 									WHERE b.userStatus = 'Y' AND c.status = 1
 									 ORDER BY a.observeTime ASC";
@@ -85,11 +85,11 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		else {
 			// Gators only see their observations
 			$query = "
-					SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
-						FROM observations4 a
-							INNER JOIN user_creds4 b
+					SELECT a.caseID, a.observeID, a.description, a.pix, a.observeTime, c.caseName, c.status, a.username, b.forename, b.surname, b.userStatus, a.action 
+						FROM observations a
+							INNER JOIN user_creds b
 								ON a.username = b.username
-							INNER JOIN cases4 c
+							INNER JOIN cases c
 								ON a.caseID = c.caseID
 									WHERE a.username = '$username' AND c.status = 1
 									 ORDER BY a.observeTime ASC";		
@@ -107,7 +107,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		echo "<td>" . $row["caseName"] . "</td>";
 		echo "<td>" . $row['surname'] . "</td>";
 		
-		$thisObserve = $row["observation"];
+		$thisObserve = $row["description"];
 		$observeLength = strlen($thisObserve);
 		if ($oserveLength > 30) {
 			$observeX = truncomatic($thisObserve, 30, " ...");

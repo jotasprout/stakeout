@@ -6,7 +6,7 @@ class CASE {
 
 	public function login($email,$upass) {
 		try {
-			$stmt = $this->conn->prepare("SELECT * FROM user_creds4 WHERE email=:email_id");
+			$stmt = $this->conn->prepare("SELECT * FROM user_creds WHERE email=:email_id");
 			$stmt->execute(array(":email_id"=>$email));
 			$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 

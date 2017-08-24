@@ -23,7 +23,7 @@ else {
 		$username = $_POST['username']; // user name
 		$lat  = $_POST['txtlat'];	
 		$lng = $_POST['txtlng'];
-		$observation = $_POST['observation']; // user email
+		$description = $_POST['description']; // user email
 		$caseID = $_POST['assignedCase'];
 		$action = $_POST['action'];
 		$pix = $_POST['pix'];
@@ -33,12 +33,12 @@ else {
 		if(empty($username)){
 			$errMSG = "Please Enter Username.";
 		}
-		else if(empty($observation)){
-			$errMSG = "Please type your observation or image description.";
+		else if(empty($description)){
+			$errMSG = "Please type a description of your observation, image, or audio file.";
 		}
 		
 		if(!empty($imgFile)){
-			$upload_dir = 'observe_pix/'; // upload directory
+			$upload_dir = 'caseAssets/'; // upload directory
 	
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
 		
@@ -66,9 +66,9 @@ else {
 		// if no error occured, continue ....
 		if(!isset($errMSG))
 		{
-			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observeAsset,lat,lng,caseID,action,pix, observeTime) VALUES(:uname, :observation, :observeAsset, :lat, :lng, :caseID, :action, :pix, UTC_TIMESTAMP())');
+			$stmt = $db->prepare('INSERT INTO observations(username,description,observeAsset,lat,lng,caseID,action,pix, observeTime) VALUES(:uname, :description, :observeAsset, :lat, :lng, :caseID, :action, :pix, UTC_TIMESTAMP())');
 			$stmt->bindParam(':uname',$username);
-			$stmt->bindParam(':observation',$observation);
+			$stmt->bindParam(':description',$description);
 			$stmt->bindParam(':observeAsset',$observeAsset);
 			$stmt->bindParam(':lat',$lat);
 			$stmt->bindParam(':lng',$lng);	
@@ -165,8 +165,8 @@ else if(isset($successMSG)){
 				// Create variable for query	
 				$query9 = "
 				SELECT a.caseID, c.caseName, c.status, a.username 
-					FROM assignments4 a
-						INNER JOIN cases4 c
+					FROM assignments a
+						INNER JOIN cases c
 							ON a.caseID = c.caseID
 								WHERE a.username = '$username' AND c.status = 1";
 			
@@ -212,9 +212,9 @@ else if(isset($successMSG)){
 			</div>
             
 			<div class='form-group'> <!-- Row 4 -->
-				<label class='col-lg-2 control-label' for='observation'>Description</label>
+				<label class='col-lg-2 control-label' for='description'>Description</label>
                 <div class='col-lg-4'>
-					<textarea class="form-control" name="observation" placeholder="Description" value="<?php echo $observation; ?>" /></textarea>
+					<textarea class="form-control" name="description" placeholder="Description" value="<?php echo $description; ?>" /></textarea>
                 </div>
 			</div>
             

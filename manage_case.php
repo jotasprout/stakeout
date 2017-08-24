@@ -45,7 +45,7 @@ else {
 			}
 			else {
 				// save data to database
-				$updateCase = "UPDATE cases4 SET caseNum='$caseNum', caseName='$caseName', startDate='$startDate', endDate='$endDate', deliveryDate='$deliveryDate', status='$status' WHERE caseID='$caseID'";
+				$updateCase = "UPDATE cases SET caseNum='$caseNum', caseName='$caseName', startDate='$startDate', endDate='$endDate', deliveryDate='$deliveryDate', status='$status' WHERE caseID='$caseID'";
 				$retval = $connekt->query($updateCase);
 				// Feedback of whether INSERT worked or not
 				if(!$retval){
@@ -68,7 +68,7 @@ else {
 		if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
 			// query db
 			$caseID = $_GET['id'];
-			$result = mysqli_query($connekt, "SELECT * FROM cases4 WHERE caseID=$caseID")
+			$result = mysqli_query($connekt, "SELECT * FROM cases WHERE caseID=$caseID")
 			or die(mysqli_error($result));
 			$row = mysqli_fetch_array($result);
 			// check that the 'id' matches up with a row in the databse
@@ -156,8 +156,8 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 	// Create variable for query
 	$query0 = "
 	SELECT a.caseID, a.username, b.username, b.forename, b.surname
-		FROM assignments4 a
-			INNER JOIN user_creds4 b
+		FROM assignments a
+			INNER JOIN user_creds b
 				ON a.username = b.username
 					WHERE a.caseID = '$caseID'";
 	// Use variable with MySQL command to grab info from database
@@ -187,11 +187,11 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
     $caseID = $_GET['id'];
 	// Create variable for query
 	$query = "
-		SELECT a.caseID, a.observeID, a.observation, a.pix, a.observeTime, a.username, b.forename, b.surname, a.action 
-			FROM observations4 a
-				INNER JOIN user_creds4 b
+		SELECT a.caseID, a.observeID, a.description, a.pix, a.observeTime, a.username, b.forename, b.surname, a.action 
+			FROM observations a
+				INNER JOIN user_creds b
 					ON a.username = b.username
-				INNER JOIN cases4 c
+				INNER JOIN cases c
 					ON a.caseID = c.caseID
 						WHERE a.caseID = '$caseID' AND a.username = '$username'"; 				
     // Use variable with MySQL command to grab info from database
@@ -203,7 +203,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
 
-		$thisObserve = $row["observation"];
+		$thisObserve = $row["description"];
 		$observeLength = strlen($thisObserve);
 		if ($oserveLength > 30) {
 			$observeX = truncomatic($thisObserve, 30, " ...");

@@ -11,7 +11,7 @@
     	$pw_temp = mysqli_entities_fix_string($connekt, $_POST['password']);
 
 		// get info from db for matching username
-		$query = "SELECT * FROM user_creds4 WHERE username='$un_temp'";
+		$query = "SELECT * FROM user_creds WHERE username='$un_temp'";
     	$result = $connekt->query($query);
     	if (!$result) die($connekt->error);
 		elseif ($result->num_rows)

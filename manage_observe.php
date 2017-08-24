@@ -29,11 +29,11 @@ else {
 		
 		// Create variable for query
 		$query = "
-			SELECT a.caseID, a.observeID, a.action, a.observation, a.pix, a.observeAsset, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
-				FROM observations4 a
-					INNER JOIN user_creds4 b
+			SELECT a.caseID, a.observeID, a.action, a.description, a.pix, a.observeAsset, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
+				FROM observations a
+					INNER JOIN user_creds b
 						ON a.username = b.username
-					INNER JOIN cases4 c
+					INNER JOIN cases c
 						ON a.caseID = c.caseID
 							WHERE a.observeID = '$id'"; 				
 		// Use variable with MySQL command to grab info from database
@@ -57,7 +57,7 @@ else {
 			$action = $row["action"];
 			$forename = $row['forename'];
 			$surname = $row['surname'];
-			$observation = $row["observation"];
+			$description = $row["description"];
 			$available = "";		
 			
 			if ($row["pix"] == 1) {
@@ -80,7 +80,7 @@ else {
 
 			$latitude = $row["lat"];
 			$longitude = $row["lng"];
-			$observation = $row["observation"];
+			$description = $row["description"];
 		}
 		else {
 			// if no match, display error
@@ -131,7 +131,7 @@ else {
 <div class='row'><strong>Case: </strong> <?php echo $caseName; ?> </div>
 <div class='row'>
 	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
-	<div class='col-md-9'><a href='observe_pix/<?php echo $observeAsset; ?>'><img class='img-thumb' src='observe_pix/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
+	<div class='col-md-9'><a href='caseAssets/<?php echo $observeAsset; ?>'><img class='img-thumb' src='caseAssets/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
 </div>
 
 <div class='row'><strong>Action:</strong> <?php echo $action; ?> </div>
@@ -139,7 +139,7 @@ else {
 
 <div class='row'>
 	<div class='col-md-3'><strong>Description:</strong></div>
-	<div class='col-md-9'><?php echo $observation; ?></div>
+	<div class='col-md-9'><?php echo $description; ?></div>
 </div>
 
 <div class='row'><strong>Photos Available:</strong> <?php echo $available; ?></div>

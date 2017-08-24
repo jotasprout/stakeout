@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
 	$surname = trim($_POST['surname']);
 	$email = trim($_POST['email']);
 	$code = md5(uniqid(rand()));
-	$stmt = $user->runQuery("SELECT * FROM user_creds4 WHERE email=:email_id");
+	$stmt = $user->runQuery("SELECT * FROM user_creds WHERE email=:email_id");
 	$stmt->execute(array(":email_id"=>$email));
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 	if($stmt->rowCount() > 0) {
