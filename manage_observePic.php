@@ -58,7 +58,7 @@ else {
 		
 		// Create variable for query
 		$query = "
-			SELECT a.caseID, a.observeID, a.observation, a.observePic, c.caseName 
+			SELECT a.caseID, a.observeID, a.observation, a.observeAsset, c.caseName 
 				FROM observations4 a
 					INNER JOIN cases4 c
 						ON a.caseID = c.caseID
@@ -76,11 +76,11 @@ else {
 			echo "<div class='col-md-3'><strong>Uploaded Asset:</strong></div>";
 			echo "<div class='col-md-9'>";
 			
-			if($row["observePic"] == "") {
+			if($row["observeAsset"] == "") {
 				echo "None";
 			}
 			else {
-				echo "<img src='observe_pix/" . $row["observePic"] . "'>";
+				echo "<img src='observe_pix/" . $row["observeAsset"] . "'>";
 			}
 			echo "</div></div>";
 			

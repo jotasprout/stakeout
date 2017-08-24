@@ -29,7 +29,7 @@ else {
 		
 		// Create variable for query
 		$query = "
-			SELECT a.caseID, a.observeID, a.action, a.observation, a.pix, a.observePic, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
+			SELECT a.caseID, a.observeID, a.action, a.observation, a.pix, a.observeAsset, a.observeTime, a.lng, a.lat, c.caseName, a.username, b.forename, b.surname, a.action 
 				FROM observations4 a
 					INNER JOIN user_creds4 b
 						ON a.username = b.username
@@ -44,14 +44,14 @@ else {
 		if($row){
 			// if there's a match, display data from db
 			$caseName = $row["caseName"];
-			$observePic = "";
+			$observeAsset = "";
 
 			
-			if($row["observePic"] == "") {
-				$observePic = "nope.png";
+			if($row["observeAsset"] == "") {
+				$observeAsset = "nope.png";
 			}
 			else {
-				$observePic = $row["observePic"];
+				$observeAsset = $row["observeAsset"];
 			}
 			
 			$action = $row["action"];
@@ -131,7 +131,7 @@ else {
 <div class='row'><strong>Case: </strong> <?php echo $caseName; ?> </div>
 <div class='row'>
 	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
-	<div class='col-md-9'><a href='observe_pix/<?php echo $observePic; ?>'><img class='img-thumb' src='observe_pix/<?php echo $observePic; ?>' width='300px' height='auto'></a></div>
+	<div class='col-md-9'><a href='observe_pix/<?php echo $observeAsset; ?>'><img class='img-thumb' src='observe_pix/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
 </div>
 
 <div class='row'><strong>Action:</strong> <?php echo $action; ?> </div>

@@ -46,13 +46,13 @@ else {
 			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'm4a', 'mp3'); // valid extensions
 		
 			// rename uploading image
-			$observePic = rand(1000,1000000).".".$imgExt;
+			$observeAsset = rand(1000,1000000).".".$imgExt;
 				
 			// allow valid image file formats
 			if(in_array($imgExt, $valid_extensions)){			
 				// Check file size '5MB'
 				if($imgSize < 5000000)				{
-					move_uploaded_file($tmp_dir,$upload_dir.$observePic);
+					move_uploaded_file($tmp_dir,$upload_dir.$observeAsset);
 				}
 				else{
 					$errMSG = "Sorry, your file is too large.";
@@ -66,10 +66,10 @@ else {
 		// if no error occured, continue ....
 		if(!isset($errMSG))
 		{
-			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observePic,lat,lng,caseID,action,pix, observeTime) VALUES(:uname, :observation, :observePic, :lat, :lng, :caseID, :action, :pix, UTC_TIMESTAMP())');
+			$stmt = $db->prepare('INSERT INTO observations4(username,observation,observeAsset,lat,lng,caseID,action,pix, observeTime) VALUES(:uname, :observation, :observeAsset, :lat, :lng, :caseID, :action, :pix, UTC_TIMESTAMP())');
 			$stmt->bindParam(':uname',$username);
 			$stmt->bindParam(':observation',$observation);
-			$stmt->bindParam(':observePic',$observePic);
+			$stmt->bindParam(':observeAsset',$observeAsset);
 			$stmt->bindParam(':lat',$lat);
 			$stmt->bindParam(':lng',$lng);	
 			$stmt->bindParam(':caseID',$caseID);
