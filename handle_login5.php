@@ -1,5 +1,6 @@
 <?php
-	require_once '../../../php/landfill.php'; // connects to db
+	require_once '../../secret_php/landfill.php'; // connects to db
+	require_once '../../secret_php/landfill.php';
 
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 	if ($connekt->connect_error) die($connekt->connect_error);

@@ -1,6 +1,6 @@
 <?php
 	// PHP code in a more secure location
-  require_once '../../../php/landfill.php';
+  require_once '../../secret_php/landfill.php';
   $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
   if ($connekt->connect_error) die($connekt->connect_error);
 // Assigns form field content to columns in database

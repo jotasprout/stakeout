@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../../php/dbconfig.php';
+require_once '../../secret_php/dbconfig.php';
 
 class USER {
 

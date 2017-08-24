@@ -19,7 +19,7 @@ else {
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
 
-require_once '../../../php/landfill.php';
+require_once '../../secret_php/landfill.php';
 
 $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 
