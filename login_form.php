@@ -90,5 +90,5 @@ if(isset($_POST['submit'])) {
 	
 </div> <!-- /container -->
 
-<script src='//roxorsoxor.com/stakeout/mobrulesLogin.js'></script></body>
+<script src='//roxorsoxor.com/stakeout/js/mobrulesLogin.js'></script></body>
 </html>

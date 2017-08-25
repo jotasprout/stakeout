@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -247,5 +247,5 @@ else if(isset($successMSG)){
 </div> <!-- /container -->
 
 <script src="geoloc5.js"></script>
-<script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

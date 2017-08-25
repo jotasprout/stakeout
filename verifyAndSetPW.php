@@ -4,7 +4,7 @@ require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();
 if(empty($_GET['id']) && empty($_GET['code'])) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
 }
 if(isset($_GET['id']) && isset($_GET['code'])) {
 	$id = base64_decode($_GET['id']);
@@ -133,5 +133,5 @@ if(isset($_GET['id']) && isset($_GET['code'])) {
             
         </form>
     </div> <!-- /container -->
-  <script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+  <script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

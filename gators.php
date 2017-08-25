@@ -8,7 +8,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -59,7 +59,7 @@ else {
 			<!-- Panel Content --> 
 			
 			<a href="insert_gator.php" class="btn btn-primary">Add Investigator</a>
-			<a href='https://www.roxorsoxor.com/stakeout/gators_all.php' class='btn btn-primary'>Show All</a>
+			<a href='http://www.roxorsoxor.com/stakeout/gators_all.php' class='btn btn-primary'>Show All</a>
 
 <?php
 
@@ -115,5 +115,5 @@ else {
 
 <!-- /container -->
 
-<script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

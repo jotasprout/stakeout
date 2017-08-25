@@ -30,7 +30,7 @@ if(isset($_POST['btn-submit']))
 				   If it was you, click the link and reset your password.<br/>
 				   If it wasn't you, someone is up to no good.<br/>
 				   <br /><br />
-				   <a href='https://www.roxorsoxor.com/stakeout/resetpass.php?id=$id&code=$code'>Click here to reset your password</a>.
+				   <a href='http://www.roxorsoxor.com/stakeout/resetpass.php?id=$id&code=$code'>Click here to reset your password</a>.
 				   <br /><br />
 				   Be safe.
 				   ";
@@ -103,5 +103,5 @@ if(isset($_POST['btn-submit']))
 		</div> <!-- /panel-body -->
 	</div> <!-- /panel-primary -->
 </div> <!-- /container -->
-  <script src='//roxorsoxor.com/stakeout/mobrulesLogin.js'></script></body>
+  <script src='//roxorsoxor.com/stakeout/js/mobrulesLogin.js'></script></body>
 </html>

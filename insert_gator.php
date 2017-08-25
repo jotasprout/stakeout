@@ -7,7 +7,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])) {
 			$id = $key;
 			$message = "Welcome to Stakeout, $forename!<br/>
 						Click the link below to complete your registration.<br/>
-						<a href='https://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />
+						<a href='http://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />
 						Thanks,";
 			$subject = "Confirm Registration";
 			$user->send_mail($email,$message,$subject);
@@ -140,5 +140,5 @@ if(isset($_POST['submit'])) {
 	</div> <!-- /panel-primary -->
 
 	</div> <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

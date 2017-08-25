@@ -20,17 +20,17 @@ class CASE {
 						return true;
 					}
 					else {
-						header("Location: https://www.roxorsoxor.com/stakeout/login_form.php?error");
+						header("Location: http://www.roxorsoxor.com/stakeout/login_form.php?error");
 						exit;
 					}
 				}
 				else {
-					header("Location: https://www.roxorsoxor.com/stakeout/login_form.php?inactive");
+					header("Location: http://www.roxorsoxor.com/stakeout/login_form.php?inactive");
 					exit;
 				}
 			}
 			else {
-				header("Location: https://www.roxorsoxor.com/stakeout/login_form.php?error");
+				header("Location: http://www.roxorsoxor.com/stakeout/login_form.php?error");
 				exit;
 			}
 		}
@@ -52,7 +52,7 @@ class CASE {
 	public function logout() {
 		session_destroy();
 		$_SESSION['username'] = false;
-		header("location: https://www.roxorsoxor.com/stakeout/login_form.php");
+		header("location: http://www.roxorsoxor.com/stakeout/login_form.php");
 	}
 
 }
