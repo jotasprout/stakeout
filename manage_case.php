@@ -142,7 +142,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		
  <?php
 	// PHP code in a more secure location
-	include("../../../php/landfill.php");
+	include("../../secret_php/landfill.php");
 	// Start creating an HTML table for Assigned Cases and create header row
     echo "<table class='table table-striped table-hover '><thead><tr><th>Assigned Investigators</th></tr></thead>";
 	echo "<tbody>";
@@ -176,7 +176,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 
 <?php
     // PHP code in a more secure location
-    include("../../../php/landfill.php");
+    include("../../secret_php/landfill.php");
     //Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
     // Connection test and feedback

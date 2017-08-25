@@ -206,7 +206,7 @@ if ($connekt->connect_error) die($connekt->connect_error);
 	<?php
 	// this lists the cases assigned to this user
 	// PHP code in a more secure location
-	include("../../../php/landfill.php");
+	include("../../secret_php/landfill.php");
 	// Start creating an HTML table for Assigned Cases and create header row
     echo "<table class='table table-striped table-hover '><thead><tr><th>Assigned Cases</th></tr></thead>";
 	echo "<tbody>";

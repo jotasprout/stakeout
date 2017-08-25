@@ -51,7 +51,7 @@ else {
     <div class="panel-body"> <!-- Panel Content --> <a href="insert_assignment.php" class="btn btn-primary">Add Assignment</a>
       <?php
       // PHP code in a more secure location
-	  include("../../../php/landfill.php");
+	  include("../../secret_php/landfill.php");
 	  //Uses PHP code to connect to database
 	  $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 	  // Connection test and feedback

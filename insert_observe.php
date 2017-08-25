@@ -150,7 +150,7 @@ else if(isset($successMSG)){
 
 			<?php
 				// PHP code in a more secure location
-				include("../../../php/landfill.php");
+				include("../../secret_php/landfill.php");
 				// require_once '../../secret_php/landfill.php';
 			
 				// connect to database
