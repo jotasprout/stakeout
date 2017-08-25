@@ -2,9 +2,9 @@
 
 class Database {
     private $host = "localhost";
-    private $db_name = "jscript_stakeout";
-    private $username = "jscript_soadmin";
-    private $password = "F3@5tY0ur3yez!";
+    private $db_name = "stakeout";
+    private $username = "jay";
+    private $password = "B|gD@ddy69";
     public $conn;
     public function dbConnection() {
 	    $this->conn = null;    
