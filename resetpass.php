@@ -1,6 +1,6 @@
 <?php
 
-require_once 'class.gator.php';
+require_once 'class.gatorGoogle.php';
 require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
 $user = new USER();

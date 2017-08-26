@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'class.gator.php';
+require_once 'class.gatorGoogle.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
