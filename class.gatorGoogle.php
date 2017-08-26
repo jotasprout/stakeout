@@ -100,7 +100,7 @@ class USER {
 		$mail->SMTPAuth   = true;
 		$mail->SMTPSecure = "ssl";
 		$mail->Host       = "smtp.gmail.com";
-		$mail->Port       = 465;
+		$mail->Port       = 250;
 		$mail->AddAddress($email);
 		$mail->Username="rxrsxr@gmail.com";
 		$mail->Password="P3@c30utBro!";
