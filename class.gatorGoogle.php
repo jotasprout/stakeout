@@ -103,7 +103,7 @@ class USER {
 		$mail->Port       = 465;
 		$mail->AddAddress($email);
 		$mail->Username="rxrsxr@gmail.com";
-		$mail->Password="WeB2Thug4Lif3!";
+		$mail->Password="P3@c30utBro!";
 		$mail->SetFrom('rxrsxr@gmail.com','Stakeout Registration');
 		$mail->AddReplyTo("rxrsxr@gmail.com","Stakeout Registration");
 		$mail->Subject    = $subject;
