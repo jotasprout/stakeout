@@ -1,6 +1,7 @@
 <?php
 
 require_once '../../secret_php/dbconfig.php';
+require_once 'mailer/PHPMailer.php';
 
 class USER {
 
@@ -95,7 +96,7 @@ class USER {
 	function send_mail($email,$message,$subject) {
 		require ('mailer/PHPMailer.php');
 		require ('mailer/Exception.php');
-		$mail = new PHPMailer();
+		$mail = new PHPMailer(true);
 		$mail->IsSMTP();
 		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth   = true;
