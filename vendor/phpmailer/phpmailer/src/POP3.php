@@ -242,7 +242,11 @@ class POP3
         if (false === $this->pop_conn) {
             //  It would appear not...
             $this->setError(
-                "Failed to connect to server $host on port $port. errno: $errno; errstr: $errstr"
+                [
+                'error' => "Failed to connect to server $host on port $port",
+                'errno' => $errno,
+                'errstr' => $errstr
+                ]
             );
             return false;
         }
@@ -357,7 +361,13 @@ class POP3
     protected function checkResponse($string)
     {
         if (substr($string, 0, 3) !== '+OK') {
-            $this->setError("Server reported an error: $string");
+            $this->setError(
+                [
+                'error' => "Server reported an error: $string",
+                'errno' => 0,
+                'errstr' => ''
+                ]
+            );
             return false;
         } else {
             return true;
@@ -403,8 +413,13 @@ class POP3
     protected function catchWarning($errno, $errstr, $errfile, $errline)
     {
         $this->setError(
-            'Connecting to the POP3 server raised a PHP warning:'.
-            "errno: $errno errstr: $errstr; errfile: $errfile; errline: $errline"
+            [
+            'error' => 'Connecting to the POP3 server raised a PHP warning: ',
+            'errno' => $errno,
+            'errstr' => $errstr,
+            'errfile' => $errfile,
+            'errline' => $errline
+            ]
         );
     }
 }

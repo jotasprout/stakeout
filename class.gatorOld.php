@@ -1,5 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
+
 require_once '../../secret_php/dbconfig.php';
 
 class USER {
@@ -93,9 +93,7 @@ class USER {
 	}
 
 	function send_mail($email,$message,$subject) {
-
-		require 'vendor/autoload.php';
-
+		require ('PHPMailer/PHPMailer.php');
 		$mail = new PHPMailer(true);
 		$mail->IsSMTP();
 		$mail->SMTPDebug  = 2;
