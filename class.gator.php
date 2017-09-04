@@ -93,7 +93,8 @@ class USER {
 	}
 
 	function send_mail($email,$message,$subject) {
-		require_once('mailer/PHPMailer.php');
+		require ('mailer/PHPMailer.php');
+		require ('mailer/Exception.php');
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
 		$mail->SMTPDebug  = 2;
