@@ -93,14 +93,14 @@ class USER {
 	}
 
 	function send_mail($email,$message,$subject) {
-		require_once('mailer/class.phpmailer.php');
+		require_once('mailer/PHPMailer.php');
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
-		$mail->SMTPDebug  = 0;
+		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth   = true;
-		$mail->SMTPSecure = "ssl";
-		$mail->Host       = "roxorsoxor.com";
-		$mail->Port       = 465;
+		$mail->SMTPSecure = "tls";
+		$mail->Host       = "mailtime.roxorsoxor.com";
+		$mail->Port       = 587;
 		$mail->AddAddress($email);
 		$mail->Username="stakeout@roxorsoxor.com";
 		$mail->Password="P3@c30utBro!";
