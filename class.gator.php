@@ -100,7 +100,7 @@ class USER {
 		$mail->SMTPAuth   = true;
 		$mail->SMTPSecure = "tls";
 		$mail->Host       = "mailtime.roxorsoxor.com";
-		$mail->Port       = 587;
+		$mail->Port       = 25;
 		$mail->AddAddress($email);
 		$mail->Username="stakeout@roxorsoxor.com";
 		$mail->Password="P3@c30utBro!";
