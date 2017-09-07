@@ -100,12 +100,13 @@ class USER {
 		$mail->IsSMTP();
 		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth   = true;
+		$mail->AuthType = "login";
 		$mail->SMTPSecure = "tls";
 		$mail->Host       = "mailtime.roxorsoxor.com";
 		$mail->Port       = 587;
 		$mail->AddAddress($email);
 		$mail->Username="stakeout@roxorsoxor.com";
-		$mail->Password="P3@c30utBro!";
+		$mail->Password='MyButtCake';
 		$mail->SetFrom('stakeout@roxorsoxor.com','Stakeout');
 		$mail->AddReplyTo("stakeout@roxorsoxor.com","Stakeout");
 		$mail->Subject    = $subject;
