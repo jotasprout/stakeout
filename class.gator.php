@@ -106,7 +106,7 @@ class USER {
 		$mail->Port       = 587;
 		$mail->AddAddress($email);
 		$mail->Username="stakeout@roxorsoxor.com";
-		$mail->Password='MyButtCake';
+		$mail->Password='Bi11G@t3s';
 		$mail->SetFrom('stakeout@roxorsoxor.com','Stakeout');
 		$mail->AddReplyTo("stakeout@roxorsoxor.com","Stakeout");
 		$mail->Subject    = $subject;
