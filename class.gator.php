@@ -100,7 +100,7 @@ class USER {
 		$mail->IsSMTP();
 		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth   = true;
-		$mail->AuthType = "plain";
+		$mail->AuthType = "PLAIN";
 		$mail->SMTPSecure = "tls";
 		$mail->Host       = "mailtime.roxorsoxor.com";
 		$mail->Port       = 587;
