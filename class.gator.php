@@ -101,7 +101,7 @@ class USER {
 		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth   = true;
 		$mail->AuthType = "PLAIN";
-		$mail->SMTPSecure = "tls";
+		$mail->SMTPSecure = "TLS";
 		$mail->Host       = "mailtime.roxorsoxor.com";
 		$mail->Port       = 587;
 		$mail->AddAddress($email);
