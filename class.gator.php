@@ -113,4 +113,21 @@ class USER {
 		$mail->MsgHTML($message);
 		$mail->Send();
 	}
+
+	function message_bottle ($email, $message, $subject) {
+		$to = $email;
+		$subject = $subject;
+	
+		// headers for From info
+		$headers = "From: stakeout@roxorsoxor.com\r\n";
+		$headers .= "Reply-To: stakeout@roxorsoxor.com\r\n";
+		$headers .= "X-Mailer: PHP/".phpversion();
+	
+		// body
+		$message = $message;
+	
+		// send email
+		mail($to, $subject, $message, $headers);
+	}
+
 }

@@ -45,7 +45,8 @@ if(isset($_POST['submit'])) {
 						<a href='http://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />
 						Thanks,";
 			$subject = "Confirm Registration";
-			$user->send_mail($email,$message,$subject);
+			// changing send_mail on next line to message_bottle
+			$user->message_bottle($email,$message,$subject);
 			$msg = "<div class='alert alert-success'>
 						<button class='close' data-dismiss='alert'>&times;</button>
 						<strong>Almost there!</strong> We've sent an email to $email.

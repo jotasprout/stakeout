@@ -35,7 +35,8 @@ if(isset($_POST['btn-submit']))
 				   Be safe.
 				   ";
 		$subject = "Password Reset";
-		$user->send_mail($email,$message,$subject);
+		// changing send_mail on next line to message_bottle
+		$user->message_bottle($email,$message,$subject);
 		$msg = "<div class='alert alert-success'>
 					We've sent an email to $email.
                     Click the link in the email to reset your password.
