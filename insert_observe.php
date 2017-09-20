@@ -246,6 +246,6 @@ else if(isset($successMSG)){
 	
 </div> <!-- /container -->
 
-<script src="geoloc5.js"></script>
+<script src="/js/geoloc5.js"></script>
 <script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>
