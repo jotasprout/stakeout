@@ -19,7 +19,7 @@ $stylesAndSuch = "
 <link rel='stylesheet' type='text/css' href='//roxorsoxor.com/stakeout/css/mobrules.css' media='only screen and (max-width: 600px)' />
 <link rel='stylesheet' type='text/css' href='//roxorsoxor.com/stakeout/css/both.css' />
 <link rel='stylesheet' type='text/css' href='//roxorsoxor.com/bootstrap/css/bootstrap.min.css' media='screen and (min-width: 601px)'>
-<link rel='stylesheet' type='text/css' href='//roxorsoxor.com/css/justified-nav.css' media='screen and (min-width: 601px)'>
+<link rel='stylesheet' type='text/css' href='https://www.roxorsoxor.com/css/justified-nav.css' media='screen and (min-width: 601px)'>
 
 <meta name='viewport' content='user-scalable=no, width=device-width' />
 <meta name='apple-mobile-web-app-capable' content='yes'>
