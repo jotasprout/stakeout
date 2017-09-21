@@ -130,7 +130,7 @@ else {
 
 <div class='row'>
 	<div class='col-md-3'><strong>Case: </strong></div>
-	<div class='col-md-3'><?php echo $caseName; ?> </div>
+	<div class='col-md-9'><?php echo $caseName; ?> </div>
 </div>
 
 <div class='row'>
@@ -144,7 +144,7 @@ else {
 </div>
 
 <div class='row'>
-	<div class='col-md-3'><strong>Investigator:</strong> </div></div>
+	<div class='col-md-3'><strong>Investigator:</strong> </div>
 	<div class='col-md-9'><div class='col-md-9'><?php echo $forename . " " . $surname; ?> </div>
 	</div>
 
