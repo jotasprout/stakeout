@@ -132,24 +132,41 @@ else {
 	<div class='col-md-3'><strong>Case: </strong></div>
 	<div class='col-md-3'><?php echo $caseName; ?> </div>
 </div>
+
 <div class='row'>
 	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
 	<div class='col-md-9'><a href='caseAssets/<?php echo $observeAsset; ?>'><img class='img-thumb' src='caseAssets/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
 </div>
 
-<div class='row'><strong>Action:</strong> <?php echo $action; ?> </div>
-<div class='row'><strong>Investigator:</strong> <?php echo $forename . " " . $surname; ?> </div>
+<div class='row'>
+	<div class='col-md-3'><strong>Action:</strong></div>
+	<div class='col-md-9'><div class='col-md-3'><?php echo $action; ?> </div>
+</div>
+
+<div class='row'>
+	<div class='col-md-3'><strong>Investigator:</strong> </div></div>
+	<div class='col-md-9'><div class='col-md-9'><?php echo $forename . " " . $surname; ?> </div>
+	</div>
 
 <div class='row'>
 	<div class='col-md-3'><strong>Description:</strong></div>
 	<div class='col-md-9'><?php echo $description; ?></div>
 </div>
 
-<div class='row'><strong>Photos Available:</strong> <?php echo $available; ?></div>
+<div class='row'>
+	<div class='col-md-3'><strong>Photos Available:</strong> </div>
+	<div class='col-md-9'><?php echo $available; ?></div>
+</div>
 
-<div class='row'><strong>Date:</strong><?php echo $formatted_date_long=date_format($ourTime, 'F jS, Y'); ?></div>
+<div class='row'>
+	<div class='col-md-3'><strong>Date:</strong></div>
+	<div class='col-md-9'><?php echo $formatted_date_long=date_format($ourTime, 'F jS, Y'); ?></div>
+</div>
 
-<div class='row'><strong>Time:</strong><?php echo $formatted_date_long=date_format($ourTime, 'g:i a'); ?></div>	
+<div class='row'>
+	<div class='col-md-3'><strong>Time:</strong></div>
+	<div class='col-md-9'><?php echo $formatted_date_long=date_format($ourTime, 'g:i a'); ?></div>	
+</div>
 
 <?php
 
