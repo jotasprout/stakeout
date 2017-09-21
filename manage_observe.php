@@ -128,7 +128,9 @@ else {
                 
 <!-- SHIZZLE GOES HERE -->
 
-<div class='row'><strong>Case: </strong> <?php echo $caseName; ?> </div>
+<div class='row'>
+	<div class='col-md-3'><strong>Case: </strong></div>
+	<div class='col-md-3'><?php echo $caseName; ?> </div>
 <div class='row'>
 	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
 	<div class='col-md-9'><a href='caseAssets/<?php echo $observeAsset; ?>'><img class='img-thumb' src='caseAssets/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
