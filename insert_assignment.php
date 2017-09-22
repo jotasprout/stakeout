@@ -93,7 +93,7 @@ else {
 							echo "</select>";
 						echo "</div>";
 					echo "</div>";
-					echo "<script>console.log('Case Number " . $assignedCase . " is assigned to " . $username . "')</script>";
+					// echo "<script>console.log('Case Number " . $assignedCase . " is assigned to " . $username . "')</script>";
 					// When attempt is complete, connection closes
 					mysqli_close($connekt);
 				?>

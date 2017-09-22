@@ -205,7 +205,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 
 		$thisObserve = $row["description"];
 		$observeLength = strlen($thisObserve);
-		if ($oserveLength > 30) {
+		if ($observeLength > 30) {
 			$observeX = truncomatic($thisObserve, 30, " ...");
 		}
 		else {
