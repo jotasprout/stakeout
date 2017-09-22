@@ -43,6 +43,7 @@ else {
 		// check that the 'id' matches up with a row in the databse
 		if($row){
 			// if there's a match, display data from db
+			$caseID = $row["caseID"];
 			$caseName = $row["caseName"];
 			$observeAsset = "";
 
@@ -135,7 +136,7 @@ else {
 
 <div class='row'>
 	<div class='col-md-3'><strong>Uploaded Asset:</strong></div>
-	<div class='col-md-9'><a href='caseAssets/<?php echo $observeAsset; ?>'><img class='img-thumb' src='caseAssets/<?php echo $observeAsset; ?>' width='300px' height='auto'></a></div>
+	<div class='col-md-9'><a href='caseAssets/<?php echo $caseID . '/' . $observeAsset; ?>'><img class='img-thumb' src='caseAssets/<?php echo $caseID . '/' . $observeAsset; ?>' width='300px' height='auto'></a></div>
 </div>
 
 <div class='row'>

@@ -39,8 +39,8 @@ else {
 		
 		if(!empty($imgFile)){
 
-			if (!is_dir(caseAssets/$caseID)) {
-				mkdir(caseAssets/$caseID, 0755);
+			if (!is_dir('caseAssets/' . $caseID)) {
+				mkdir('caseAssets/' . $caseID, 0755);
 			}
 
 			$upload_dir = 'caseAssets/' . $caseID; // upload directory
