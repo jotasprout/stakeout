@@ -38,7 +38,12 @@ else {
 		}
 		
 		if(!empty($imgFile)){
-			$upload_dir = 'caseAssets/'; // upload directory
+
+			if (!is_dir(caseAssets/$caseID)) {
+				mkdir(caseAssets/$caseID, 0755);
+			}
+
+			$upload_dir = 'caseAssets/' . $caseID; // upload directory
 	
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
 		
