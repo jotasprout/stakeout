@@ -43,7 +43,7 @@ else {
 				mkdir('caseAssets/' . $caseID, 0755);
 			}
 
-			$upload_dir = 'caseAssets/' . $caseID; // upload directory
+			$upload_dir = 'caseAssets/' . $caseID . '/'; // upload directory
 	
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
 		
