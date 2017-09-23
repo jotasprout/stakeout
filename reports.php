@@ -1,32 +1,35 @@
 <?php
-session_start();
-require_once 'class.gator.php';
-require_once 'stylesAndSuch.php';
-require_once 'navbar.php';
-$user = new USER();
+    session_start();
+    require_once 'class.gator.php';
+    require_once 'stylesAndSuch.php';
+    require_once 'navbar.php';
+    $user = new USER();
 
-if(!$user->areTheyLoggedIn()) {
-	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
-}
-else {
-	$jefe = $_SESSION['jefe'];
-	if ($jefe == 1) {
-		echo "<script>console.log('You are an admin.')</script>";
-	} else {
-		$user->redirect('index.php');
-	}	
-	$username = $_SESSION['username'];
-	echo "<script>console.log('" . $username . " is logged in.')</script>";
-}
-
+    if(!$user->areTheyLoggedIn()) {
+        $user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+    }
+    else {
+        $jefe = $_SESSION['jefe'];
+        if ($jefe == 1) {
+            echo "<script>console.log('You are an admin.')</script>";
+        } else {
+            $user->redirect('index.php');
+        }	
+        $username = $_SESSION['username'];
+        echo "<script>console.log('" . $username . " is logged in.')</script>";
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Reports</title>
 	<?php echo $stylesAndSuch; ?>
 </head>
+
 <body>
+
 <div class="container">
 
     <nav class='navbar navbar-default'>	
@@ -41,10 +44,7 @@ else {
             echo $navbarGator;
         }
     ?>
-	
-</div> <!-- /container-fluid -->   
-</nav> <!-- /navbar -->	
-	
+    </nav> <!-- /navbar -->	
 	<!-- main -->
 	
 	<div class="panel panel-primary">
@@ -54,17 +54,17 @@ else {
 		<div class="panel-body"> 
 			
 			<!-- Panel Content --> 
-			<?php
-			<div class="form-group"><!-- Last Row -->
+
+            <div class="form-group"> 
                 <div class="col-lg-4 col-lg-offset-2">
-                    <button class="btn btn-primary" type="submit" name="submit">Nothing Button</button>
+                    <button class="btn btn-primary" type="submit" name="submit">Create Cover</button>
                 </div>  
-            </div> <!-- /Last Row -->
-			?>
+            </div> 
 
 		</div>
-	</div>
-</div>
-<!-- /container -->
+    </div>
+    	
+</div> <!-- /container-fluid -->   
+
 <script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>
