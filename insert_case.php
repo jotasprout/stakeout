@@ -76,7 +76,7 @@ else {
 				<label class="col-lg-2 control-label" for="startDate">Start Date</label>
 				<!-- Column 2 -->
 				<div class="col-lg-4">
-					<input class="form-control" type="date" id="datepicker" name="startDate" placeholder="YYYY-MM-DD" />
+					<input class="form-control" type="date" id="datepicker" name="startDate"/>
 				</div>
 			</div> <!-- /Row 3 -->
 			
