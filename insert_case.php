@@ -24,6 +24,7 @@ else {
 <head>
 	<title>Open A Case</title>
 	<?php echo $stylesAndSuch; ?>
+	<script src='https://www.roxorsoxor.com/stakeout/js/dates.js'></script>
 </head>
 <body>
 <div class="container">
@@ -76,7 +77,7 @@ else {
 				<label class="col-lg-2 control-label" for="startDate">Start Date</label>
 				<!-- Column 2 -->
 				<div class="col-lg-4">
-					<input class="form-control" type="date" id="datepicker" name="startDate"/>
+					<input class="form-control" type="date" id="startDate" name="startDate"/>
 				</div>
 			</div> <!-- /Row 3 -->
 			
