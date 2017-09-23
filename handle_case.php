@@ -34,7 +34,7 @@
 	echo "<script>console.log('Start Date is ' . $startDate)</script>";
 
 	// commenting out next line temporarily to test something else
-	// header("location:cases.php");
+	header("location:cases.php");
 
 	// When attempt is complete, connection closes
   mysqli_close($connekt);
