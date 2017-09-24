@@ -109,7 +109,6 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 <head>
     <title>Case Management</title>
 	<?php echo $stylesAndSuch; ?>   
-	<script src='https://www.roxorsoxor.com/stakeout/js/dates.js'></script>
 </head>
 <body>
 	<div class="container">
@@ -230,5 +229,6 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		</div> <!-- /panel-body -->
 	</div> <!-- /panel -->
 </div> <!-- /container -->
- <script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+ </body>
  </html>

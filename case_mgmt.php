@@ -34,7 +34,7 @@
 			<label class="col-lg-2 control-label" for="endDate">End Date</label>
 			<!-- Column 2 -->
 			<div class="col-lg-4">
-				<input class="form-control" type="date" id="datepicker" name="endDate" value="<?php echo $endDate; ?>" />
+				<input class="form-control" type="date" id="endDate" name="endDate" value="<?php echo $endDate; ?>" />
 			</div>
 		</div><!-- /Row 4 -->
 		
@@ -43,7 +43,7 @@
 			<label class="col-lg-2 control-label" for="deliveryDate">Delivery Date</label>
 			<!-- Column 2 -->
 			<div class="col-lg-4">
-				<input class="form-control" type="date" id="datepicker" name="deliveryDate"  value="<?php echo $deliveryDate; ?>" />
+				<input class="form-control" type="date" id="deliveryDate" name="deliveryDate"  value="<?php echo $deliveryDate; ?>" />
 			</div>
 		</div><!-- /Row 5 -->
 		

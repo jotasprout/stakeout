@@ -24,7 +24,6 @@ else {
 <head>
 	<title>Open A Case</title>
 	<?php echo $stylesAndSuch; ?>
-	<script src='https://www.roxorsoxor.com/stakeout/js/dates.js'></script>
 </head>
 <body>
 <div class="container">
@@ -94,5 +93,6 @@ else {
 	</div> <!-- /panel-primary -->	
 	
 </div> <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>
