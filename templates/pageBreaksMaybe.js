@@ -21,7 +21,7 @@ return {
             };
 
 
-In the DocDefinition you can add a function for pageBreakBefore like this:
+// In the DocDefinition you can add a function for pageBreakBefore like this:
 
 content: [{
     text: getOfferClosingParagraph(),
