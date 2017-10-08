@@ -6,6 +6,6 @@
 
   $db_username = 'jay';
 
-  $db_password = 'F3@5tY0urEyez!';
+  $db_password = 'M3b4uN0tMew/oU';
 
 ?>

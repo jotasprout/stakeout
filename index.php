@@ -115,5 +115,6 @@ $result = $connekt->query($query);
 	
 </div> <!-- /container -->
 
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>

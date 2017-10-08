@@ -4,7 +4,7 @@ class Database {
     private $host = "localhost";
     private $db_name = "stakeout";
     private $username = "jay";
-    private $password = "F3@5tY0urEyez!";
+    private $password = "M3b4uN0tMew/oU";
     public $conn;
     public function dbConnection() {
 	    $this->conn = null;    

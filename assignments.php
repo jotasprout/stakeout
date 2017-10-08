@@ -86,5 +86,6 @@ else {
   </div>
 </div>
 <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>
