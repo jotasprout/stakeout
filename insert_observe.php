@@ -252,6 +252,8 @@ else if(isset($successMSG)){
 </div> <!-- /container -->
 
 <?php echo $scriptsAndSuch; ?>
+<script src='//roxorsoxor.com/stakeout/js/geoloc.js'></script>
+
 
 </body>
 </html>
