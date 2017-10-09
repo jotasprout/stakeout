@@ -208,5 +208,6 @@ else {
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQS5VSppsf0VpNd8le9EexkJlIleZIQ04&callback=initMap' async defer></script>
 <!-- /google map -->
 
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>

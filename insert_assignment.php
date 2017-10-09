@@ -109,6 +109,7 @@ else {
 	</div> <!-- /panel-primary -->
 
 	</div> <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script>
+	<?php echo $scriptsAndSuch; ?>
+</script>
 </body>
 </html>

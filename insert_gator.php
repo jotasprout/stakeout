@@ -141,5 +141,6 @@ if(isset($_POST['submit'])) {
 	</div> <!-- /panel-primary -->
 
 	</div> <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+	<?php echo $scriptsAndSuch; ?>
+</body>
 </html>

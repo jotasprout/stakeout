@@ -244,5 +244,6 @@ if ($connekt->connect_error) die($connekt->connect_error);
 	
 </div>
 <!-- /container -->
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>
