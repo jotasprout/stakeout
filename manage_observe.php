@@ -50,6 +50,7 @@ else {
 			
 			if($row["observeAsset"] == "") {
 				$observeAsset = "nope.png";
+				$caseID = "nope";
 			}
 			else {
 				$observeAsset = $row["observeAsset"];
