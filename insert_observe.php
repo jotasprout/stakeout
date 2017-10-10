@@ -16,20 +16,20 @@ else {
 	$username = $_SESSION['username'];
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
-	error_reporting( ~E_NOTICE ); // avoid notice
+	error_reporting( ~E_NOTICE ); // avoid notice ... what is this?
 	$database = new Database();
 	$db = $database->dbConnection();
 	if(isset($_POST['btnsave'])) {
-		$username = $_POST['username']; // user name
+		$username = $_POST['username']; // user name ... why is this comment here?
 		$lat  = $_POST['txtlat'];	
 		$lng = $_POST['txtlng'];
-		$description = $_POST['description']; // user email
+		$description = $_POST['description']; // user email ... what?
 		$caseID = $_POST['assignedCase'];
 		$action = $_POST['action'];
 		$pix = $_POST['pix'];
-		$imgFile = $_FILES['observeImage']['name'];
-		$tmp_dir = $_FILES['observeImage']['tmp_name'];
-		$imgSize = $_FILES['observeImage']['size'];
+		$assetFile = $_FILES['observeAsset']['name'];
+		$tmp_dir = $_FILES['observeAsset']['tmp_name'];
+		$assetSize = $_FILES['observeAsset']['size'];
 		if(empty($username)){
 			$errMSG = "Please Enter Username.";
 		}
@@ -37,7 +37,7 @@ else {
 			$errMSG = "Please type a description of your observation, image, or audio file.";
 		}
 		
-		if(!empty($imgFile)){
+		if(!empty($assetFile)){
 
 			if (!is_dir('caseAssets/' . $caseID)) {
 				mkdir('caseAssets/' . $caseID, 0755);
@@ -45,18 +45,18 @@ else {
 
 			$upload_dir = 'caseAssets/' . $caseID . '/'; // upload directory
 	
-			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
+			$assetExt = strtolower(pathinfo($assetFile,PATHINFO_EXTENSION)); // get image extension
 		
 			// valid image extensions
 			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'm4a', 'mp3'); // valid extensions
 		
 			// rename uploading image
-			$observeAsset = rand(1000,1000000).".".$imgExt;
+			$observeAsset = rand(1000,1000000).".".$assetExt;
 				
 			// allow valid image file formats
-			if(in_array($imgExt, $valid_extensions)){			
+			if(in_array($assetExt, $valid_extensions)){			
 				// Check file size '5MB'
-				if($imgSize < 5000000)				{
+				if($assetSize < 5000000)				{
 					move_uploaded_file($tmp_dir,$upload_dir.$observeAsset);
 				}
 				else{
@@ -207,11 +207,11 @@ else if(isset($successMSG)){
 				<div class='col-lg-4'>
                 	<select class="form-control" name="action">
 						<option value="">- Choose -</option>
-						<option value="pretextContact">Pretext Contact</option>
-						<option value="socialMedia">Social Media</option>
-						<option value="surveillance">Surveillance</option>
-						<option value="trashPull">Trash Pull</option>
-						<option value="undercover">Undercover</option>
+						<option value="Pretext Contact">Pretext Contact</option>
+						<option value="social Media">Social Media</option>
+						<option value="Surveillance">Surveillance</option>
+						<option value="Trash Pull">Trash Pull</option>
+						<option value="Undercover">Undercover</option>
 					</select>
                 </div>
 			</div>
@@ -232,9 +232,9 @@ else if(isset($successMSG)){
 			</div>
             
 			<div class='form-group'> <!-- Row 6 -->
-				<label class='col-lg-2 control-label' for='observeImage'>Upload Asset</label>
+				<label class='col-lg-2 control-label' for='observeAsset'>Upload Asset</label>
 				<div class='col-lg-4'>
-                	<input class="input-group" type="file" name="observeImage" accept="image/jpeg,image/jpg,image/png,image/gif,audio/mp3,audio/m4a" />
+                	<input class="input-group" type="file" name="observeAsset" accept="image/jpeg,image/jpg,image/png,image/gif,audio/mp3,audio/m4a" />
                 </div>
 			</div>
             
