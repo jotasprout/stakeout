@@ -1,2 +1,14 @@
-# stakeout
-Mobile app for investigation reports and logging surveillance data. Can upload images with metadata, upload text info via form, then converts to XML. Downloads XML and based on tags, the report knows how to input text (and images?) and which templates to use.
+# Stakeout
+Mobile app created for private investigation firms or other teams for collaborating and combining data collected while logging surveillance information. 
+
+Can upload images, audio files, and text info via simple form.
+
+Collects geolocation data to provide maps of individual observations as well as a map of all observations in a case.
+
+Uses secure registration and login. 
+
+Admin can create cases. Admin can filter cases list by active/inactive (open/closed).
+
+Admin can add team members (investigators) and assign them to a case.
+
+Created as an enterprise-level supplement to RoxorReports, a dynamic Acrobat Javascript PDF.
