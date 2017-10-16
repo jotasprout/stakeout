@@ -12,10 +12,15 @@ $newAssetsArchive -> open ('caseAssets/' . $newZIPfileName, ZipArchive::CREATE);
 $newAssetsArchive -> addEmptyDir ($caseID);
         
 $getThis = 'caseAssets/' . $caseID . '/';
+echo $getThis;
 
 
 // if $getThis exists
 if (is_dir($getThis)) {
+
+    $msg = 'There are some assets for this case.';
+    // show that message
+    echo $msg;
 
     // add empty folder named after $caseID inside the archive
     $newAssetsArchive -> addEmptyDir ($caseID);
@@ -33,6 +38,7 @@ if (is_dir($getThis)) {
 else {
     $msg = 'There are no assets for this case.';
     // show that message
+    echo $msg;
 }
 
 $newAssetsArchive -> close();
