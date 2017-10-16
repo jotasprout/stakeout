@@ -9,7 +9,7 @@ $newZIPfileName = $caseID . '.zip';
 $newAssetsArchive -> open ('caseAssets/' . $newZIPfileName, ZipArchive::CREATE);
 
 // create new folder in zip file named after $caseID
-$newAssetsArchive -> addEmptyDir ($caseID)
+$newAssetsArchive -> addEmptyDir ($caseID);
         
 $getThis = 'caseAssets/' . $caseID . '/';
 
