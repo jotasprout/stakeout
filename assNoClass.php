@@ -23,7 +23,7 @@ if (is_dir($getThis)) {
     echo $msg . '<br>';
 
     // add empty folder named after $caseID inside the archive
-    $newAssetsArchive -> addEmptyDir ($caseID);
+    // $newAssetsArchive -> addEmptyDir ($caseID);
 
     // start looking at items inside the original assets folder for $caseID
     $targetDir = opendir($getThis);
@@ -32,7 +32,7 @@ if (is_dir($getThis)) {
     while ( ($file = readdir($targetDir) ) !== false) {
         echo $file . '<br>';
         // add a copy of each item in original folder to the new $caseID folder in the archive
-        $newAssetsArchive -> addFile ($caseID . '/' . $file);
+        $newAssetsArchive -> addFile ($file, $caseID . '/' . $file);
     }
 }
 
