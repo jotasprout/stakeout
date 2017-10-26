@@ -1,5 +1,6 @@
 <?php
 
+$caseID = '8';
 $getThis = 'caseAssets/' . $caseID . '/';
 echo $getThis . '<br>';
 
@@ -15,8 +16,6 @@ if (is_dir($getThis)) {
         $msg = $getThis . ' is writable.';
         // show that message
         echo $msg . '<br>';
-
-        $caseID = '8';
 
         $newAssetsArchive = new ZipArchive();
 
@@ -40,11 +39,12 @@ if (is_dir($getThis)) {
                 echo $file . '<br>';
                 // add a copy of each item in original folder to the new $caseID folder in the archive
                 $newAssetsArchive -> addFile ($file, $file);
-            }
-            
-            $newAssetsArchive -> close();
+            }   
             
         }
+
+        $newAssetsArchive -> close();
+
     }
 }
 
