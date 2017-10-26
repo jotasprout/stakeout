@@ -36,9 +36,15 @@ if (is_dir($getThis)) {
             
             // while there is at least one more file in the original folder
             while ( ($file = readdir($targetDir) ) !== false) {
-                echo $file . '<br>';
-                // add a copy of each item in original folder to the new $caseID folder in the archive
-                $newAssetsArchive -> addFile ($file, $file);
+
+                if (file_exists($file) && is_file($file)) {
+                    
+                    echo $file . '<br>';
+                    // add a copy of each item in original folder to the new $caseID folder in the archive
+                    $newAssetsArchive -> addFile ($file, $file);                    
+                }
+
+
             }   
             
         }
