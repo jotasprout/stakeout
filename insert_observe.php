@@ -17,8 +17,11 @@ else {
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
 	error_reporting( ~E_NOTICE ); // avoid notice ... what is this?
+
+	// where are these next two lines from? User class should be taking care of such stuff.
 	$database = new Database();
 	$db = $database->dbConnection();
+
 	if(isset($_POST['btnsave'])) {
 		$username = $_POST['username']; // user name ... why is this comment here?
 		$lat  = $_POST['txtlat'];	

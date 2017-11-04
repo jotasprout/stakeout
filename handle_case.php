@@ -23,7 +23,6 @@
 	);";
 
 	// Uses the above instructions for inserting
-	// mysqli_query($pushObserve);
   $retval = $connekt->query($pushCase);
 
 	// Feedback of whether INSERT worked or not

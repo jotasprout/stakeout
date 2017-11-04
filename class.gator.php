@@ -36,6 +36,8 @@ class USER {
 			$stmt->execute();
 			return $stmt;
 		}
+
+		// should not ex be exception like it is in user class? Make all of this consistent
 		catch(PDOException $ex) {
 			echo $ex->getMessage();
 		}
