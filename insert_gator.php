@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
 					<label class="col-lg-2 control-label" for="forename">First Name</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
-						<input class="form-control" type="text" name="forename" placeholder="First Name"/>
+						<input class="form-control" type="text" name="forename" placeholder="First Name" required>
 					</div>
 				</div><!-- /Row 1 -->
 				<div class="form-group"><!-- Row 2 -->
@@ -108,7 +108,7 @@ if(isset($_POST['submit'])) {
 					<label class="col-lg-2 control-label" for="surname">Last Name</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
-						<input class="form-control" type="text" name="surname" placeholder="Last Name"/>
+						<input class="form-control" type="text" name="surname" placeholder="Last Name" required>
 					</div>
 				</div><!-- /Row 2 -->
 				<div class="form-group"><!-- Row 3 -->
@@ -116,7 +116,7 @@ if(isset($_POST['submit'])) {
 					<label class="col-lg-2 control-label" for="username">Username</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
-						<input class="form-control" type="text" name="username" placeholder="username"/>
+						<input class="form-control" type="text" name="username" placeholder="username" required>
 					</div>
 				</div><!-- /Row 3 -->
 				
@@ -125,7 +125,7 @@ if(isset($_POST['submit'])) {
 					<label class="col-lg-2 control-label" for="email">Email</label>
 					<!-- Column 2 -->
 					<div class="col-lg-4">
-						<input class="form-control" type="text" name="email" placeholder="you@domain.com"/>
+						<input class="form-control" type="email" name="email" placeholder="you@domain.com" required>
 					</div>
 				</div><!-- /Row 5 -->
 				<div class="form-group"><!-- Last Row -->

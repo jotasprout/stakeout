@@ -66,7 +66,7 @@ if(isset($_POST['submit'])) {
 				<label class="col-lg-2 control-label" for="email">Email</label>
 				<!-- Column 2 -->
 				<div class="col-lg-4">
-					<input class="form-control" type="email" name="email" placeholder="email@domain.com"/>
+					<input class="form-control" type="email" name="email" placeholder="email@domain.com" required>
 				</div>
 			</div>
 			<!-- /Row 1 -->
@@ -74,7 +74,7 @@ if(isset($_POST['submit'])) {
 			<div class="form-group"><!-- Row 3 -->
 				<label class="col-lg-2 control-label" for="password">Password</label>
 				<div class="col-lg-4">
-					<input class="form-control" type="password" name="password" placeholder="password"/>
+					<input class="form-control" type="password" name="password" placeholder="password" required>
                     <div id="lost"><a href="fpass.php">Reset/Change Password</a></div>
 				</div>
 			</div> <!-- /Row 3 -->
