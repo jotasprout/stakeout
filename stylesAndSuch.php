@@ -8,7 +8,7 @@ $stylesAndSuch = "
     <link rel='stylesheet' type='text/css' href='https://www.roxorsoxor.com/bootstrap/css/bootstrap.min.css' media='screen and (min-width: 601px)'>
     <link rel='stylesheet' type='text/css' href='https://www.roxorsoxor.com/css/justified-nav.css' media='screen and (min-width: 601px)'>
 
-    <meta name='viewport' content='user-scalable=no, width=device-width' />
+    <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1' />
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='mobile-web-app-capable' content='yes'>
 
