@@ -1,0 +1,741 @@
+/*
+  **********************************************************************
+  **********************************************************************
+  *** Purpose........: CSS stylesheet
+  *** Page Type......: General Page(s)
+  *** Version........: 01
+  *** XHTML/CSS by...: Jeffrey A. Savoye
+  *** Last Update....: March 19, 2017
+  **********************************************************************
+  **********************************************************************
+ */
+body{
+  background-color:#264027;
+  background-image:url(../images/backtil6.jpg);
+  background-repeat:repeat;
+  color:#000000;
+  font-size:medium;
+}
+sup{
+  font-size:60%;
+}
+sub{
+  font-size:60%;
+} /*
+  **********************************************************************
+  *** Heading classes
+  **********************************************************************
+ */
+h1.txtinfo{
+  display:inline;
+  font-size:medium;
+  font-weight:bold;
+  text-align:left;
+}
+h1.txtttl{
+  font-size:x-large;
+  font-weight:normal;
+  text-align:center;
+}
+h1.hanging{
+  text-indent:-1.5em;
+  padding-left:1.5em;
+  text-align:justify;
+}
+h1.navttl{
+  display:inline;
+  font-size:xx-large;
+  font-weight:bold;
+  font-style:italic;
+  text-align:justify;
+}
+h2.section{
+  font-size:x-large;
+  font-weight:bold;
+  font-style:italic;
+  text-align:left;
+}
+h2.subsection{
+  font-size:x-large;
+  font-weight:bold;
+  font-style:italic;
+  padding:20px;
+  padding-top:0px;
+  padding-bottom:0px;
+  text-align:left;
+}
+h3.subsection{
+  font-size:Medium;
+  font-weight:bold;
+  font-style:italic;
+  padding:20px;
+  padding-top:0px;
+  padding-bottom:0px;
+  text-align:left;
+}
+div.indenttxt{
+  padding:0px;
+  padding-left:3em;
+  padding-right:3em;
+}
+/*
+  **********************************************************************
+  *** List classes
+  **********************************************************************
+ */
+li.noind{
+  list-style-type:disc;
+  margin-left:-1em;
+}
+li.bibentry{
+  margin-top:5px;
+  margin-bottom:15px;
+}
+li.miscitem{
+  margin-top:5px;
+  margin-bottom:15px;
+}
+/*
+  **********************************************************************
+  *** Pargaraph classes
+  **********************************************************************
+ */
+
+p.flind4{
+  text-indent:1.5em;
+}
+p.hanging{
+  text-align:justify;
+  text-indent:-1.5em;
+  padding-left:1.5em;
+}
+p.hangingnf{
+  text-indent:-1.5em;
+  padding:0px;
+  margin:0px;
+  padding-left:1.5em;
+}
+p.hanging2{
+  text-align:justify;
+  text-indent:-2.5em;
+  padding-left:2.5em;
+}
+p.indent4{
+  padding-left:1.5em;
+}
+p.indent{
+  padding-left:60px;
+}
+p.navline{
+  display:inline;
+  font-size:small;
+  font-weight:bold;
+  text-align:left;
+}
+p.proofline{
+  display:inline;
+  border-radius:10px;
+  font-size:x-small;
+  font-weight:normal;
+  text-align:left;
+}
+/* block quote */
+p.bq{
+  padding-left:20px;
+  padding-right:20px;
+}
+p.boximg{
+  display:block;
+  text-align:center;
+  padding:10px;
+  padding-bottom:0px;
+  margin:7px;
+}
+p.bottom{
+  font-size:100%;
+  padding:0px;
+  margin:0px;
+  clear:both;
+}
+p.textaj{
+  display:block;
+  font-size:medium;
+  font-weight:normal;
+  text-align:justify;
+  margin:0px;
+}
+p.textal{
+  display:block;
+  font-size:medium;
+  font-weight:normal;
+  text-align:left;
+  margin:0px;
+}
+p.textar{
+  display:block;
+  font-size:medium;
+  font-weight:normal;
+  text-align:right;
+  margin:0px;
+}
+p.textac{
+  display:block;
+  font-size:medium;
+  font-weight:normal;
+  text-align:center;
+  margin:0px;
+}
+p.ornline{
+  display:block;
+  font-size:medium;
+  font-weight:normal;
+  text-align:center;
+  margin:0px;
+}
+p.seprline{
+  border:solid 1px #000;
+  border-style:solid;
+  border-color:#003c00;
+  border-radius:10px;
+  margin:4px;
+  padding:2px;
+  font-size:medium;
+  font-weight:normal;
+  background-color:#f9fce6;
+  color:#003c00;
+  text-align:center;
+}
+p.hrline{
+  border-style:none;
+  border-top:solid 1px #000;
+  border-top-style:solid;
+  border-top-color:black;
+  border-bottom-style:hidden;
+  margin:4px;
+  padding:2px;
+  font-size:1%;
+  font-weight:normal;
+  background-color:#f9fce6;
+  color:#003c00;
+  text-align:center;
+}
+p.spacer{
+  display:block;
+  font-size:xx-small;
+  text-align:left;
+  line-height:1.5em;
+  margin:-1em;
+}
+p.spacermed{
+  display:block;
+  font-size:medium;
+  text-align:left;
+  margin:0px;
+}
+p.txtbox{
+  border:solid 1px #000;
+  border-color:#003c00;
+  font-size:medium;
+  margin:1px;
+  padding:20px;
+  text-align:justify;
+}
+/*
+  **********************************************************************
+  *** SPAN classes
+  **********************************************************************
+ */
+span.ellipses{
+  letter-spacing:.25em;
+  margin-right:-.25em;
+}
+a.navitem{
+  margin-right: .5em;
+}
+/*
+  **********************************************************************
+  *** DIV classes
+  **********************************************************************
+ */
+div.blockquote{
+  padding-left:3em;
+  padding-right:3em;
+}
+div.bottom{
+  font-size:6px;
+  clear:both;
+}
+div.pagebrdr{
+  color:#000000;
+  padding:30px;
+  padding-top:0px;
+  padding-bottom:100%;
+}
+/*  background-color was = #f5f5dc;
+*/
+div.pageframe{
+  background-color:#f9fce6;
+  border:solid 10px;
+  border-color:#0c0c0c;
+  border-radius:20px;
+  color:#000000;
+  margin:30px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:40px;
+  padding-top:32px;
+  min-width:50px;
+  max-width:1000px;
+}
+div.fixline{
+  display:block;
+  margin:0px;
+  padding:0px;
+  font-size:1%;
+  font-weight:normal;
+  text-align:left;
+  clear:both;
+}
+div.seprdecr{
+  display:block;
+  border:solid 1px #000;
+  border-style:double;
+  border-color:#003c00;
+  margin:1px;
+  padding:2px;
+  font-size:medium;
+  font-weight:normal;
+  text-align:center;
+}
+/* Generic borders and boxes */
+div.pnlimgleft{
+  float:left;
+  clear:none;
+  margin:0px;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+div.pnlimgcenter{
+  float:left;
+  margin:0px;
+  margin-left:15%;
+  margin-right:15%;
+  margin-bottom:20px;
+  min-width:5em;
+}
+div.pnlimgright{
+  float:right;
+  clear:none;
+  margin:0px;
+  margin-left:20px;
+  margin-bottom:20px;
+}
+div.boximgright{
+  float:right;
+  clear:none;
+  margin:10px;
+  margin-left:20px;
+  margin-bottom:20px;
+}
+div.boximglouter{
+  background-color:white;
+  color:#000;
+  display:block;
+  border:solid 1px #000000;
+  border-style:solid;
+  border-radius:10px;
+  margin:0px;
+  padding:0px;
+}
+div.boximglinner{
+  display:block;
+  background-color:#ffffff;
+  color:#000;
+  border:solid 1px #000000;
+  border-style:solid;
+  border-radius:10px;
+  margin:4px;
+  padding:0px;
+  padding-left:10px;
+  padding-right:10px;
+}
+div.boxbrdlouter{
+  display:block;
+  border:solid 1px #000;
+  border-color:#003c00;
+  border-style:solid;
+  border-radius:10px;
+  margin:0px;
+  padding:0px;
+  width:100%;
+}
+div.boxbrdlinner{
+  display:block;
+  border:solid 1px #000;
+  border-color:#003c00;
+  border-style:solid;
+  border-radius:10px;
+  margin:4px;
+  padding:0px;
+}
+div.boxbrdcouter{
+  display:block;
+  border:solid 6px #000;
+  border-color:#003c00;
+  border-style:solid;
+  border-radius:10px;
+  margin:0px;
+  padding:0px;
+}
+div.boxbrdcinner{
+  display:block;
+  border:solid 6px #000;
+  border-color:#003c00;
+  border-style:solid;
+  border-radius:10px;
+  margin:4px;
+  padding:0px;
+}
+div.blktxtal{
+  text-align:left;
+  padding:0px;
+  padding-top:4px;
+  padding-bottom:4px;
+}
+div.blkcvr{
+  text-align:center;
+  padding-left:20px;
+  padding-right:20px;
+  margin-left:40px;
+  margin-right:40px;
+}
+div.blktblc{
+  text-align:left;
+  padding:0px;
+  margin-left:40px;
+  margin-right:40px;
+}div.blktxtac{
+  text-align:center;
+  padding:0px;
+}
+div.blktxtaj{
+  text-align:justify;
+  padding:0px;
+}
+div.blktxtar{
+  text-align:right;
+  margin:0px;
+  padding:0px;
+}
+div.blktxtpd{
+  padding:20px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+div.bibliography{
+  padding:20px;
+  padding-left:0px;
+  padding-top:4px;
+  padding-bottom:30px;
+  text-align:justify;
+}
+/* Separator boxes */
+div.seprline{
+  border:solid 1px #000;
+  border-style:solid;
+  border-color:#003c00;
+  border-radius:10px;
+  margin:4px;
+  padding:2px;
+  font-size:medium;
+  font-weight:normal;
+  text-align:center;
+}
+div.note{
+  padding:20px;
+  padding-top:0px;
+  padding-bottom:0px;
+  text-align:justify;
+}
+div.boxannouter{
+  border: 3px solid; 
+  border-radius: 20px; 
+  padding: 3px; 
+  margin: 0px;
+  margin-top: 2em; 
+  text-align: center; 
+  max-width: 330px;  
+}
+div.boxanninner{
+  border: 1px solid; 
+  border-radius: 20px; 
+  padding: 1em;
+  margin: 0px;
+}
+/*
+  **********************************************************************
+  *** Span classes
+  **********************************************************************
+ */
+span.pgloc{
+  color:#006401;
+  font-weight:bold;
+  font-style:normal;
+}
+span.smcaps{
+  font-size:60%;
+}
+span.smspace{
+  font-size:40%;
+}
+span.navdate{
+  margin-right: .25em;
+}
+span.navsec{
+  margin-right: .25em;
+}
+/*
+  **********************************************************************
+  *** Etc.
+  **********************************************************************
+ */
+#spaceline{
+  padding:1px;
+  font-size:xx-small;
+}
+/* Navigation Area */
+#pnlnavbx{
+  margin:0px;
+  text-align:left;
+}
+#pnlnavln{
+  padding:10px;
+  padding-top:4px;
+  padding-bottom:4px;
+}
+#pnlnavttl{
+  padding:10px;
+  padding-top:20px;
+  padding-bottom:4px;
+}
+/* Notes and Proofing Line Area */
+#pnlntsm{
+  margin:0px;
+  text-align:left;
+}
+#pnlproof{
+  border:solid 1px #000;
+  border-style:double;
+  border-color:#003c00;
+  border-radius:10px;
+  margin:4px;
+  padding:3px;
+  padding-left:5px;
+  padding-right:5px;
+}
+/*
+  **********************************************************************
+  *** Overrides for Mobile
+  ********************************************************************** 
+  * 
+*/
+@media screen and (max-width: 800px){
+body{
+    margin: 0px;
+    padding: 0px;
+}
+div.pagebrdr {
+    border-color:#f9fce6;
+    border-width: 2px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+div.pagebrdr{
+    border-color:#f9fce6;
+    border-width: 1px;
+    border-radius: 0px;
+    color:#000000;
+    margin: 0px;
+    padding: 2px;
+    padding-top: 0px;
+    padding-bottom:100%;
+}
+div.pageframe{
+    border-color:#f9fce6;
+    border-width: 0px;
+    border-radius: 0px;
+    margin:3px;
+    padding:5px;
+    min-width:10px;
+    max-width:1000px;
+}
+div.pnlimgleft{
+    float:none;
+    clear:none;
+    margin:0px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+}
+div.pnlimgcenter {
+    float:none;
+    margin:0px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+    min-width:5em;
+}
+div.pnlimgright {
+    float: none !important;
+    clear: both !important;
+    margin: 0px;
+    margin-left:auto !important;
+    margin-right:auto !important;   
+}
+div.pnlmainlft {
+    float: none !important;
+    clear: both !important;
+    background-color:transparent;
+    color: #000;
+    width:100% !important;
+    max-width:100% !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+}
+div.pnlmainrgt {
+    float: left !important;
+    clear: both !important;
+    background-color: #f9fce6;
+    color: #000;
+    max-width:100% !important;
+    height: auto;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+}
+div.indenttxt{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+}
+.drophh {
+    display: none;
+}
+.boxbrdcouter {
+    border-width: 1px !important;
+    border-radius: 5px !important;
+    margin: 0px ! important;
+}
+.boxbrdcinner {
+    border-width: 1px !important;
+    border-radius: 2px !important;
+    margin: 0px ! important;
+}
+.boxbrdlouter {
+    border-width: 1px !important;
+    margin: 0px ! important;
+    padding: 0px ! important;
+}
+.boxbrdlinner {
+    border-width: 1px !important;
+    border-radius: 1px!important;
+    margin: 0px ! important;
+    padding: 0px ! important;
+}
+div.boxannouter{
+    border-width: 1px !important;
+    border-radius: 20px !important;
+    padding: 3px; 
+    margin: 0px;
+    margin-top: 2em; 
+    text-align: center; 
+    width: 100% !important;
+    max-width: 100% !important;
+}
+div.boxanninner{
+    border-width: 1px !important;
+    border-radius: 20px !important;
+    padding: 1em;
+    margin: 3px;
+    width: auto !important;
+    max-width: 800px !important;
+    text-align: center; 
+}
+div.boximgright{
+  float:none !important;
+  clear:both !important;
+  margin:10px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  margin-bottom:20px !important;
+}
+div.boximglouter{
+  background-color:white;
+  color:#000;
+  display:block;
+  border:solid 1px #000000;
+  border-style:solid;
+  border-radius:10px;
+  margin:0px;
+  padding:0px;
+}
+div.boximglinner{
+  display:block;
+  background-color:#ffffff;
+  color:#000;
+  border:solid 1px #000000;
+  border-style:solid;
+  border-radius:10px;
+  margin:4px;
+  padding:0px;
+  padding-left:10px;
+  padding-right:10px;
+}
+div.blkcvr{
+  padding-left:20px;
+  padding-right:20px;
+  margin-left:20px;
+  margin-right:20px;
+}
+div.blktblc{
+  margin:20px;
+}
+a.navitem{
+  margin-right: .10em;
+}
+span.navdate{
+  margin-right: .10em;
+}
+span.navsec{
+  margin-right: .10em;
+}
+}
+@media screen and (max-width: 400px){
+div.blkcvr{
+  padding:5px;
+  margin:5px;
+}
+div.blktblc{
+  margin-left:5px;
+  margin-right:5px;
+}
+div.indenttxt{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+}
+/*
+  **********************************************************************
+  **********************************************************************
+  *** END
+  **********************************************************************
+  **********************************************************************
+ */

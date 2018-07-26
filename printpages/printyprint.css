@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: sans-serif;
+}
+
+/* FOR PRINTING */
+
+@media print {
+	
+header nav, footer, img, video, audio, embed {
+	display: none;
+}
+/*
+	Have print versions of labels and fields in PDF invisible in browser but visible in print
+	You can also just create a blacklist class as follows
+*/
+	
+.dont-print {
+	display: none;
+}
+
+body {
+	font-family: serif;
+	text-align: justify;
+	counter-reset: chapter;
+}
+/* Dynamic chapter and page numbers that can reset */
+	
+body {
+	counter-reset: chapternum;
+	counter-reset: chapternum figurenum;
+}
+section {
+	page-break-before: always;
+}
+.footnotes {
+	page-break-before: always;
+}
+.fn {
+	counter-increment: footnote;
+}
+ .fn::footnote-call {
+ content: counter(footnote);
+ font-size: 9pt;
+ vertical-align: super;
+ line-height: none;
+}
+ .fn::footnote-marker {
+ font-weight: bold;
+}
+h1 {
+	page-break-before: always;
+	/*  This inserts figure numbers and resets them every chapter */
+	counter-reset: figurenum;
+	counter-reset: footnote;
+	/* Book title on bottom of right pages */
+	string-set: booktitle content();
+}
+/* This adds a dynamic chapter number, a dot, and a space before the chapter title which uses h1 */
+h1.chapter:before {
+	counter-increment: chapternum;
+	content: counter(chapternum) ". ";
+}
+header:after {
+	content: "put the URL here";
+}
+	
+	
+@page {
+		size: 8.5in 11in;
+	/*
+	size: a4;
+	size: A4 landscape;
+	*/
+	@footnote {
+		border-top: 1pt solid black;
+	}
+}
+@page:first {
+ margin: 1in;
+}
+ @page:right {
+	 margin-left: 1in;
+ margin-right: 0.5in;
+	 @top-right {
+		 margin: 10pt 0 30pt 0;
+		 border-top: .25pt solid #666;
+		 content: string(booktitle);
+		 font-size: 9pt;
+		 color: #333;
+	}
+	/* Page Numbers */
+	@bottom-right {
+		content: counter(page);
+	}
+}
+ @page:left {
+	  margin-left: 0.5in;
+ 	margin-right: 1in;
+	 @top-left {
+		 content: string(chaptertitle);
+		 margin: 30pt 0 10pt 0;
+		 font-size: 8pt;
+	}
+	/* Page Numbers */
+	@bottom-left {
+		content: counter(page);
+	}
+}
+	
+	/* GENERATING CONTENT WITH MARGIN BOXES MAGIC */
+	
+@page:blank {
+	@top-center {
+		content: "This page is intentionally left blank."
+	}
+}
+/*
+@page:left{
+	@bottom-left {
+		content: "Page " counter(page) " of " counter(pages);
+	}
+}
+*/		
+      
+h2:before {
+	content: "Chapter " counter(chapter) ": ";
+}
+h2 {
+	/* Similarly, you can do chapter titles using string-set which is like a variable. In this case, the book title uses h1 */
+	string-set: chaptertitle content();
+	border-top: 5px solid blue;
+	border-bottom: 1px solid blue;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 2cm;
+	counter-increment: chapter;
+}
+h2+p:first-letter {
+	font-size: 200%;
+	color: blue;
+	font-family: "Goudy Old Style", Georgia, serif;
+	line-height: 50%;
+}
+/* so links print in black */
+a, a:visited {
+	color: #000;
+}
+p {
+	widows: 3;
+	orphans: 3;
+}
+table {
+	page-break-inside: avoid;
+}
+hr {
+	width: 50%;
+	text-align: center;
+}
+blockquote {
+	font-size: 90%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+/*  ------ Special sections, using CSS class identifiers */
+      
+.toc {
+	text-align: center;
+	margin-top: 2cm;
+	margin-bottom: 2cm;
+}
+.toc p:first-letter {
+	font-size: 100%;
+}
+pre {
+	font-family: "Comic Sans", fantasy, serif;
+	font-style: italic;
+	margin-left: 20%;
+}
+p.fineprint {
+	font-size: 70%;
+	text-indent: 0em;
+}
+pre.copyright, .noprint {
+	display: none;
+}
+figcaption:before {
+	counter-increment: figurenum;
+	content: counter(chapternum) "-" counter(figurenum) ". ";
+}
+	
+}
