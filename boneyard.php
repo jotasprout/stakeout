@@ -1,1 +1,0 @@
-<? $connekt = mysql_connect("localhost","jscript_jota","We2CanFly!"); ?>
