@@ -7,7 +7,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])) {
 			$id = $key;
 			$message = "Welcome to Stakeout, $forename!<br/>
 						Click the link below to complete your registration.<br/>
-						<a href='http://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />
+						<a href='https://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />
 						Thanks,";
 			$subject = "Confirm Registration";
 			// changing send_mail on next line to message_bottle

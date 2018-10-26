@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -56,7 +56,7 @@ function truncomatic ($textytext, $endomatic, $linkylink) {
 		<div class="panel-heading"><h3 class="panel-title">Observations</h3></div>
 			<div class="panel-body">
 				<!-- Panel Content -->
-                <a href="//www.roxorsoxor.com/stakeout/insert_observe.php" class="btn btn-primary">Add Observation</a>
+                <a href="https://www.roxorsoxor.com/stakeout/insert_observe.php" class="btn btn-primary">Add Observation</a>
 <?php
     // PHP code in a more secure location
     include("../../secret_php/landfill.php");
