@@ -1,0 +1,33 @@
+#lost {
+	display: block;
+	line-height: 44px;
+}
+
+#header h1.hide {
+    display: none;
+}
+
+.panel-body > .row:nth-of-type(odd) {
+	background-color: #353a41;
+}
+
+.row {
+	padding: 5px;
+}
+
+.img-thumb {
+	border-radius: 4px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.allThumbs {
+	border-radius: 4px;
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}

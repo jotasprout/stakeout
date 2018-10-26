@@ -1,0 +1,44 @@
+%FDF-1.2
+%‚„œ”
+1 0 obj 
+<<
+/FDF 
+<<
+/Fields [
+<<
+/V (Report of Investigation)
+/T (reportType)
+>> 
+<<
+/V /
+/T (siteLink)
+>> 
+<<
+/V (Paul McCartney)
+/T (subject_01_CoverPage)
+>> 
+<<
+/V (John Lennon)
+/T (subject_02_CoverPage)
+>> 
+<<
+/V (September 22, 2017)
+/T (coverDate)
+>> 
+<<
+/V /
+/T (hideAnd)
+>> 
+<<
+/V (Breakup by Yoko)
+/T (caseType)
+>>]
+>>
+>>
+endobj 
+trailer
+
+<<
+/Root 1 0 R
+>>
+%%EOF
