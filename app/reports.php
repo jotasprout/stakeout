@@ -6,7 +6,7 @@
     $user = new USER();
 
     if(!$user->areTheyLoggedIn()) {
-        $user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+        $user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
     }
     else {
         $jefe = $_SESSION['jefe'];
@@ -66,5 +66,5 @@
     	
 </div> <!-- /container-fluid -->   
 
-<script src='//roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<script src='https://roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

@@ -6,7 +6,7 @@ require_once 'navbar.php';
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -56,8 +56,8 @@ else {
 			<!-- Panel Content --> 
 			<?php
 				if ($jefe == 1) {
-					echo "<a href='http://www.roxorsoxor.com/stakeout/insert_case.php' class='btn btn-primary'>Add Case</a>";
-					echo "<a href='http://www.roxorsoxor.com/stakeout/cases_all.php' class='btn btn-primary'>Show All</a>";
+					echo "<a href='https://www.roxorsoxor.com/stakeout/insert_case.php' class='btn btn-primary'>Add Case</a>";
+					echo "<a href='https://www.roxorsoxor.com/stakeout/cases_all.php' class='btn btn-primary'>Show All</a>";
 				}
 			?>
 
