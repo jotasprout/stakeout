@@ -8,7 +8,19 @@
 - Changing an Investigator's Password
 
 ## Adding a New Investigator
-Blah
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/investigators_ShowAll.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/NewInvestigator.png.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/accountNotActivated.png.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/confirmEmailinInbox.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/confirmEmailContent.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/insertgatorconfirm.png">
+
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/saveAndPW_Working.png">
 
 ## Deactivating an Investigator
 Blah
@@ -17,7 +29,7 @@ Blah
 Blah
 
 ## Viewing a List of Investigators
-Blah
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/investigators_ShowAll.png">
 
 ## Viewing a Single Investigator
 Blah
