@@ -7,8 +7,10 @@ if(empty($_GET['id']) && empty($_GET['code'])) {
 	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 if(isset($_GET['id']) && isset($_GET['code'])) {
-	$id = base64_decode($_GET['id']);
-	$code = $_GET['code'];
+	$id = $_GET['id'];
+	// echo $id;
+	$code = base64_decode($_GET['code']);
+	// echo $code;
 	
 	$statusY = "Y";
 	$statusN = "N";	

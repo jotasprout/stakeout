@@ -38,8 +38,8 @@ if(isset($_POST['submit'])) {
 	else {
 		if($user->register($uname,$forename,$surname,$email,$code)) {
 			$id = $user->lasdID();
-			$key = base64_encode($id);
-			$id = $key;
+			$key = base64_encode($code);
+			$code = $key;
 			$message = "Welcome to Stakeout, $forename!<br/>
 						Click the link below to complete your registration.<br/>
 						<a href='https://www.roxorsoxor.com/stakeout/verifyAndSetPW.php?id=$id&code=$code'>Click here to activate</a>.<br />

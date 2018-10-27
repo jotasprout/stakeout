@@ -21,8 +21,7 @@ else {
 	echo "<script>console.log('" . $username . " is logged in.')</script>";
 }
 
-// PHP code in a more secure location
-include("../../secret_php/landfill.php");
+require_once("../../secret_php/landfill.php");
 
 //Uses PHP code to connect to database
 $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
@@ -76,9 +75,7 @@ $result = $connekt->query($query);
 	<p><strong>Username:</strong> <?php echo $username; ?></p>
 	
 <?php
-  // PHP code in a more secure location
-  include("../../secret_php/landfill.php");
-  //Uses PHP code to connect to database
+
   $connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
   // Connection test and feedback
   if (!$connekt)  {    

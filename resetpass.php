@@ -106,5 +106,5 @@ if(isset($_GET['id']) && isset($_GET['code']))
 		</fieldset>
       </form>
     </div> <!-- /container -->
-  <script src='https://roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+  <script src='https://www.roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
 </html>

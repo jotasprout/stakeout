@@ -5,10 +5,11 @@ session_start();
 require_once 'class.gator.php';
 require_once 'stylesAndSuch.php';
 require_once 'navbar.php';
+require_once("../../secret_php/landfill.php");
 $user = new USER();
 
 if(!$user->areTheyLoggedIn()) {
-	$user->redirect('http://www.roxorsoxor.com/stakeout/login_form.php');
+	$user->redirect('https://www.roxorsoxor.com/stakeout/login_form.php');
 }
 else {
 	$jefe = $_SESSION['jefe'];
@@ -59,12 +60,12 @@ else {
 			<!-- Panel Content --> 
 			
 			<a href="insert_gator.php" class="btn btn-primary">Add Investigator</a>
-			<a href='http://www.roxorsoxor.com/stakeout/gators_all.php' class='btn btn-primary'>Show All</a>
+			<a href='https://www.roxorsoxor.com/stakeout/gators_all.php' class='btn btn-primary'>Show All</a>
 
 <?php
 
 	// PHP code in a more secure location
-    include("../../secret_php/landfill.php");
+    // include("../../secret_php/landfill.php");
 
 	//Uses PHP code to connect to database
 	$connekt = new mysqli($db_hostname, $db_username, $db_password, $db_database);
