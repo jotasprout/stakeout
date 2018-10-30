@@ -10,10 +10,10 @@ Add other MD files for each "section."
 
 ## Features
 - Admin
-- Users/Investigators
+- [Users/Investigators](https://github.com/jotasprout/stakeout/blob/master/investigators.md)
 - Assignments
-- Cases 
-- Observations
+- [Cases](cases.md)
+- [Observations](observations.md)
 - Downloading Case Assets
 
 ### Old, Vague Bullets

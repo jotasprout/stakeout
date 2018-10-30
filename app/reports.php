@@ -65,6 +65,6 @@
     </div>
     	
 </div> <!-- /container-fluid -->   
-
-<script src='https://roxorsoxor.com/stakeout/js/mobrules.js'></script></body>
+<?php echo $scriptsAndSuch; ?>
+</body>
 </html>
