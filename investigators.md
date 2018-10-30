@@ -10,9 +10,9 @@
 ## Adding a New Investigator
 <img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/investigators_ShowAll.png">
 
-<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/NewInvestigator.png.png">
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/NewInvestigator.png">
 
-<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/accountNotActivated.png.png">
+<img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/accountNotActivated.png">
 
 <img src="https://github.com/jotasprout/stakeout/blob/master/imagesMD/gators/confirmEmailinInbox.png">
 
