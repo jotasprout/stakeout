@@ -1,7 +1,7 @@
-# Stakeout
+# Stakeout (PHP)
 Mobile app created for private investigation firms or other teams for collaborating and combining data collected while logging surveillance information. 
 
-**Status:** Active. Refactoring everything.
+**Status:** Sunset. Evolving into [Stakeout PWA](https://github.com/jotasprout/stakeout-pwa).
 
 ## Adding U
 Add other MD files for each "section."
