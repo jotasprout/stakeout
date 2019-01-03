@@ -96,7 +96,7 @@ $result = $connekt->query($query);
   while ($row = mysqli_fetch_array($result)) {	 
 	  echo "<tr>";	 
 
-	  echo "<td><a href='manage_case.php?id=" . $row["caseID"] . "'>" . $row["caseName"] . "</a></td>";	 	 
+	  echo "<td><a href='manage_case.php?id=" . $row["caseID"] . "'>" . $row["caseName"] . "</a></td>";
 	  echo "</tr>";
   }
   // Finish creating HTML table
