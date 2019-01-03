@@ -106,7 +106,7 @@ $result = $connekt->query($query);
 ?>	
 
 <p align="center"><a href="userGuide_beta_0-2.pdf">Download latest User Guide (PDF)</a></p>
-
+<p align="center"><a href="RoxorReports_v2-5.pdf">Latest A</a></p>
   </div> <!-- /panel-body -->
 </div>
 	
