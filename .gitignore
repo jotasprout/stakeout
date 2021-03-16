@@ -1,3 +1,4 @@
+.DS_Store
 backburner
 dist
 from-RoxorSoxor2021
@@ -5,3 +6,4 @@ node_modules
 oldMisc
 secret_php
 vendor
+.DS_Store
